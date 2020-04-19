@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
+import { StoreProvider } from "../context/Store";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/connect" />} />
         <Route exact path="/connect" component={Login} />
-        <Route exact path="/home" component={Home} />
+        <StoreProvider>
+          <Route exact path="/home" component={Home} />
+        </StoreProvider>
       </Switch>
     </Router>
   );

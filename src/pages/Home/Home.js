@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Store } from "../../context/Store";
 
 const Home = () => {
-  return <h2>Home</h2>;
+  const store = useContext(Store);
+
+  return (
+    <React.Fragment>
+      <h3>Home</h3>
+    </React.Fragment>
+  );
 };
 
 export default Home;
