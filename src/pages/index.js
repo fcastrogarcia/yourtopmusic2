@@ -8,6 +8,7 @@ import {
 import Login from "./Login";
 import Home from "./Home";
 import { StoreProvider } from "../context/Store";
+import GlobalStyles from "../theme/globals";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/home" component={Home} />
         </StoreProvider>
       </Switch>
+      <GlobalStyles />
     </Router>
   );
 }
