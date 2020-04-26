@@ -4,18 +4,40 @@ import { setAxiosHeader } from "../utils/axios";
 export const Store = createContext();
 
 const initialState = {
-  data: {},
+  user: {},
+  artists: [],
+  tracks: [],
   type: "artists",
   token_expired: false,
 };
 
 const reducer = (state, action) => {
-  switch (action.type) {
-    case "DATA":
-      return {
-        ...state,
-        data: action.payload,
-      };
+  const { type, payload } = action;
+  switch (type) {
+    case "API":
+      const nextState = payload.reduce((acc, curr, i) => {
+        switch (i) {
+          case 0:
+            return { ...acc, user: curr };
+          case 1:
+          case 2:
+          case 3:
+            return {
+              ...acc,
+              artists: [...acc.artists, curr],
+            };
+          case 4:
+          case 5:
+          case 6:
+            return {
+              ...acc,
+              tracks: [...acc.tracks, curr],
+            };
+          default:
+            return acc;
+        }
+      }, state);
+      return nextState;
     case "TYPE":
       return {
         ...state,
