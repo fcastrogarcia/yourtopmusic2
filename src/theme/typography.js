@@ -1,10 +1,9 @@
 export default {
-  fontFamily: ['"Open sans"', '"Helvetica Neue"', "Arial", "sans-serif"].join(
-    ","
-  ),
+  fontFamily: ['".SF NS Display"'].join(","),
   subtitle1: {
     fontSize: "15px",
-    fontWeight: 700,
+    fontWeight: 600,
+    letterSpacing: "0.8px",
   },
   subtitle2: {
     fontSize: "12px",

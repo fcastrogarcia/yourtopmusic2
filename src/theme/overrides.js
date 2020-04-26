@@ -1,4 +1,5 @@
 import palette from "./palette";
+import shadows from "./shadows";
 
 export default {
   // MuiAppBar: {
@@ -84,15 +85,11 @@ export default {
   //     padding: "13px",
   //   },
   // },
-  // MuiPaper: {
-  //   rounded: {
-  //     boxShadow: "none",
-  //     borderRadius: "0px",
-  //   },
-  //   elevation2: {
-  //     boxShadow: "none",
-  //   },
-  // },
+  MuiPaper: {
+    elevation8: {
+      boxShadow: shadows.lg,
+    },
+  },
   // MuiInputBase: {
   //   root: {
   //     background: `${palette.grey[200]}`,
