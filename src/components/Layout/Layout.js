@@ -1,11 +1,16 @@
 import React from "react";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import theme from "../../theme";
+import Header from "../Header";
+import styles from "./styles";
 
 const Layout = ({ children }) => {
   return (
     <MuiThemeProvider theme={theme}>
-      <main>{children}</main>
+      <styles.Layout>
+        <Header />
+        <styles.Main>{children}</styles.Main>
+      </styles.Layout>
     </MuiThemeProvider>
   );
 };
