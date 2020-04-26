@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import styles from "./styles";
 import { ScaleLoader } from "react-spinners";
-import Layout from "../../components/Layout";
 import redirect from "../../utils/redirect";
 
 const LoginButton = () => {
@@ -11,12 +10,10 @@ const LoginButton = () => {
 
   return (
     <Fragment>
-      <Layout>
-        <styles.Button onClick={handleClick} href={redirect}>
-          {!loading && <span>Connect </span>}
-          {loading && <ScaleLoader color={"#FFFFFF"} height={22} />}
-        </styles.Button>
-      </Layout>
+      <styles.Button onClick={handleClick} href={redirect}>
+        {!loading && <span>Connect </span>}
+        {loading && <ScaleLoader color={"#FFFFFF"} height={22} />}
+      </styles.Button>
     </Fragment>
   );
 };
