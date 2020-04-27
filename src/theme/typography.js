@@ -24,6 +24,12 @@ export default {
     lineHeight: "17px",
     letterSpacing: "0.5px",
   },
+  h1: {
+    fontWeight: 500,
+    fontSize: "32px",
+    lineHeight: "43px",
+    fontFamily: '"Rubik", sans-serif',
+  },
   h2: {
     fontWeight: 700,
     fontSize: "32px",

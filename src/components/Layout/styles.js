@@ -8,6 +8,4 @@ const Layout = styled.div`
   grid-template-rows: 4em auto 4em;
 `;
 
-const Main = styled.main``;
-
-export default { Layout, Main };
+export default { Layout };

@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
     <MuiThemeProvider theme={theme}>
       <styles.Layout>
         <Header />
-        <styles.Main>{children}</styles.Main>
+        {children}
       </styles.Layout>
     </MuiThemeProvider>
   );
