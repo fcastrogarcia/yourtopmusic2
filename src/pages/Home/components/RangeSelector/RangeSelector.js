@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { func, number } from "prop-types";
 import styles from "./styles";
 

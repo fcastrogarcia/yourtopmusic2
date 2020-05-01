@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 import Container from "../../components/Container";
 import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
-import ChartItem from "./components/ChartItem";
+import Chart from "./components/Chart";
 
 import { Store } from "../../context/Store";
 import useFetchData from "../../hooks/useFetchData";
@@ -17,7 +17,10 @@ const Home = () => {
   const { type, artists, tracks } = store;
 
   const handleType = () => dispatch({ type: "TYPE" });
-  const title = `Top ${type === "artists" ? "Artists" : "Tracks"}`;
+
+  const isArtists = type === "artists";
+  const title = `Top ${isArtists ? "Artists" : "Tracks"}`;
+  const data = isArtists ? artists : tracks;
 
   return (
     <Layout>
@@ -28,6 +31,7 @@ const Home = () => {
             <RangeSelector tab={tab} setTab={setTab} />
             <TypeSelector handleType={handleType} type={type} />
           </styles.RowWrapper>
+          <Chart {...{ data, isArtists }} range={tab} />
         </styles.Main>
       </Container>
     </Layout>

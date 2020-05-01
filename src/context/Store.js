@@ -5,8 +5,8 @@ export const Store = createContext();
 
 const initialState = {
   user: {},
-  artists: [],
-  tracks: [],
+  artists: [[], [], []],
+  tracks: [[], [], []],
   type: "artists",
   token_expired: false,
 };
@@ -22,16 +22,18 @@ const reducer = (state, action) => {
           case 1:
           case 2:
           case 3:
+            acc.artists[i - 1] = curr;
             return {
               ...acc,
-              artists: [...acc.artists, curr],
+              artists: acc.artists,
             };
           case 4:
           case 5:
           case 6:
+            acc.tracks[i - 4] = curr;
             return {
               ...acc,
-              tracks: [...acc.tracks, curr],
+              tracks: acc.tracks,
             };
           default:
             return acc;
