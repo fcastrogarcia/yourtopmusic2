@@ -3,11 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import BaseTabs from "@material-ui/core/Tabs";
 import BaseTab from "@material-ui/core/Tab";
-
-const Wrapper = styled(Grid).attrs({
-  container: true,
-  alignItems: "center",
-})``;
+import teal from "@material-ui/core/colors/teal";
 
 const Tab = styled(BaseTab).attrs({
   disableRipple: false,
@@ -15,33 +11,26 @@ const Tab = styled(BaseTab).attrs({
   && {
     font-weight: 700;
     text-transform: none;
-    color: var(--gray-900);
+    color: var(--gray-800);
     letter-spacing: 0.8px;
     font-size: 14px;
+    width: 20vw;
     min-width: 100px;
-    border-bottom: 2px solid var(--gray-300);
+    max-width: 125px;
+    opacity: 0.5;
+  }
+  & .Mui-selected {
+    color: var(--gray-100);
   }
 `;
 
 const Tabs = styled(BaseTabs)`
-  && .MuiTabs-indicator {
-    background-color: var(--teal-400);
+  & .MuiTabs-indicator {
+    background-color: ${teal["A400"]};
     height: 3px;
   }
 `;
 
-const Line = styled.div`
-  box-sizing: border-box;
-  align-self: flex-end;
-  flex: 1;
-  justify-content: flex-end;
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  margin: 11px 0;
-  border: none;
-  height: calc(100% - 22px);
-  border-bottom: 2px solid var(--gray-300);
-`;
+const LeftContainer = styled(Grid)``;
 
-export default { Wrapper, Tab, Tabs, Line };
+export default { Tab, Tabs, LeftContainer };

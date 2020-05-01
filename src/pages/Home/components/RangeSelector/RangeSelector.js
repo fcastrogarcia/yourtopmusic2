@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import { func, number } from "prop-types";
 import styles from "./styles";
 
-const RangeSelector = () => {
-  const [tab, setTab] = useState(0);
-
+const RangeSelector = ({ tab, setTab }) => {
   const a11yProps = (index) => {
     return {
       id: `simple-tab-${index}`,
@@ -14,15 +13,21 @@ const RangeSelector = () => {
   const handleChange = (_, newValue) => setTab(newValue);
 
   return (
-    <styles.Wrapper>
-      <styles.Tabs value={tab} onChange={handleChange}>
-        <styles.Tab label="All Time" {...a11yProps(0)} />
-        <styles.Tab label="Six Months" {...a11yProps(1)} />
-        <styles.Tab label="Last Month" {...a11yProps(2)} />
-      </styles.Tabs>
-      <styles.Line>asaafasfasf</styles.Line>
-    </styles.Wrapper>
+    <styles.Tabs value={tab} onChange={handleChange}>
+      <styles.Tab label="All Time" {...a11yProps(0)} />
+      <styles.Tab label="Six Months" {...a11yProps(1)} />
+      <styles.Tab label="Last Month" {...a11yProps(2)} />
+    </styles.Tabs>
   );
+};
+
+RangeSelector.propTypes = {
+  tab: number,
+  setTab: func.isRequired,
+};
+
+RangeSelector.defaulProps = {
+  tab: 0,
 };
 
 export default RangeSelector;

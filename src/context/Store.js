@@ -15,7 +15,7 @@ const reducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
     case "API":
-      const nextState = payload.reduce((acc, curr, i) => {
+      return payload.reduce((acc, curr, i) => {
         switch (i) {
           case 0:
             return { ...acc, user: curr };
@@ -37,11 +37,10 @@ const reducer = (state, action) => {
             return acc;
         }
       }, state);
-      return nextState;
     case "TYPE":
       return {
         ...state,
-        type: action.payload,
+        type: state.type === "artists" ? "tracks" : "artists",
       };
     case "ERROR":
       return {

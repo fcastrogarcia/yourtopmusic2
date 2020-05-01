@@ -15,6 +15,10 @@ const Content = styled(Grid).attrs({
   xs: 12,
   xl: 11,
 })`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
   ${mediaBreaks.tabletLg`
 	  max-width: 1280px
 	`}
