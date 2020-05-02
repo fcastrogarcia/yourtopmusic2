@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BaseSwitch from "@material-ui/core/Switch";
-import teal from "@material-ui/core/colors/teal";
+import BaseSwitch from "material/Switch";
+import teal from "material/colors/teal";
 
 const Wrapper = styled.div`
   padding-right: 12px;

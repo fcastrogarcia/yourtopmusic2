@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Grid from "@material-ui/core/Grid";
-import { mediaBreaks } from "../../theme/devices";
+import Grid from "material/Grid";
+import { mediaBreaks } from "theme/devices";
 
 const Container = styled(Grid).attrs({
   container: true,

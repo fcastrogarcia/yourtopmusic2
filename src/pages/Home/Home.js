@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import styles from "./styles";
 
-import Layout from "../../components/Layout";
-import Container from "../../components/Container";
+import Layout from "components/Layout";
+import Container from "components/Container";
 import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 
-import { Store } from "../../context/Store";
-import useFetchData from "../../hooks/useFetchData";
+import { Store } from "context/Store";
+import useFetchData from "hooks/useFetchData";
 
 const Home = () => {
   const [tab, setTab] = useState(0);

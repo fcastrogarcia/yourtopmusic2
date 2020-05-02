@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/IconButton";
-import BaseMenuItem from "@material-ui/core/MenuItem";
-import BaseMenu from "@material-ui/core/Menu";
-import { withTheme } from "@material-ui/core";
+import Typography from "material/Typography";
+import Button from "material/IconButton";
+import BaseMenuItem from "material/MenuItem";
+import BaseMenu from "material/Menu";
+import { withTheme } from "material";
 
 const User = styled.div`
   grid-area: user;

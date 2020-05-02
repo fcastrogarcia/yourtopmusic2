@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import BaseTabs from "@material-ui/core/Tabs";
-import BaseTab from "@material-ui/core/Tab";
-import teal from "@material-ui/core/colors/teal";
+import Typography from "material/Typography";
+import Grid from "material/Grid";
+import BaseTabs from "material/Tabs";
+import BaseTab from "material/Tab";
+import teal from "material/colors/teal";
 
 const Tab = styled(BaseTab).attrs({
   disableRipple: false,

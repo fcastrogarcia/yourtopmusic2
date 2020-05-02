@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import "../assets/font-icon/style.css";
+import "assets/font-icon/style.css";
 
 const GlobalStyle = createGlobalStyle`
     :root {
