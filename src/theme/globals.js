@@ -43,7 +43,8 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         /* font-family: 'Archivo', sans-serif; */
-        font-family: ".SF NS Display";
+        /* font-family: ".SF NS Display"; */
+        font-family: "Rubik", sans-serif
 
     }
     ul {

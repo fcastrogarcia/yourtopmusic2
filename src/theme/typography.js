@@ -1,9 +1,9 @@
 export default {
-  fontFamily: ['".SF NS Display"'].join(","),
+  fontFamily: ['"Rubik", sans-serif'].join(","),
   subtitle1: {
     fontSize: "15px",
-    fontWeight: 600,
-    letterSpacing: "0.8px",
+    fontWeight: 500,
+    letterSpacing: "0.5px",
   },
   subtitle2: {
     fontSize: "12px",

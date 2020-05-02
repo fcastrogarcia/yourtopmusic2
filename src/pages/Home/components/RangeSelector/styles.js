@@ -9,15 +9,14 @@ const Tab = styled(BaseTab).attrs({
   disableRipple: false,
 })`
   && {
-    font-weight: 700;
     text-transform: none;
-    color: var(--gray-800);
-    letter-spacing: 0.8px;
+    color: var(--gray-900);
+    letter-spacing: 0.5px;
     font-size: 14px;
     width: 20vw;
     min-width: 100px;
     max-width: 125px;
-    opacity: 0.5;
+    opacity: 0.35;
   }
   & .Mui-selected {
     color: var(--gray-100);

@@ -4,13 +4,13 @@ import Typography from "@material-ui/core/Typography";
 const Main = styled.main`
   display: grid;
   width: min(90vw, 1280px);
-  margin: 50px 0;
+  margin: 40px 0;
   grid-template-rows: 55px auto auto;
   gap: 30px;
 `;
 
 const Title = styled(Typography).attrs({ variant: "h1" })`
-  color: var(--gray-700);
+  color: var(--gray-800);
 `;
 
 const RowWrapper = styled.div`

@@ -4,6 +4,8 @@ import teal from "material/colors/teal";
 
 const Wrapper = styled.div`
   padding-right: 12px;
+  display: flex;
+  align-items: center;
 `;
 
 const Switch = styled(BaseSwitch)`

@@ -11,6 +11,7 @@ const Header = styled.header`
   z-index: 598;
   top: 0;
   padding: 0 24px;
+  background: #fff;
 `;
 
 export default { Header };
