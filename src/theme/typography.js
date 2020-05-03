@@ -20,26 +20,22 @@ export default {
     lineHeight: "25px",
   },
   body2: {
-    fontSize: "12px",
-    lineHeight: "17px",
-    letterSpacing: "0.5px",
+    fontSize: "13px",
   },
   h1: {
     fontWeight: 500,
     fontSize: "32px",
     lineHeight: "43px",
-    fontFamily: '"Rubik", sans-serif',
   },
   h2: {
-    fontWeight: 700,
-    fontSize: "32px",
-    lineHeight: "43px",
+    fontWeight: 500,
+    fontSize: "22px",
+    lineHeight: "34px",
   },
   h3: {
-    fontWeight: 600,
-    fontSize: "26px",
-    lineHeight: "36px",
-    letterSpacing: "1.73px",
+    fontWeight: 500,
+    fontSize: "15px",
+    lineHeight: "34px",
   },
   h4: {
     fontWeight: 600,
