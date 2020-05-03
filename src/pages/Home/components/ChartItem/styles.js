@@ -36,17 +36,21 @@ const Card = styled.div`
   ${({ track }) =>
     track &&
     css`
-      grid-template: 1fr 1fr / 1fr 2fr 4fr 1fr;
+      grid-template: auto auto auto / 55px 85px 5fr 1fr;
       grid-template-areas:
-        "rank image description activity"
-        "rank image description activity";
+        "rank image track activity"
+        "rank image artist activity"
+        "rank image album activity";
     `}
 
   ${({ isMobile }) =>
     !isMobile &&
     css`
       &:hover ${Genres} {
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
+      }
+      &:hover ${Album} {
+        -webkit-line-clamp: 1;
       }
     `}
 `;
@@ -75,4 +79,25 @@ const Name = styled(Typography).attrs({ variant: "h3" })`
   padding-left: 20px;
 `;
 
-export default { Card, Image, Rank, Name, Genres };
+const Track = styled(Name)`
+  grid-area: track;
+  align-self: center;
+  ${mixins.textEllipsis(2)}
+  padding-top: 4px;
+
+  && {
+    font-size: 13px;
+    line-height: 18px;
+  }
+`;
+
+const Artist = styled(Genres)`
+  grid-area: artist;
+`;
+
+const Album = styled(Genres)`
+  grid-area: album;
+  margin-bottom: 4px;
+`;
+
+export default { Card, Image, Rank, Name, Genres, Track, Artist, Album };
