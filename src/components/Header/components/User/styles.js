@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/IconButton";
-import BaseMenuItem from "@material-ui/core/MenuItem";
-import BaseMenu from "@material-ui/core/Menu";
-import { withTheme } from "@material-ui/core";
+import Typography from "material/Typography";
+import Button from "material/IconButton";
+import BaseMenuItem from "material/MenuItem";
+import BaseMenu from "material/Menu";
+import { withTheme } from "material";
 
 const User = styled.div`
   grid-area: user;
   display: grid;
   grid-template-columns: auto 48px;
-  gap: 0 12px;
+  gap: 0 10px;
   justify-items: center;
   align-items: center;
 `;
@@ -31,7 +31,9 @@ const Image = styled.img`
 const DisplayName = styled(Typography).attrs({
   variant: "subtitle1",
 })`
-  color: var(--gray-800);
+  && {
+    color: var(--gray-800);
+  }
 `;
 
 const MenuItem = styled(BaseMenuItem)``;
@@ -39,7 +41,11 @@ const MenuItem = styled(BaseMenuItem)``;
 const ItemText = styled(Typography).attrs({
   variant: "subtitle1",
 })`
-  color: var(--gray-700);
+  && {
+    color: var(--gray-800);
+    font-weight: 400;
+    font-size: 16px;
+  }
 `;
 
 const Menu = withTheme(

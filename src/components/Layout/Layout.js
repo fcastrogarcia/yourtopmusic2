@@ -1,6 +1,6 @@
 import React from "react";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import theme from "../../theme";
+import { MuiThemeProvider } from "material/styles";
+import theme from "theme";
 import Header from "../Header";
 import styles from "./styles";
 

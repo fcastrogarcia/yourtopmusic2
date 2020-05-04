@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import styles from "./styles";
 import { ScaleLoader } from "react-spinners";
-import redirect from "../../utils/redirect";
+import redirect from "utils/redirect";
 
 const LoginButton = () => {
   const [loading, setLoading] = useState(false);

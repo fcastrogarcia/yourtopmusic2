@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./styles";
 
-import { Store } from "../../context/Store";
+import { Store } from "context/Store";
 
 import User from "./components/User";
 

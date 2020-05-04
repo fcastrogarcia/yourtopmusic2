@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import "../assets/font-icon/style.css";
+import "assets/font-icon/style.css";
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -43,7 +43,8 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         /* font-family: 'Archivo', sans-serif; */
-        font-family: ".SF NS Display";
+        /* font-family: ".SF NS Display"; */
+        font-family: "Rubik", sans-serif
 
     }
     ul {

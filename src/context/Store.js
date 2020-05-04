@@ -1,5 +1,5 @@
 import React, { createContext, useMemo, useReducer, useState } from "react";
-import { setAxiosHeader } from "../utils/axios";
+import { setAxiosHeader } from "utils/axios";
 
 export const Store = createContext();
 

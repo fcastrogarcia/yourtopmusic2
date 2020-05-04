@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BaseButton from "@material-ui/core/Button";
+import BaseButton from "material/Button";
 
 const Button = styled(BaseButton)``;
 
