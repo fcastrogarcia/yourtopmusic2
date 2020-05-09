@@ -9,7 +9,7 @@ const User = styled.div`
   grid-area: user;
   display: grid;
   grid-template-columns: auto 48px;
-  gap: 0 10px;
+  grid-gap: 0 10px;
   justify-items: center;
   align-items: center;
 `;

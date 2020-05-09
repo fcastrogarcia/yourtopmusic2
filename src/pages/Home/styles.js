@@ -7,7 +7,7 @@ const Main = styled.main`
   width: min(90vw, 1280px);
   margin: 40px 0;
   grid-template-rows: auto auto;
-  gap: 30px;
+  grid-gap: 30px;
 `;
 
 const Header = styled.div`
@@ -16,7 +16,7 @@ const Header = styled.div`
   top: 0;
   z-index: 30;
   grid-template-rows: auto auto;
-  gap: 30px;
+  grid-gap: 30px;
   background: #fff;
   transition: all 0.15s;
   clip-path: inset(0px 1px -40px 1px);
@@ -26,7 +26,7 @@ const Header = styled.div`
     sticky &&
     css`
       padding-top: 25px;
-      gap: 25px;
+      grid-gap: 25px;
     `}
 `;
 
