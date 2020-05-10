@@ -1,21 +1,33 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { string } from "prop-types";
 import styles from "./styles";
+
+import Tooltip from "material/Tooltip";
 
 import usePlayTrack from "./hooks/usePlayTrack";
 
 const Player = ({ src, id }) => {
-  const { track, isPlaying, handlePlay, handlePause } = usePlayTrack(id);
+  const { ref, isPlaying, handlePlay: play, handlePause } = usePlayTrack(id);
 
-  const _handlePlay = src && handlePlay;
+  const handlePlay = src && play;
+
+  const tip = "Oops! No preview for this song";
+
+  const player = () => (
+    <styles.Player
+      onClick={isPlaying ? handlePause : handlePlay}
+      active={src}
+      disableRipple={!src}
+    >
+      <Fragment>{isPlaying ? <styles.Pause /> : <styles.Play />}</Fragment>
+    </styles.Player>
+  );
 
   return (
-    <React.Fragment>
-      <styles.Player onClick={isPlaying ? handlePause : _handlePlay}>
-        {isPlaying ? <styles.Pause /> : <styles.Play />}
-      </styles.Player>
-      <audio ref={track} src={src} preload="none" />
-    </React.Fragment>
+    <Fragment>
+      {src ? player() : <Tooltip title={tip}>{player()}</Tooltip>}
+      <audio ref={ref} src={src} preload="none" />
+    </Fragment>
   );
 };
 

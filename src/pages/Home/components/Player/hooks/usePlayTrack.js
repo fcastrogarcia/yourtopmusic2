@@ -5,20 +5,20 @@ import { PlayerContext } from "context/PlayerContext";
 const usePlayTrack = (id) => {
   const [isPlaying, setPlaying] = useState(false);
   const { id: globalId, setId } = useContext(PlayerContext);
-  const track = useRef();
+  const ref = useRef();
 
   const isCurrentTrack = globalId === id;
 
   const handlePlay = () => {
     setId(id);
     setPlaying(true);
-    track.current.play();
+    ref.current.play();
   };
 
   const handlePause = () => {
     setPlaying(false);
-    track.current.currentTime = 0;
-    track.current.pause();
+    ref.current.currentTime = 0;
+    ref.current.pause();
   };
 
   useEffect(() => {
@@ -26,20 +26,20 @@ const usePlayTrack = (id) => {
   }, [isCurrentTrack]);
 
   useEffect(() => {
-    const _track = track.current;
+    const track = ref.current;
 
-    _track.addEventListener("ended", handlePause);
-    _track.addEventListener("pause", handlePause);
-    _track.addEventListener("playing", () => setPlaying(true));
+    track.addEventListener("ended", handlePause);
+    track.addEventListener("pause", handlePause);
+    track.addEventListener("playing", () => setPlaying(true));
 
     return () => {
-      _track.removeEventListener("ended", handlePause);
-      _track.removeEventListener("pause", handlePause);
-      _track.removeEventListener("playing", () => setPlaying(true));
+      track.removeEventListener("ended", handlePause);
+      track.removeEventListener("pause", handlePause);
+      track.removeEventListener("playing", () => setPlaying(true));
     };
   });
 
-  return { track, handlePlay, handlePause, isPlaying };
+  return { ref, handlePlay, handlePause, isPlaying };
 };
 
 export default usePlayTrack;
