@@ -8,6 +8,7 @@ import {
 import Login from "./Login";
 import Home from "./Home";
 import { StoreProvider } from "context/Store";
+import { PlayerProdiver } from "context/PlayerContext";
 import GlobalStyles from "theme/globals";
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
         <Route exact path="/" render={() => <Redirect to="/connect" />} />
         <Route exact path="/connect" component={Login} />
         <StoreProvider>
-          <Route exact path="/home" component={Home} />
+          <PlayerProdiver>
+            <Route exact path="/home" component={Home} />
+          </PlayerProdiver>
         </StoreProvider>
       </Switch>
       <GlobalStyles />

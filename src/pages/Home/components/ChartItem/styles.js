@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 import Typography from "material/Typography";
-import Grid from "material/Grid";
-import teal from "material/colors/teal";
 import mixins from "theme/mixins";
 import shadows from "theme/shadows";
 
@@ -17,12 +15,13 @@ const Genres = styled.p`
 
 const Card = styled.div`
   display: grid;
+  position: relative;
   flex: 1;
   grid-template: 1fr 1.5fr / 55px 85px 4fr;
   grid-template-areas:
     "rank image name"
     "rank image genres";
-  gap: 0 10px;
+  grid-gap: 0 10px;
   min-width: 500px;
   width: 100%;
   height: 100px;
@@ -36,11 +35,11 @@ const Card = styled.div`
   ${({ track }) =>
     track &&
     css`
-      grid-template: auto auto auto / 55px 85px 5fr 1fr;
+      grid-template: auto auto auto / 55px 85px 5fr 0.65fr;
       grid-template-areas:
-        "rank image track activity"
-        "rank image artist activity"
-        "rank image album activity";
+        "rank image track player"
+        "rank image artist player"
+        "rank image album player";
     `}
 
   ${({ isMobile }) =>
@@ -100,4 +99,21 @@ const Album = styled(Genres)`
   margin-bottom: 4px;
 `;
 
-export default { Card, Image, Rank, Name, Genres, Track, Artist, Album };
+const Player = styled.div`
+  grid-area: player;
+  width: 100%;
+  height: 100%;
+  background: var(--gray-100);
+`;
+
+export default {
+  Card,
+  Image,
+  Rank,
+  Name,
+  Genres,
+  Track,
+  Artist,
+  Album,
+  Player,
+};

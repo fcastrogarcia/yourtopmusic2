@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   padding-right: 12px;
   display: flex;
   align-items: center;
+  padding-bottom: 6px;
 `;
 
 const Switch = styled(BaseSwitch)`
