@@ -3,6 +3,7 @@ import { string } from "prop-types";
 import styles from "./styles";
 
 import Tooltip from "material/Tooltip";
+import Equalizer from "../Equalizer";
 
 import usePlayTrack from "./hooks/usePlayTrack";
 
@@ -26,6 +27,7 @@ const Player = ({ src, id }) => {
   return (
     <Fragment>
       {src ? player() : <Tooltip title={tip}>{player()}</Tooltip>}
+      {isPlaying && <Equalizer />}
       <audio ref={ref} src={src} preload="none" />
     </Fragment>
   );

@@ -20,6 +20,7 @@ const Pause = styled(FaPause)`
 
 const Player = styled(ButtonBase)`
   && {
+    position: relative;
     justify-self: flex-end;
     align-self: flex-end;
     margin: 0 12px 12px 0;
@@ -32,7 +33,7 @@ const Player = styled(ButtonBase)`
     background: #fff;
     box-shadow: ${shadows.lg};
     transition: all 0.15s ease-in-out;
-
+    z-index: 15;
     position: absolute;
     right: -27px;
     top: 30px;
