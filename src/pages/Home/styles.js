@@ -19,8 +19,7 @@ const Header = styled.div`
   grid-gap: 30px;
   background: #fff;
   transition: all 0.15s;
-  clip-path: inset(0px 1px -40px 1px);
-  box-shadow: ${shadows.fuzzy};
+  box-shadow: ${shadows.onlyBottom};
 
   ${({ sticky }) =>
     sticky &&
@@ -52,7 +51,6 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
 const RowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  /* border-bottom: 1px solid var(--gray-300); */
   background: #fff;
 `;
 
