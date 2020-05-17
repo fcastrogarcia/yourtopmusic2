@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { any, object, string, number, objectOf, arrayOf } from "prop-types";
 import styles from "./styles";
 
@@ -7,6 +7,8 @@ import { isMobile } from "react-device-detect";
 import Player from "../Player";
 
 const Track = ({ name, album, rank, artists, preview_url, id }) => {
+  const [isPlaying, setPlaying] = useState(false);
+
   const src = album.images[1].url;
   const albumName = album.name;
   const artistName = artists[0].name;
@@ -19,7 +21,7 @@ const Track = ({ name, album, rank, artists, preview_url, id }) => {
       <styles.Artist>{artistName}</styles.Artist>
       <styles.Album>{albumName}</styles.Album>
       <styles.Player>
-        <Player src={preview_url} id={id} />
+        <Player src={preview_url} {...{ isPlaying, setPlaying, id }} />
       </styles.Player>
     </styles.Card>
   );

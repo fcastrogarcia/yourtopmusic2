@@ -37,9 +37,7 @@ const sound = keyframes`
 `;
 
 const Container = styled.div`
-  position: relative;
   display: flex;
-  /* bottom: 11px; */
   z-index: 1;
 `;
 
@@ -82,10 +80,51 @@ const Column = styled.ol`
   &:nth-child(7) ${Bar} {
     animation: ${sound} 1.5s 0.05s ease-in-out alternate infinite;
   }
+  &:nth-child(8) ${Bar} {
+    animation: ${sound} 1.5s 0.1s ease-in-out alternate infinite;
+  }
+  &:nth-child(9) ${Bar} {
+    animation: ${sound} 1.5s 0.25s ease-in-out alternate infinite;
+  }
+  &:nth-child(10) ${Bar} {
+    animation: ${sound} 1.5s 0s ease-in-out alternate infinite;
+  }
+  &:nth-child(11) ${Bar} {
+    animation: ${sound} 1.5s 0.15s ease-in-out alternate infinite;
+  }
+  &:nth-child(12) ${Bar} {
+    animation: ${sound} 1.5s 0.25s ease-in-out alternate infinite;
+  }
+  &:nth-child(13) ${Bar} {
+    animation: ${sound} 1.5s 0.12s ease-in-out alternate infinite;
+  }
+  &:nth-child(14) ${Bar} {
+    animation: ${sound} 1.5s 0.05s ease-in-out alternate infinite;
+  }
+  &:nth-child(10) ${Bar} {
+    animation: ${sound} 1.5s 0.3s ease-in-out alternate infinite;
+  }
+  &:nth-child(11) ${Bar} {
+    animation: ${sound} 1.5s 0.1s ease-in-out alternate infinite;
+  }
+  &:nth-child(15) ${Bar} {
+    animation: ${sound} 1.5s 0.14s ease-in-out alternate infinite;
+  }
+  &:nth-child(16) ${Bar} {
+    animation: ${sound} 1.5s 0.12s ease-in-out alternate infinite;
+  }
+  &:nth-child(17) ${Bar} {
+    animation: ${sound} 1.5s 0.05s ease-in-out alternate infinite;
+  }
+  &:nth-child(18) ${Bar} {
+    animation: ${sound} 1.5s 0.16s ease-in-out alternate infinite;
+  }
+  &:nth-child(10) ${Bar} {
+    animation: ${sound} 1.5s 0.05s ease-in-out alternate infinite;
+  }
+  &:nth-child(20) ${Bar} {
+    animation: ${sound} 1.5s 0.1s ease-in-out alternate infinite;
+  }
 `;
-
-// .equaliser-column:last-child {
-//   margin-right: 0;
-// }
 
 export default { Container, Column, Bar };

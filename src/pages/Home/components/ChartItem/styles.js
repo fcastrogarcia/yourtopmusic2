@@ -106,6 +106,7 @@ const Player = styled.div`
   background: var(--gray-100);
   display: flex;
   align-items: center;
+  overflow: hidden;
 `;
 
 export default {
