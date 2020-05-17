@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import shadows from "theme/shadows";
+import { mediaBreaks } from "theme/devices";
 
 const Main = styled.main`
   display: grid;
@@ -8,6 +9,11 @@ const Main = styled.main`
   margin: 40px 0;
   grid-template-rows: auto auto;
   grid-gap: 30px;
+
+  ${mediaBreaks.tablet`
+    width: min(93vw, 1280px);
+    margin: 16px 0;
+  `}
 `;
 
 const Header = styled.div`
@@ -19,14 +25,22 @@ const Header = styled.div`
   grid-gap: 30px;
   background: #fff;
   transition: all 0.15s;
-  clip-path: inset(0px 1px -40px 1px);
-  box-shadow: ${shadows.fuzzy};
+  box-shadow: ${shadows.onlyBottom};
+
+  ${mediaBreaks.tablet`
+    grid-gap: 18px;
+    padding-left: 6px;
+  `}
 
   ${({ sticky }) =>
     sticky &&
     css`
       padding-top: 25px;
       grid-gap: 25px;
+      ${mediaBreaks.mobile`
+        padding-top: 0;
+        grid-gap: 0;
+      `}
     `}
 `;
 
@@ -35,8 +49,12 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
   background: #fff;
   transition: all 0.15s;
   padding-left: 1px;
+
   && {
     line-height: 55px;
+    ${mediaBreaks.tablet`
+      font-size: 25px;
+    `}
   }
 
   ${({ sticky }) =>
@@ -45,6 +63,9 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
       && {
         font-size: 22px;
         line-height: 32px;
+        ${mediaBreaks.mobile`
+          display: none;
+        `}
       }
     `}
 `;
@@ -52,8 +73,8 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
 const RowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  /* border-bottom: 1px solid var(--gray-300); */
   background: #fff;
+  border-top: 1px solid var(--gray-200);
 `;
 
 export default { Main, Title, RowWrapper, Header };

@@ -4,12 +4,11 @@ import Button from "material/IconButton";
 import BaseMenuItem from "material/MenuItem";
 import BaseMenu from "material/Menu";
 import { withTheme } from "material";
+import { mediaBreaks } from "theme/devices";
 
 const User = styled.div`
   grid-area: user;
-  display: grid;
-  grid-template-columns: auto 48px;
-  grid-gap: 0 10px;
+  display: flex;
   justify-items: center;
   align-items: center;
 `;
@@ -26,14 +25,22 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 50%;
   box-shadow: var(--shadow);
+  ${mediaBreaks.mobile`
+    width: 36px;
+    height: 36px;
+  `}
 `;
 
 const DisplayName = styled(Typography).attrs({
   variant: "subtitle1",
 })`
   && {
+    padding-right: 10px;
     color: var(--gray-800);
   }
+  ${mediaBreaks.mobile`
+    display: none;
+  `}
 `;
 
 const MenuItem = styled(BaseMenuItem)``;

@@ -7,8 +7,8 @@ import Equalizer from "../Equalizer";
 
 import usePlayTrack from "./hooks/usePlayTrack";
 
-const Player = ({ src, id }) => {
-  const { ref, isPlaying, handlePlay: play, handlePause } = usePlayTrack(id);
+const Player = ({ src, id, setPlaying, isPlaying }) => {
+  const { ref, handlePlay: play, handlePause } = usePlayTrack(id, setPlaying);
 
   const handlePlay = src && play;
 

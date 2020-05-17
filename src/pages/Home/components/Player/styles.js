@@ -41,10 +41,18 @@ const Player = styled(ButtonBase)`
     ${({ active }) =>
       active
         ? css`
-            &:hover {
+            @media (hover: hover) {
+              &:hover {
+                background: ${teal["A700"]};
+              }
+              &:hover ${Play}, &:hover ${Pause} {
+                color: var(--white);
+              }
+            }
+            &:active {
               background: ${teal["A700"]};
             }
-            &:hover ${Play}, &:hover ${Pause} {
+            &:active ${Play}, &:active ${Pause} {
               color: var(--white);
             }
           `

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mediaBreaks } from "theme/devices";
 
 const Header = styled.header`
   display: grid;
@@ -10,6 +11,9 @@ const Header = styled.header`
   z-index: 598;
   padding: 0 24px;
   background: #fff;
+  ${mediaBreaks.mobile`
+    padding: 0 12px;
+  `}
 `;
 
 export default { Header };

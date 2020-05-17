@@ -4,7 +4,7 @@ import times from "lodash/times";
 
 const Equalizer = () => (
   <styles.Container>
-    {times(8, (i) => (
+    {times(20, (i) => (
       <styles.Column key={i.toString()}>
         <styles.Bar />
       </styles.Column>

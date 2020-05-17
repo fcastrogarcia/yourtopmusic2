@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import BaseSwitch from "material/Switch";
 import teal from "material/colors/teal";
+import { mediaBreaks } from "theme/devices";
 
 const Wrapper = styled.div`
   padding-right: 12px;
   display: flex;
   align-items: center;
-  padding-bottom: 6px;
+  height: 58px;
 `;
 
 const Switch = styled(BaseSwitch)`
