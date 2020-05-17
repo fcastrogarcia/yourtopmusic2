@@ -18,8 +18,11 @@ const Tab = styled(BaseTab).attrs({
     min-width: 100px;
     max-width: 125px;
     opacity: 0.35;
+    min-height: 58px;
     ${mediaBreaks.tablet`
       min-height: 52px;
+      padding: 0;
+      margin: 
     `}
   }
   & .Mui-selected {
@@ -41,8 +44,9 @@ const Tabs = styled(BaseTabs)`
       right: 0;
       z-index: 15000;
       box-shadow: ${shadows.onlyTop};
+
       && .MuiTabs-flexContainer {
-        justify-content: center;
+        justify-content: space-evenly;
       }
     `}
   }

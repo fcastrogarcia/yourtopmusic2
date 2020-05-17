@@ -7,7 +7,7 @@ const initialState = {
   user: {},
   artists: [[], [], []],
   tracks: [[], [], []],
-  type: "tracks",
+  type: "artists",
   token_expired: false,
 };
 

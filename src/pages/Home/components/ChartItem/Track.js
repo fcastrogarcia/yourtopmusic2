@@ -9,12 +9,12 @@ import Player from "../Player";
 const Track = ({ name, album, rank, artists, preview_url, id }) => {
   const [isPlaying, setPlaying] = useState(false);
 
-  const src = album.images[1].url;
+  const src = album.images[0].url;
   const albumName = album.name;
   const artistName = artists[0].name;
 
   return (
-    <styles.Card isMobile={isMobile} track>
+    <styles.Card isMobile={isMobile} isTrack>
       <styles.Rank>{rank}</styles.Rank>
       <styles.Image src={src} alt={name} />
       <styles.Track>{name}</styles.Track>

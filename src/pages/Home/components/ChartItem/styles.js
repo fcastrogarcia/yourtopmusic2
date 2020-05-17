@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import Typography from "material/Typography";
 import mixins from "theme/mixins";
 import shadows from "theme/shadows";
+import { mediaBreaks } from "theme/devices";
 
 const Genres = styled.p`
   font-size: 12px;
@@ -11,35 +12,43 @@ const Genres = styled.p`
   max-width: 300px;
   padding-left: 20px;
   text-transform: capitalize;
+  ${mediaBreaks.mobile`
+    padding-left: 14px;
+  `}
 `;
 
 const Card = styled.div`
   display: grid;
   position: relative;
-  flex: 1;
   grid-template: 1fr 1.5fr / 55px 85px 4fr;
   grid-template-areas:
     "rank image name"
     "rank image genres";
   grid-gap: 0 10px;
-  min-width: 500px;
-  width: 100%;
-  height: 100px;
   box-shadow: ${shadows.fuzzy};
   border: 1px solid var(--gray-100);
-  margin: 10px 20px;
   align-items: center;
   justify-items: center;
   border-radius: 4px;
+  ${mediaBreaks.mobile`
+    padding-right: 12px;
+    grid-gap: 0 6px;
+    grid-template: 1fr 1.5fr / 45px 75px 4fr;
+  `}
 
-  ${({ track }) =>
-    track &&
+  ${({ isTrack }) =>
+    isTrack &&
     css`
+      width: 97%;
       grid-template: auto auto auto / 55px 85px 5fr 0.65fr;
       grid-template-areas:
         "rank image track player"
         "rank image artist player"
         "rank image album player";
+      ${mediaBreaks.mobile`
+        padding-right: 0;
+        grid-template: auto auto auto / 45px 75px 5fr 0.65fr;
+      `}
     `}
 
   ${({ isMobile }) =>
@@ -59,6 +68,11 @@ const Rank = styled(Typography).attrs({ variant: "h2" })`
   z-index: 1;
   grid-area: rank;
   color: var(--gray-700);
+  ${mediaBreaks.mobile`
+    && {
+      font-size: 20px;
+    }
+  `}
 `;
 
 const Image = styled.img`
@@ -68,6 +82,10 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 4px;
   box-shadow: ${shadows.md};
+  ${mediaBreaks.mobile`
+    height: 75px;
+    width: 75px;
+  `}
 `;
 
 const Name = styled(Typography).attrs({ variant: "h3" })`
@@ -76,6 +94,13 @@ const Name = styled(Typography).attrs({ variant: "h3" })`
   justify-self: flex-start;
   align-self: flex-end;
   padding-left: 20px;
+  ${mediaBreaks.mobile`
+    padding-left: 14px;
+  `}
+
+  && {
+    line-height: 19px;
+  }
 `;
 
 const Track = styled(Name)`
@@ -107,6 +132,9 @@ const Player = styled.div`
   display: flex;
   align-items: center;
   overflow: hidden;
+  ${mediaBreaks.mobile`
+    background: none;
+  `}
 `;
 
 export default {
