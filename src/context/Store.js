@@ -1,5 +1,6 @@
 import React, { createContext, useMemo, useReducer, useState } from "react";
 import { setAxiosHeader } from "utils/axios";
+import useFetchData from "hooks/useFetchData";
 
 export const Store = createContext();
 
@@ -62,14 +63,17 @@ export function StoreProvider(props) {
     return t;
   });
 
+  const { isLoading } = useFetchData(token, dispatch);
+
   const value = useMemo(() => {
     return {
       store,
       dispatch,
       token,
       setToken,
+      isLoading,
     };
-  }, [store, token]);
+  }, [store, token, isLoading]);
 
   return <Store.Provider value={value}>{props.children}</Store.Provider>;
 }

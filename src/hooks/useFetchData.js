@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext } from "react";
-import { Store } from "../context/Store";
+import { useState, useEffect } from "react";
 import endpoints from "../utils/endpoints";
 import axios from "axios";
 
-export default () => {
-  const { token, dispatch } = useContext(Store);
+export default (token, dispatch) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

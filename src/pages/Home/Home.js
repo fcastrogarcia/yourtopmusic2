@@ -8,13 +8,11 @@ import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 
 import { Store } from "context/Store";
-import useFetchData from "hooks/useFetchData";
 import useSticky from "hooks/useSticky";
 
 const Home = () => {
   const [tab, setTab] = useState(0);
   const { store, dispatch } = useContext(Store);
-  const { isLoading } = useFetchData();
   const { sticky } = useSticky(84);
 
   const handleType = () => dispatch({ type: "TYPE" });
