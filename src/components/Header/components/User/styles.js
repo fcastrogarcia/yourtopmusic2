@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Typography from "material/Typography";
 import BaseMenuItem from "material/MenuItem";
 import BaseMenu from "material/Menu";
+import BaseSkeleton from "@material-ui/lab/Skeleton";
 import { withTheme } from "material";
 import { mediaBreaks } from "theme/devices";
 
@@ -10,6 +11,16 @@ const User = styled.div`
   display: flex;
   justify-items: center;
   align-items: center;
+`;
+
+const Skeleton = styled(BaseSkeleton).attrs({
+  variant: "text",
+  width: 120,
+  height: 15,
+})`
+  && {
+    margin-right: 10px;
+  }
 `;
 
 const DisplayName = styled(Typography).attrs({
@@ -53,6 +64,7 @@ const Menu = withTheme(
 export default {
   User,
   DisplayName,
+  Skeleton,
   Menu,
   MenuItem,
   ItemText,

@@ -18,7 +18,11 @@ const User = ({ externalUrl, displayName, images }) => {
 
   return (
     <styles.User>
-      <styles.DisplayName>{displayName}</styles.DisplayName>
+      {isLoading ? (
+        <styles.Skeleton width={120} height={15} variant="text" />
+      ) : (
+        <styles.DisplayName>{displayName}</styles.DisplayName>
+      )}
       <div>
         <Avatar
           image={image}
