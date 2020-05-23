@@ -138,6 +138,22 @@ const SkeletonGenres = styled(BaseSkeleton).attrs({
   `}
 `;
 
+const SkeletonTrack = styled(SkeletonGenres).attrs({
+  width: "65%",
+})`
+  grid-area: track;
+  align-self: center;
+  margin-top: 8px;
+`;
+
+const SkeletonAlbum = styled(SkeletonTrack).attrs({ width: "70%" })`
+  grid-area: album;
+`;
+
+const SkeletonArtist = styled(SkeletonTrack).attrs({ width: "50%" })`
+  grid-area: artist;
+`;
+
 const Name = styled(Typography).attrs({ variant: "h3" })`
   grid-area: name;
   color: var(--gray-700);
@@ -200,4 +216,7 @@ export default {
   SkeletonImage,
   SkeletonName,
   SkeletonGenres,
+  SkeletonAlbum,
+  SkeletonArtist,
+  SkeletonTrack,
 };

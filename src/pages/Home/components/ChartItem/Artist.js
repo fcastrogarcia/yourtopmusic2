@@ -16,8 +16,8 @@ const Artist = ({ name, genres, images, rank, isLoading }) => {
       {isLoading ? (
         <Fragment>
           <styles.SkeletonImage mobile={mobile} />
-          <styles.SkeletonName>{name}</styles.SkeletonName>
-          <styles.SkeletonGenres>{_genres}</styles.SkeletonGenres>
+          <styles.SkeletonName />
+          <styles.SkeletonGenres />
         </Fragment>
       ) : (
         <Fragment>
@@ -37,6 +37,7 @@ Artist.propTypes = {
   images: arrayOf(object),
   rank: number.isRequired,
   isLoading: bool,
+  mobile: bool.isRequired,
 };
 
 Artist.defaultProps = {

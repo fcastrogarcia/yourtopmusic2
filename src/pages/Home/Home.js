@@ -33,7 +33,7 @@ const Home = () => {
               <TypeSelector handleType={handleType} type={type} />
             </styles.RowWrapper>
           </styles.Header>
-          <Chart {...{ data, isArtists, isLoading }} range={tab} />
+          <Chart {...{ isArtists, isLoading }} term={data[tab]} />
         </styles.Main>
       </Container>
     </Layout>

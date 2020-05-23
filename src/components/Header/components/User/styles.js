@@ -21,6 +21,11 @@ const Skeleton = styled(BaseSkeleton).attrs({
   && {
     margin-right: 10px;
   }
+  ${mediaBreaks.mobile`
+    && {
+      display: none;
+    }
+  `}
 `;
 
 const DisplayName = styled(Typography).attrs({
