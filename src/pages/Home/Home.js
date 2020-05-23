@@ -12,7 +12,7 @@ import useSticky from "hooks/useSticky";
 
 const Home = () => {
   const [tab, setTab] = useState(0);
-  const { store, dispatch } = useContext(Store);
+  const { store, dispatch, isLoading } = useContext(Store);
   const { sticky } = useSticky(84);
 
   const handleType = () => dispatch({ type: "TYPE" });
@@ -33,7 +33,7 @@ const Home = () => {
               <TypeSelector handleType={handleType} type={type} />
             </styles.RowWrapper>
           </styles.Header>
-          <Chart {...{ data, isArtists }} range={tab} />
+          <Chart {...{ data, isArtists, isLoading }} range={tab} />
         </styles.Main>
       </Container>
     </Layout>

@@ -18,7 +18,7 @@ const User = ({ externalUrl, displayName, images }) => {
 
   return (
     <styles.User>
-      {isLoading ? (
+      {isLoading || !displayName ? (
         <styles.Skeleton width={120} height={15} variant="text" />
       ) : (
         <styles.DisplayName>{displayName}</styles.DisplayName>
@@ -30,21 +30,23 @@ const User = ({ externalUrl, displayName, images }) => {
           isLoading={isLoading}
           handleMenu={handleMenu}
         />
-        <styles.Menu
-          open={Boolean(anchorEl)}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          keepMounted
-        >
-          <styles.MenuItem onClick={handleClose}>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              <styles.ItemText>My Account</styles.ItemText>
-            </a>
-          </styles.MenuItem>
-          <styles.MenuItem onClick={handleClose}>
-            <styles.ItemText>Sign out</styles.ItemText>
-          </styles.MenuItem>
-        </styles.Menu>
+        {!isLoading && (
+          <styles.Menu
+            open={Boolean(anchorEl)}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            keepMounted
+          >
+            <styles.MenuItem onClick={handleClose}>
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <styles.ItemText>My Account</styles.ItemText>
+              </a>
+            </styles.MenuItem>
+            <styles.MenuItem onClick={handleClose}>
+              <styles.ItemText>Sign out</styles.ItemText>
+            </styles.MenuItem>
+          </styles.Menu>
+        )}
       </div>
     </styles.User>
   );

@@ -7,7 +7,7 @@ import { PlayerProdiver } from "context/PlayerContext";
 import Artist from "../ChartItem/Artist";
 import Track from "../ChartItem/Track";
 
-const Chart = ({ data, range, isArtists }) => {
+const Chart = ({ data, range, isArtists, isLoading }) => {
   const term = data[range];
 
   return (
@@ -18,12 +18,18 @@ const Chart = ({ data, range, isArtists }) => {
             key={i.toString()}
             {...{ name, genres, images }}
             rank={i + 1}
+            isLoading={isLoading}
           />
         ))
       ) : (
         <PlayerProdiver>
           {term.map((item, i) => (
-            <Track key={i.toString()} {...item} rank={i + 1} />
+            <Track
+              key={i.toString()}
+              {...item}
+              rank={i + 1}
+              isLoading={isLoading}
+            />
           ))}
         </PlayerProdiver>
       )}
@@ -35,12 +41,14 @@ Chart.propTypes = {
   data: arrayOf(array),
   range: number,
   isArtists: bool,
+  isLoading: bool,
 };
 
 Chart.defaultProps = {
   data: [[], [], []],
   range: 0,
   isArtists: true,
+  isLoading: true,
 };
 
 export default Chart;

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import Typography from "material/Typography";
+import BaseSkeleton from "@material-ui/lab/Skeleton";
 import mixins from "theme/mixins";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
@@ -100,6 +101,43 @@ const Image = styled.img`
   `}
 `;
 
+const SkeletonImage = styled(BaseSkeleton).attrs(({ mobile }) => ({
+  variant: "rect",
+  width: mobile ? 75 : 85,
+  height: mobile ? 75 : 85,
+}))`
+  grid-area: image;
+  border-radius: 4px;
+`;
+
+const SkeletonName = styled(BaseSkeleton).attrs({
+  variant: "text",
+  width: 100,
+  height: 15,
+})`
+  grid-area: name;
+  justify-self: flex-start;
+  align-self: flex-end;
+  margin-left: 20px;
+  ${mediaBreaks.mobile`
+    margin-left: 14px;
+  `}
+`;
+
+const SkeletonGenres = styled(BaseSkeleton).attrs({
+  variant: "text",
+  width: "75%",
+  height: 15,
+})`
+  grid-area: genres;
+  justify-self: flex-start;
+  margin-left: 20px;
+  max-width: 230px;
+  ${mediaBreaks.mobile`
+    margin-left: 14px;
+  `}
+`;
+
 const Name = styled(Typography).attrs({ variant: "h3" })`
   grid-area: name;
   color: var(--gray-700);
@@ -159,4 +197,7 @@ export default {
   Artist,
   Album,
   Player,
+  SkeletonImage,
+  SkeletonName,
+  SkeletonGenres,
 };

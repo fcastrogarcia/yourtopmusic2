@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import { any, object, string, number, objectOf, arrayOf } from "prop-types";
+import {
+  any,
+  object,
+  string,
+  number,
+  objectOf,
+  arrayOf,
+  bool,
+} from "prop-types";
 import styles from "./styles";
 
 import { isMobile } from "react-device-detect";
 
 import Player from "../Player";
 
-const Track = ({ name, album, rank, artists, preview_url, id }) => {
+const Track = ({ name, album, rank, artists, preview_url, id, isLoading }) => {
   const [isPlaying, setPlaying] = useState(false);
 
   const src = album.images[0].url;
@@ -34,6 +42,7 @@ Track.propTypes = {
   artists: arrayOf(object),
   preview_url: string,
   id: string,
+  isLoading: bool,
 };
 
 Track.defaultProps = {
@@ -42,6 +51,7 @@ Track.defaultProps = {
   artist: [{ name: "" }],
   preview_url: "",
   id: "",
+  isLoading: true,
 };
 
 export default Track;

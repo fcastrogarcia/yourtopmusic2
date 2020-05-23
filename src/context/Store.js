@@ -6,8 +6,8 @@ export const Store = createContext();
 
 const initialState = {
   user: {},
-  artists: [[], [], []],
-  tracks: [[], [], []],
+  artists: Array(3).fill(Array(50).fill({})),
+  tracks: Array(3).fill(Array(50).fill({})),
   type: "artists",
   token_expired: false,
 };

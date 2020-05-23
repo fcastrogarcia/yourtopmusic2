@@ -7,7 +7,7 @@ const Avatar = ({ image, isLoading, firstLetter, handleMenu }) => {
 
   return (
     <styles.IconButton size="medium" onClick={handleMenu}>
-      {isLoading ? (
+      {isLoading || !src ? (
         <styles.Skeleton />
       ) : (
         <styles.Avatar src={src}>{firstLetter}</styles.Avatar>
