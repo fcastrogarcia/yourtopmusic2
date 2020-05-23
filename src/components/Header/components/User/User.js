@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { arrayOf, string, object, objectOf } from "prop-types";
+import { Store } from "context/Store";
 import styles from "./styles";
+import Avatar from "../Avatar";
 
-const User = ({ externalUrl, displayName, image }) => {
+const User = ({ externalUrl, displayName, images }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const { isLoading } = useContext(Store);
 
-  const src = image[0].url;
+  const image = images[0];
   const url = externalUrl.spotify;
+  const firstLetter = displayName && displayName[0];
 
   const handleMenu = (event) => setAnchorEl(event.currentTarget);
 
@@ -16,9 +20,12 @@ const User = ({ externalUrl, displayName, image }) => {
     <styles.User>
       <styles.DisplayName>{displayName}</styles.DisplayName>
       <div>
-        <styles.IconButton size="medium" onClick={handleMenu}>
-          {src && <styles.Image src={src} />}
-        </styles.IconButton>
+        <Avatar
+          image={image}
+          firstLetter={firstLetter}
+          isLoading={isLoading}
+          handleMenu={handleMenu}
+        />
         <styles.Menu
           open={Boolean(anchorEl)}
           anchorEl={anchorEl}
@@ -42,13 +49,13 @@ const User = ({ externalUrl, displayName, image }) => {
 User.propTypes = {
   externalUrl: objectOf(string),
   displayName: string,
-  image: arrayOf(object),
+  images: arrayOf(object),
 };
 
 User.defaultProps = {
   externalUrl: { spotify: "" },
   displayName: "",
-  image: [{ url: "" }],
+  images: [],
 };
 
 export default User;

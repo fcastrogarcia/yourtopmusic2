@@ -16,7 +16,7 @@ const Header = () => {
       <User
         externalUrl={external_urls}
         displayName={display_name}
-        image={images}
+        images={images}
       />
     </styles.Header>
   );

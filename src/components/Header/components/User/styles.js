@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Typography from "material/Typography";
-import Button from "material/IconButton";
 import BaseMenuItem from "material/MenuItem";
 import BaseMenu from "material/Menu";
 import { withTheme } from "material";
@@ -11,24 +10,6 @@ const User = styled.div`
   display: flex;
   justify-items: center;
   align-items: center;
-`;
-
-const IconButton = styled(Button)`
-  && {
-    padding: 8px;
-  }
-`;
-
-const Image = styled.img`
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-  ${mediaBreaks.mobile`
-    width: 36px;
-    height: 36px;
-  `}
 `;
 
 const DisplayName = styled(Typography).attrs({
@@ -71,9 +52,7 @@ const Menu = withTheme(
 
 export default {
   User,
-  Image,
   DisplayName,
-  IconButton,
   Menu,
   MenuItem,
   ItemText,
