@@ -30,6 +30,7 @@ const Card = styled.div`
   align-items: center;
   justify-items: center;
   border-radius: 4px;
+  transition: all .15s ease-in-out;
   ${mediaBreaks.mobile`
     padding-right: 12px;
     grid-gap: 0 6px;
@@ -61,6 +62,17 @@ const Card = styled.div`
         -webkit-line-clamp: 1;
       }
     `}
+
+    ${({ isPlaying }) =>
+      isPlaying &&
+      css`
+        position: sticky;
+        top: 68px;
+        bottom: 60px;
+        z-index: 30;
+        background: var(--white);
+        box-shadow: ${shadows.xl};
+      `}
 `;
 
 const Rank = styled(Typography).attrs({ variant: "h2" })`
@@ -107,7 +119,7 @@ const Track = styled(Name)`
   grid-area: track;
   align-self: center;
   ${mixins.textEllipsis(2)}
-  padding-top: 4px;
+  padding-top: 8px;
 
   && {
     font-size: 13px;
@@ -121,7 +133,7 @@ const Artist = styled(Genres)`
 
 const Album = styled(Genres)`
   grid-area: album;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 `;
 
 const Player = styled.div`

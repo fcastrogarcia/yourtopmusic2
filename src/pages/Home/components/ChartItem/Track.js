@@ -14,7 +14,7 @@ const Track = ({ name, album, rank, artists, preview_url, id }) => {
   const artistName = artists[0].name;
 
   return (
-    <styles.Card isMobile={isMobile} isTrack>
+    <styles.Card isMobile={isMobile} isTrack isPlaying={isPlaying}>
       <styles.Rank>{rank}</styles.Rank>
       <styles.Image src={src} alt={name} />
       <styles.Track>{name}</styles.Track>

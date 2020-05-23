@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { mediaBreaks } from "theme/devices";
 
 const sound = keyframes`
   0% {
@@ -39,6 +40,9 @@ const sound = keyframes`
 const Container = styled.div`
   display: flex;
   z-index: 1;
+  ${mediaBreaks.mobile`
+    display: none;
+  `}
 `;
 
 const Bar = styled.li`
