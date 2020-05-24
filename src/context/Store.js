@@ -8,7 +8,6 @@ const initialState = {
   user: {},
   artists: Array(3).fill(Array(50).fill({})),
   tracks: Array(3).fill(Array(50).fill({})),
-  type: "artists",
   token_expired: false,
 };
 
@@ -40,11 +39,6 @@ const reducer = (state, action) => {
             return acc;
         }
       }, state);
-    case "TYPE":
-      return {
-        ...state,
-        type: state.type === "artists" ? "tracks" : "artists",
-      };
     case "ERROR":
       return {
         ...state,

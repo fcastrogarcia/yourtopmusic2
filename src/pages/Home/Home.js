@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./styles";
 
 import Layout from "components/Layout";
@@ -9,15 +9,14 @@ import Chart from "./components/Chart";
 
 import { Store } from "context/Store";
 import useSticky from "hooks/useSticky";
+import useQuery from "./hooks/useQuery";
 
 const Home = () => {
-  const [tab, setTab] = useState(0);
-  const { store, dispatch, isLoading } = useContext(Store);
+  const { store, isLoading } = useContext(Store);
   const { sticky } = useSticky(84);
+  const { handleType, handleTab, type, tab } = useQuery();
 
-  const handleType = () => dispatch({ type: "TYPE" });
-
-  const { type, artists, tracks } = store;
+  const { artists, tracks } = store;
   const isArtists = type === "artists";
   const title = `Top ${isArtists ? "Artists" : "Tracks"}`;
   const data = isArtists ? artists : tracks;
@@ -29,7 +28,7 @@ const Home = () => {
           <styles.Header sticky={sticky}>
             <styles.Title sticky={sticky}>{title}</styles.Title>
             <styles.RowWrapper>
-              <RangeSelector tab={tab} setTab={setTab} />
+              <RangeSelector tab={tab} handleChange={handleTab} />
               <TypeSelector handleType={handleType} type={type} />
             </styles.RowWrapper>
           </styles.Header>
