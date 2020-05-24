@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import {
   any,
   string,
@@ -11,6 +11,7 @@ import {
 import styles from "./styles";
 
 import { isMobile } from "react-device-detect";
+import usePlayTrack from "../../hooks/usePlayTrack";
 
 import Player from "../Player";
 
@@ -24,9 +25,9 @@ const Track = ({
   isLoading,
   mobile,
 }) => {
-  const [isPlaying, setPlaying] = useState(false);
+  const { ref, handlePlay, handlePause, isPlaying } = usePlayTrack(id);
 
-  const src = album.images[0].url;
+  const src = album.images[1].url;
   const albumName = album.name;
   const artistName = artists && artists[0].name;
 
@@ -47,10 +48,17 @@ const Track = ({
           <styles.Artist>{artistName}</styles.Artist>
           <styles.Album>{albumName}</styles.Album>
           <styles.Player>
-            <Player src={preview_url} {...{ isPlaying, setPlaying, id }} />
+            <Player
+              isPlaying={isPlaying}
+              id={id}
+              src={preview_url}
+              play={preview_url && handlePlay}
+              pause={handlePause}
+            />
           </styles.Player>
         </Fragment>
       )}
+      <audio ref={ref} src={preview_url} preload="none" />
     </styles.Card>
   );
 };

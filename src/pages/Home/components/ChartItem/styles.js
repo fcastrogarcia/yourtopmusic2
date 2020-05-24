@@ -62,17 +62,24 @@ const Card = styled.div`
       &:hover ${Album} {
         -webkit-line-clamp: 1;
       }
+      &:hover {
+        box-shadow: ${shadows.xl};
+      }
     `}
 
     ${({ isPlaying }) =>
       isPlaying &&
       css`
         position: sticky;
-        top: 68px;
-        bottom: 60px;
         z-index: 30;
         background: var(--white);
         box-shadow: ${shadows.xl};
+        top: 150px;
+        bottom: 10px;
+        ${mediaBreaks.tablet`
+          top: 68px;
+          bottom: 60px;
+        `}
       `}
 `;
 

@@ -1,11 +1,13 @@
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext, useState } from "react";
 
 import { PlayerContext } from "context/PlayerContext";
 
-const usePlayTrack = (id, setPlaying) => {
+const usePlayTrack = (id) => {
+  const [isPlaying, setPlaying] = useState(false);
+
   const { id: globalId, setId } = useContext(PlayerContext);
   const ref = useRef();
-
+  console.log(ref);
   const isCurrentTrack = globalId === id;
 
   const handlePlay = () => {
@@ -38,7 +40,7 @@ const usePlayTrack = (id, setPlaying) => {
     };
   });
 
-  return { ref, handlePlay, handlePause };
+  return { ref, handlePlay, handlePause, isPlaying };
 };
 
 export default usePlayTrack;
