@@ -38,7 +38,7 @@ const usePlayTrack = (id) => {
       track.removeEventListener("pause", handlePause);
       track.removeEventListener("playing", () => setPlaying(true));
     };
-  });
+  }, []);
 
   return { ref, handlePlay, handlePause, isPlaying };
 };

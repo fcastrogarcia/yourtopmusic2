@@ -23,7 +23,7 @@ const Artist = ({ name, genres, images, rank, isLoading }) => {
       ) : (
         <Fragment>
           <styles.Rank>{rank}</styles.Rank>
-          <Lazy once>
+          <Lazy>
             <styles.Image src={src} alt={name} />
           </Lazy>
           <styles.Name>{name}</styles.Name>

@@ -44,7 +44,7 @@ const Track = ({
       ) : (
         <Fragment>
           <styles.Rank>{rank}</styles.Rank>
-          <Lazy once>
+          <Lazy>
             <styles.Image src={src} alt={albumName} />
           </Lazy>
           <styles.Track>{name}</styles.Track>
