@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Typography from "material/Typography";
-import Button from "material/IconButton";
 import BaseMenuItem from "material/MenuItem";
 import BaseMenu from "material/Menu";
+import BaseSkeleton from "@material-ui/lab/Skeleton";
 import { withTheme } from "material";
 import { mediaBreaks } from "theme/devices";
 
@@ -13,21 +13,18 @@ const User = styled.div`
   align-items: center;
 `;
 
-const IconButton = styled(Button)`
+const Skeleton = styled(BaseSkeleton).attrs({
+  variant: "text",
+  width: 120,
+  height: 15,
+})`
   && {
-    padding: 8px;
+    margin-right: 10px;
   }
-`;
-
-const Image = styled.img`
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: var(--shadow);
   ${mediaBreaks.mobile`
-    width: 36px;
-    height: 36px;
+    && {
+      display: none;
+    }
   `}
 `;
 
@@ -71,9 +68,8 @@ const Menu = withTheme(
 
 export default {
   User,
-  Image,
   DisplayName,
-  IconButton,
+  Skeleton,
   Menu,
   MenuItem,
   ItemText,

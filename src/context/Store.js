@@ -1,13 +1,13 @@
 import React, { createContext, useMemo, useReducer, useState } from "react";
 import { setAxiosHeader } from "utils/axios";
+import useFetchData from "hooks/useFetchData";
 
 export const Store = createContext();
 
 const initialState = {
   user: {},
-  artists: [[], [], []],
-  tracks: [[], [], []],
-  type: "artists",
+  artists: Array(3).fill(Array(50).fill({})),
+  tracks: Array(3).fill(Array(50).fill({})),
   token_expired: false,
 };
 
@@ -39,11 +39,6 @@ const reducer = (state, action) => {
             return acc;
         }
       }, state);
-    case "TYPE":
-      return {
-        ...state,
-        type: state.type === "artists" ? "tracks" : "artists",
-      };
     case "ERROR":
       return {
         ...state,
@@ -62,14 +57,17 @@ export function StoreProvider(props) {
     return t;
   });
 
+  const { isLoading } = useFetchData(token, dispatch);
+
   const value = useMemo(() => {
     return {
       store,
       dispatch,
       token,
       setToken,
+      isLoading,
     };
-  }, [store, token]);
+  }, [store, token, isLoading]);
 
   return <Store.Provider value={value}>{props.children}</Store.Provider>;
 }

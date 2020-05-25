@@ -2,15 +2,13 @@ import React from "react";
 import { func, number } from "prop-types";
 import styles from "./styles";
 
-const RangeSelector = ({ tab, setTab }) => {
+const RangeSelector = ({ tab, handleChange }) => {
   const a11yProps = (index) => {
     return {
       id: `simple-tab-${index}`,
       "aria-controls": `simple-tabpanel-${index}`,
     };
   };
-
-  const handleChange = (_, newValue) => setTab(newValue);
 
   return (
     <styles.Tabs value={tab} onChange={handleChange}>
@@ -23,7 +21,7 @@ const RangeSelector = ({ tab, setTab }) => {
 
 RangeSelector.propTypes = {
   tab: number,
-  setTab: func.isRequired,
+  handleChange: func.isRequired,
 };
 
 RangeSelector.defaulProps = {

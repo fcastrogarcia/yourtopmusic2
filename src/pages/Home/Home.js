@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./styles";
 
 import Layout from "components/Layout";
@@ -8,18 +8,15 @@ import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 
 import { Store } from "context/Store";
-import useFetchData from "hooks/useFetchData";
 import useSticky from "hooks/useSticky";
+import useQuery from "./hooks/useQuery";
 
 const Home = () => {
-  const [tab, setTab] = useState(0);
-  const { store, dispatch } = useContext(Store);
-  const { isLoading } = useFetchData();
+  const { store, isLoading } = useContext(Store);
   const { sticky } = useSticky(84);
+  const { handleType, handleTab, type, tab } = useQuery();
 
-  const handleType = () => dispatch({ type: "TYPE" });
-
-  const { type, artists, tracks } = store;
+  const { artists, tracks } = store;
   const isArtists = type === "artists";
   const title = `Top ${isArtists ? "Artists" : "Tracks"}`;
   const data = isArtists ? artists : tracks;
@@ -31,11 +28,11 @@ const Home = () => {
           <styles.Header sticky={sticky}>
             <styles.Title sticky={sticky}>{title}</styles.Title>
             <styles.RowWrapper>
-              <RangeSelector tab={tab} setTab={setTab} />
+              <RangeSelector tab={tab} handleChange={handleTab} />
               <TypeSelector handleType={handleType} type={type} />
             </styles.RowWrapper>
           </styles.Header>
-          <Chart {...{ data, isArtists }} range={tab} />
+          <Chart {...{ isArtists, isLoading }} term={data[tab]} />
         </styles.Main>
       </Container>
     </Layout>
