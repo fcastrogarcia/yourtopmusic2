@@ -4,6 +4,7 @@ import BaseSkeleton from "@material-ui/lab/Skeleton";
 import mixins from "theme/mixins";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
+import LazyImage from "components/LazyImage";
 
 const Genres = styled.p`
   font-size: 12px;
@@ -47,6 +48,7 @@ const Card = styled.div`
         "rank image track player"
         "rank image artist player"
         "rank image album player";
+      cursor: pointer;
       ${mediaBreaks.mobile`
         padding-right: 0;
         grid-template: auto auto auto / 45px 75px 5fr 0.65fr;
@@ -95,7 +97,7 @@ const Rank = styled(Typography).attrs({ variant: "h2" })`
   `}
 `;
 
-const Image = styled.img`
+const Image = styled(LazyImage)`
   grid-area: image;
   height: 85px;
   width: 85px;

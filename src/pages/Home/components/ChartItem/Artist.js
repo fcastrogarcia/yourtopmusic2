@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { arrayOf, object, string, number, bool } from "prop-types";
 import styles from "./styles";
-import Lazy from "react-lazyload";
 
 import { isMobile } from "react-device-detect";
 import useDevices from "hooks/useDevices";
@@ -10,7 +9,7 @@ const Artist = ({ name, genres, images, rank, isLoading }) => {
   const { mobile } = useDevices();
 
   const src = images[1].url;
-  const _genres = (isMobile ? genres.slice(0, 3) : genres).join(", ");
+  const slicedGenres = (isMobile ? genres.slice(0, 3) : genres).join(", ");
 
   return (
     <styles.Card isMobile={isMobile}>
@@ -23,11 +22,9 @@ const Artist = ({ name, genres, images, rank, isLoading }) => {
       ) : (
         <Fragment>
           <styles.Rank>{rank}</styles.Rank>
-          <Lazy once>
-            <styles.Image src={src} alt={name} />
-          </Lazy>
+          <styles.Image src={src} alt={name} />
           <styles.Name>{name}</styles.Name>
-          <styles.Genres>{_genres}</styles.Genres>
+          <styles.Genres>{slicedGenres}</styles.Genres>
         </Fragment>
       )}
     </styles.Card>

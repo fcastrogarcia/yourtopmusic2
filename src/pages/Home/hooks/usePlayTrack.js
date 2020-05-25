@@ -7,7 +7,7 @@ const usePlayTrack = (id) => {
 
   const { id: globalId, setId } = useContext(PlayerContext);
   const ref = useRef();
-  console.log(ref);
+
   const isCurrentTrack = globalId === id;
 
   const handlePlay = () => {
@@ -38,7 +38,7 @@ const usePlayTrack = (id) => {
       track.removeEventListener("pause", handlePause);
       track.removeEventListener("playing", () => setPlaying(true));
     };
-  });
+  }, []);
 
   return { ref, handlePlay, handlePause, isPlaying };
 };

@@ -23,7 +23,7 @@ export default function useParseToken() {
         setUnauthorized(true);
       }
     })();
-  });
+  }, []);
 
   return { unauthorized };
 }

@@ -26,7 +26,7 @@ export default (token, dispatch) => {
       }
     };
     fetchData();
-  }, [dispatch, token]);
+  }, [token]);
 
   const state = {
     isLoading,

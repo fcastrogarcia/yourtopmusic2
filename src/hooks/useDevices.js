@@ -54,7 +54,7 @@ const useDevices = () => {
     window.addEventListener("resize", handleChanges);
 
     return () => window.removeEventListener("resize", handleChanges);
-  });
+  }, []);
 
   return {
     width,
