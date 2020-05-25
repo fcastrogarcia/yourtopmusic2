@@ -19,6 +19,13 @@ const useQuery = () => {
     });
   };
 
+  const setDefaultQueryParams = () => {
+    if (queryType && queryRange) return;
+    if (!queryType) params.set("type", "artists");
+    if (!queryRange) params.set("range", 0);
+    setQueryParams(params.toString());
+  };
+
   const handleType = () => {
     const nextType = `${type === "artists" ? "tracks" : "artists"}`;
     params.set("type", nextType);
@@ -38,6 +45,7 @@ const useQuery = () => {
   };
 
   useEffect(() => {
+    setDefaultQueryParams();
     if (queryType) setType(queryType);
     if (queryRange) setTab(doValidateRange(queryRange));
   }, [search]);
