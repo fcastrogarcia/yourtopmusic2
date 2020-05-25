@@ -7,7 +7,7 @@ const usePlayTrack = (id) => {
 
   const { id: globalId, setId } = useContext(PlayerContext);
   const ref = useRef();
-  console.log(ref);
+
   const isCurrentTrack = globalId === id;
 
   const handlePlay = () => {
