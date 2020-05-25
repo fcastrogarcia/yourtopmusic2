@@ -9,7 +9,6 @@ import {
   bool,
 } from "prop-types";
 import styles from "./styles";
-import Lazy from "react-lazyload";
 
 import { isMobile } from "react-device-detect";
 import usePlayTrack from "../../hooks/usePlayTrack";
@@ -44,9 +43,7 @@ const Track = ({
       ) : (
         <Fragment>
           <styles.Rank>{rank}</styles.Rank>
-          <Lazy>
-            <styles.Image src={src} alt={albumName} />
-          </Lazy>
+          <styles.Image src={src} alt={albumName} />
           <styles.Track>{name}</styles.Track>
           <styles.Artist>{artistName}</styles.Artist>
           <styles.Album>{albumName}</styles.Album>
