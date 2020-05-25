@@ -9,7 +9,7 @@ const Artist = ({ name, genres, images, rank, isLoading }) => {
   const { mobile } = useDevices();
 
   const src = images[1].url;
-  const _genres = (isMobile ? genres.slice(0, 3) : genres).join(", ");
+  const slicedGenres = (isMobile ? genres.slice(0, 3) : genres).join(", ");
 
   return (
     <styles.Card isMobile={isMobile}>
@@ -24,7 +24,7 @@ const Artist = ({ name, genres, images, rank, isLoading }) => {
           <styles.Rank>{rank}</styles.Rank>
           <styles.Image src={src} alt={name} />
           <styles.Name>{name}</styles.Name>
-          <styles.Genres>{_genres}</styles.Genres>
+          <styles.Genres>{slicedGenres}</styles.Genres>
         </Fragment>
       )}
     </styles.Card>

@@ -48,6 +48,7 @@ const Card = styled.div`
         "rank image track player"
         "rank image artist player"
         "rank image album player";
+      cursor: pointer;
       ${mediaBreaks.mobile`
         padding-right: 0;
         grid-template: auto auto auto / 45px 75px 5fr 0.65fr;

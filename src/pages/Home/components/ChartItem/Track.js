@@ -32,7 +32,12 @@ const Track = ({
   const artistName = artists && artists[0].name;
 
   return (
-    <styles.Card isMobile={isMobile} isTrack isPlaying={isPlaying}>
+    <styles.Card
+      isMobile={isMobile}
+      isTrack
+      isPlaying={isPlaying}
+      onClick={isPlaying ? handlePause : handlePlay}
+    >
       {isLoading ? (
         <Fragment>
           <styles.SkeletonImage mobile={mobile} />
