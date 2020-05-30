@@ -9,7 +9,7 @@ const TypeSelector = ({ handleType, type }) => {
       <styles.Emoji role="img" aria-label="singer">
         👨‍🎤
       </styles.Emoji>
-      <styles.Switch onChange={handleType} value={type === "artists"} />
+      <styles.Switch onChange={handleType} checked={type === "tracks"} />
       <styles.Emoji role="img" aria-label="song">
         🎼
       </styles.Emoji>

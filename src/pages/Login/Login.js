@@ -1,6 +1,5 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles";
-import { ScaleLoader } from "react-spinners";
 import redirect from "utils/redirect";
 
 const LoginButton = () => {
@@ -9,12 +8,22 @@ const LoginButton = () => {
   const handleClick = () => setLoading(true);
 
   return (
-    <Fragment>
-      <styles.Button onClick={handleClick} href={redirect}>
-        {!loading && <span>Connect </span>}
-        {loading && <ScaleLoader color={"#FFFFFF"} height={22} />}
-      </styles.Button>
-    </Fragment>
+    <styles.Layout>
+      <styles.Wrapper>
+        <styles.Title>
+          Find out who your top artists and songs are.
+        </styles.Title>
+        <styles.Button onClick={handleClick} href={redirect}>
+          {!loading ? (
+            <>
+              <styles.Icon /> Continue with Spotify
+            </>
+          ) : (
+            <styles.Loader />
+          )}
+        </styles.Button>
+      </styles.Wrapper>
+    </styles.Layout>
   );
 };
 export default LoginButton;
