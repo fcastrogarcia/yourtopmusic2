@@ -13,6 +13,7 @@ const Header = () => {
 
   return (
     <styles.Header>
+      <styles.Logo />
       <User
         externalUrl={external_urls}
         displayName={display_name}
