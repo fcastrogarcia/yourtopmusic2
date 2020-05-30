@@ -50,11 +50,14 @@ const mixins = {
       }
     }
   `,
-  hoverOnly: (...args) => css`
-    ${devices.onlyDesktop} {
+  hoverButton: (...args) => css`
+    @media (hover: hover) {
       &:hover {
         ${css(...args)}
       }
+    }
+    &:active {
+      ${css(...args)}
     }
   `,
   placeholder: (...args) => css`
