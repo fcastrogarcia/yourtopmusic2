@@ -36,7 +36,8 @@ const Card = styled.div`
   ${mediaBreaks.mobile`
     padding-right: 12px;
     grid-gap: 0 6px;
-    grid-template: 1fr 1.5fr / 45px 75px 4fr;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-columns: 45px 75px 4fr;
   `}
 
   ${({ isTrack }) =>
@@ -51,7 +52,8 @@ const Card = styled.div`
       cursor: pointer;
       ${mediaBreaks.mobile`
         padding-right: 0;
-        grid-template: auto auto auto / 45px 75px 5fr 0.65fr;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 45px 75px 5fr 0.65fr;
       `}
     `}
 
