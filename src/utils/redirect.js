@@ -3,7 +3,7 @@ import querystring from "query-string";
 const param = querystring.stringify({
   returnTo:
     process.env.NODE_ENV === "development"
-      ? "http://192.168.0.59:3000/home"
+      ? process.env.REACT_APP_LOCAL_URL
       : "https://yourtopmusic.netlify.app/home",
 });
 
