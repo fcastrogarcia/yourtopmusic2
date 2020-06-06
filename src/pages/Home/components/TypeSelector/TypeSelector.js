@@ -1,18 +1,23 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import { func, string } from "prop-types";
 import styles from "./styles";
 
 const TypeSelector = ({ handleType, type }) => {
+  const options = [
+    { value: "artists", label: "Artists" },
+    { value: "tracks", label: "Tracks" },
+  ];
+
+  const value = options.find(({ value }) => value === type);
+
   return (
     <styles.Wrapper>
-      <styles.Emoji role="img" aria-label="singer">
-        👨‍🎤
-      </styles.Emoji>
-      <styles.Switch onChange={handleType} checked={type === "tracks"} />
-      <styles.Emoji role="img" aria-label="song">
-        🎼
-      </styles.Emoji>
+      <styles.Select
+        options={options}
+        onChange={({ value }) => handleType(value)}
+        value={value}
+        isSearchable={false}
+      />
     </styles.Wrapper>
   );
 };
