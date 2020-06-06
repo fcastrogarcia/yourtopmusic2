@@ -30,13 +30,14 @@ const Track = ({
   const src = album.images[1].url;
   const albumName = album.name;
   const artistName = artists && artists[0].name;
+  const handleClick = isPlaying ? handlePause : handlePlay;
 
   return (
     <styles.Card
       isMobile={isMobile}
       isTrack
       isPlaying={isPlaying}
-      onClick={isPlaying ? handlePause : handlePlay}
+      onClick={preview_url && handleClick}
     >
       {isLoading ? (
         <Fragment>
