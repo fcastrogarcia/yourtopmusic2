@@ -26,9 +26,8 @@ const useQuery = () => {
     setQueryParams(params.toString());
   };
 
-  const handleType = () => {
-    const nextType = `${type === "artists" ? "tracks" : "artists"}`;
-    params.set("type", nextType);
+  const handleType = (value) => {
+    params.set("type", value);
     setQueryParams(params.toString());
   };
 

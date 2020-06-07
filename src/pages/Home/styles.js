@@ -13,6 +13,7 @@ const Main = styled.main`
   ${mediaBreaks.tablet`
     width: min(93vw, 1280px);
     margin: 16px 0;
+    grid-gap: 12px;
   `}
 `;
 

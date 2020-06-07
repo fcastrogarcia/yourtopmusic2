@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { arrayOf, string, object, objectOf } from "prop-types";
 import { Store } from "context/Store";
 import styles from "./styles";
@@ -7,6 +8,7 @@ import Avatar from "../Avatar";
 const User = ({ externalUrl, displayName, images }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const { isLoading } = useContext(Store);
+  const history = useHistory();
 
   const image = images[0];
   const url = externalUrl.spotify;
@@ -14,7 +16,15 @@ const User = ({ externalUrl, displayName, images }) => {
 
   const handleMenu = (event) => setAnchorEl(event.currentTarget);
 
-  const handleClose = () => setAnchorEl(null);
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleSignOut = () => {
+    handleClose();
+    window.localStorage.removeItem("t");
+    history.push("/");
+  };
 
   return (
     <styles.User>
@@ -42,7 +52,7 @@ const User = ({ externalUrl, displayName, images }) => {
                 <styles.ItemText>My Account</styles.ItemText>
               </a>
             </styles.MenuItem>
-            <styles.MenuItem onClick={handleClose}>
+            <styles.MenuItem onClick={handleSignOut}>
               <styles.ItemText>Sign out</styles.ItemText>
             </styles.MenuItem>
           </styles.Menu>
