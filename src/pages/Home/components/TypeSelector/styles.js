@@ -10,19 +10,23 @@ const Wrapper = styled.div`
   padding-right: 12px;
   display: flex;
   align-items: center;
+  ${mediaBreaks.tablet`
+    padding: 10px 12px 10px 0;
+  `}
 `;
 
 const Select = withTheme(styled(BaseSelect).attrs({
   className: "react-select-container",
   classNamePrefix: "react-select",
 })`
-  width: 200px;
+  width: 160px;
 
   .react-select {
     font-family: "Rubik", sans-serif;
     &__control {
       padding: 7px 5px 7px 10px;
       transition: all 0.15s;
+      border-color: var(--gray-300);
       cursor: pointer;  
       &:hover {
         border-color: ${teal["A400"]};
@@ -31,6 +35,9 @@ const Select = withTheme(styled(BaseSelect).attrs({
         border-color: ${teal["A400"]};
         box-shadow: 0 0 0 1px ${teal["A400"]};
       }
+    }
+    &__indicator-separator {
+      background-color: var(--gray-300);
     }
     &__dropdown-indicator {
       padding-left: 5px;
@@ -47,7 +54,12 @@ const Select = withTheme(styled(BaseSelect).attrs({
     &__option {
       cursor: pointer;  
       font-size: 13px;
-      padding: 10px 10px;
+      padding: 10px;
+      ${mediaBreaks.tablet`
+        padding: 15px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+      `}
       color: var(--gray-700);
       &--is-focused {
         background: var(--gray-100);
