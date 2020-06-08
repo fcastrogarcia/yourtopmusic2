@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BaseSwitch from "material/Switch";
 import BaseSelect from "react-select";
 import { withTheme } from "material";
 import { mediaBreaks } from "theme/devices";
@@ -7,11 +6,9 @@ import teal from "material/colors/teal";
 import shadows from "theme/shadows";
 
 const Wrapper = styled.div`
-  padding-right: 12px;
   display: flex;
   align-items: center;
   ${mediaBreaks.tablet`
-    padding: 10px 12px 10px 0;
   `}
 `;
 
@@ -20,6 +17,9 @@ const Select = withTheme(styled(BaseSelect).attrs({
   classNamePrefix: "react-select",
 })`
   width: 160px;
+  ${mediaBreaks.tablet`
+    width: 100%;
+  `}
 
   .react-select {
     font-family: "Rubik", sans-serif;
@@ -35,6 +35,9 @@ const Select = withTheme(styled(BaseSelect).attrs({
         border-color: ${teal["A400"]};
         box-shadow: 0 0 0 1px ${teal["A400"]};
       }
+      ${mediaBreaks.tablet`
+        padding: 9px 5px 9px 10px;
+      `}
     }
     &__indicator-separator {
       background-color: var(--gray-300);

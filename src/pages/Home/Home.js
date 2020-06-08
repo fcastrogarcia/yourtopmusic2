@@ -6,6 +6,7 @@ import Container from "components/Container";
 import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
+import Playlist from "./components/Playlist";
 
 import { Store } from "context/Store";
 import useSticky from "hooks/useSticky";
@@ -27,10 +28,11 @@ const Home = () => {
         <styles.Main>
           <styles.Header sticky={sticky}>
             <styles.Title sticky={sticky}>{title}</styles.Title>
-            <styles.RowWrapper>
+            <styles.Controls>
               <RangeSelector tab={tab} handleChange={handleTab} />
               <TypeSelector handleType={handleType} type={type} />
-            </styles.RowWrapper>
+              <Playlist />
+            </styles.Controls>
           </styles.Header>
           <Chart {...{ isArtists, isLoading }} term={data[tab]} />
         </styles.Main>

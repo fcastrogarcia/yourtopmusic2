@@ -71,11 +71,17 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
     `}
 `;
 
-const RowWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+const Controls = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-gap: 12px;
+  align-items: center;
   background: #fff;
   border-top: 1px solid var(--gray-200);
+  ${mediaBreaks.tablet`
+    grid-template-columns: 1fr 1fr;
+    padding: 8px 0;
+  `}
 `;
 
-export default { Main, Title, RowWrapper, Header };
+export default { Main, Title, Controls, Header };
