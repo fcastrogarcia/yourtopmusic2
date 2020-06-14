@@ -1,0 +1,20 @@
+import styled from "styled-components";
+import shadows from "theme/shadows";
+import BaseModal from "@material-ui/core/Modal";
+
+const Modal = styled(BaseModal)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div.attrs({ className: "modal__inner-wrapper" })`
+  background: var(--white);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: ${shadows.md};
+  outline: none;
+  width: min-content;
+`;
+
+export default { Wrapper, Modal };

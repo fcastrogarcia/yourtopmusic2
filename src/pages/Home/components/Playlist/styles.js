@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import BaseButton from "material/Button";
 import mixins from "theme/mixins";
-import { RiPlayListLine } from "react-icons/ri";
 import { mediaBreaks } from "theme/devices";
 import teal from "material/colors/teal";
 
@@ -19,7 +18,9 @@ const Button = styled(BaseButton)`
     letter-spacing: 0.3px;
     font-weight: 400;
     ${mixins.hoverButton`
-      border: 1px solid ${teal["A400"]};
+      border: 1px solid var(--gray-800);
+      background: var(--gray-800);
+      color: var(--white);
     `}
     ${mediaBreaks.tablet`
       height: 40px;
@@ -29,8 +30,10 @@ const Button = styled(BaseButton)`
   }
 `;
 
-const PlaylistIcon = styled(RiPlayListLine).attrs({
-  size: "22px",
-})``;
+const Wrapper = styled.div`
+  background: var(--white);
+  height: 450px;
+  width: 400px;
+`;
 
-export default { Button, PlaylistIcon };
+export default { Button, Wrapper };
