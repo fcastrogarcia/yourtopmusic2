@@ -6,10 +6,7 @@ import teal from "material/colors/teal";
 import Typography from "material/Typography";
 import { MdClose } from "react-icons/md";
 import { ScaleLoader } from "react-spinners";
-
-import BaseRadio from "material/Radio";
 import BaseRadioGroup from "material/RadioGroup";
-import BaseFormControlLabel from "material/FormControlLabel";
 import BaseFormControl from "material/FormControl";
 
 const BaseButton = styled(Button)`
@@ -142,54 +139,9 @@ const FormLabel = styled(Typography).attrs({ variant: "" })`
   }
 `;
 
-const FormControl = styled(BaseFormControl)`
+const FormControl = styled(BaseFormControl).attrs({ component: "fieldset" })`
   && {
     grid-area: range;
-  }
-`;
-
-const FormControlLabel = styled(BaseFormControlLabel).attrs({
-  classes: {
-    label: "control-label",
-  },
-})`
-  && {
-    margin-left: initial;
-    margin-right: initial;
-    height: 52px;
-    border-radius: 32px;
-    transition: all 0.1s ease-in-out;
-    border: 2px solid var(--white);
-    padding: 0 4px;
-    max-width: 245px;
-    ${mixins.hoverButton`
-        background: #F4FCFA;
-      `}
-    ${({ selected }) =>
-      selected &&
-      css`
-        border: 2px solid ${teal["A400"]};
-        background: #f4fcfa;
-      `}
-    .control-label {
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      color: var(--gray-800);
-      padding-left: 8px;
-    }
-  }
-`;
-const Radio = styled(BaseRadio).attrs({
-  classes: {
-    checked: "radio-checked",
-  },
-})`
-  && {
-    color: var(--gray-500);
-  }
-  &&.radio-checked {
-    color: ${teal["A400"]};
   }
 `;
 
@@ -206,24 +158,10 @@ const override = css`
 `;
 
 const Loader = styled(ScaleLoader).attrs({
-  height: 16,
+  height: 14,
   css: override,
   color: "#1a202c",
 })``;
-
-const Cover = styled.img`
-  height: 250;
-  width: 250px;
-  border-radius: 4px;
-`;
-
-const ViewWrapper = styled(BaseWrapper)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 470px;
-  width: 450px;
-`;
 
 export default {
   OpenButton,
@@ -236,10 +174,6 @@ export default {
   IconButton,
   FormLabel,
   FormControl,
-  FormControlLabel,
-  Radio,
   RadioGroup,
   Loader,
-  Cover,
-  ViewWrapper,
 };

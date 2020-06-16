@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "components/Modal";
 import styles from "./styles";
 import useCreatePlaylist from "../../hooks/useCreatePlaylist";
+import Radios from "./components/Radios";
+import Views from "./components/Views";
 
 const Playlist = () => {
   const [open, setOpen] = useState(true);
-  const [successView, setSuccessView] = useState(false);
 
   const {
     range,
@@ -14,23 +15,16 @@ const Playlist = () => {
     state,
     handleDefault,
   } = useCreatePlaylist();
-  const { loading, success, playlist } = state;
+  const { loading, success } = state;
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
+    setRange(0);
     handleDefault();
     setOpen(false);
   };
-  const handleChange = (e) => setRange(parseInt(e.target.value));
 
-  useEffect(() => {
-    if (success) {
-      setSuccessView(true);
-      setTimeout(() => {
-        setSuccessView(false);
-      }, 1500);
-    }
-  }, [success]);
+  const handleChange = (e) => setRange(parseInt(e.target.value));
 
   console.log(state);
 
@@ -48,34 +42,15 @@ const Playlist = () => {
             <styles.Wrapper>
               <styles.Top>
                 <styles.Title>Create a playlist</styles.Title>
-                <styles.FormControl component="fieldset">
-                  <styles.FormLabel component="legend">
-                    Select a range
-                  </styles.FormLabel>
+                <styles.FormControl>
+                  <styles.FormLabel>Select a range</styles.FormLabel>
                   <styles.RadioGroup
                     aria-label="range"
                     name="range1"
                     value={range}
                     onChange={handleChange}
                   >
-                    <styles.FormControlLabel
-                      value={0}
-                      control={<styles.Radio />}
-                      label="All Time"
-                      selected={range === 0}
-                    />
-                    <styles.FormControlLabel
-                      value={1}
-                      control={<styles.Radio />}
-                      label="Six Months"
-                      selected={range === 1}
-                    />
-                    <styles.FormControlLabel
-                      value={2}
-                      control={<styles.Radio />}
-                      label="Last Month"
-                      selected={range === 2}
-                    />
+                    <Radios range={range} />
                   </styles.RadioGroup>
                 </styles.FormControl>
               </styles.Top>
@@ -86,21 +61,7 @@ const Playlist = () => {
               </styles.Bottom>
             </styles.Wrapper>
           )}
-          {success && (
-            <styles.ViewWrapper>
-              {successView ? (
-                <>tu playlist se creó con éxito</>
-              ) : (
-                <a
-                  href={playlist.src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <styles.Cover src={playlist.cover} />
-                </a>
-              )}
-            </styles.ViewWrapper>
-          )}
+          <Views {...state} />
         </div>
       </Modal>
     </>

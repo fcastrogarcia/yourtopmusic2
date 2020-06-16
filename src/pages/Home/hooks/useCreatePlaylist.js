@@ -6,7 +6,7 @@ import Playlist from "../utils/playlist";
 const initialState = {
   loading: false,
   error: null,
-  success: null,
+  success: true,
   playlist: {},
 };
 
@@ -60,10 +60,11 @@ const useCreatePlaylist = () => {
 
       const userEndpoint = Playlist.userEndpoint(store.user.id);
       const body = Playlist.getBody(range);
-      const uris = Playlist.getUris(store.tracks[range]);
-      const getEndpoint = (slug) => Playlist.playlistEndpoint(data.id, slug);
 
       const { data } = await axios.post(userEndpoint, body).catch(handleError);
+
+      const uris = Playlist.getUris(store.tracks[range]);
+      const getEndpoint = (slug) => Playlist.playlistEndpoint(data.id, slug);
 
       await axios.post(getEndpoint("tracks"), uris).catch(handleError);
 
