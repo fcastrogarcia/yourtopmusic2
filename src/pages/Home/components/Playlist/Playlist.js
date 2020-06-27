@@ -18,6 +18,7 @@ const Playlist = () => {
   const { loading, success } = state;
 
   const handleOpen = () => setOpen(true);
+
   const handleClose = () => {
     setRange(0);
     handleDefault();
@@ -25,8 +26,6 @@ const Playlist = () => {
   };
 
   const handleChange = (e) => setRange(parseInt(e.target.value));
-
-  console.log(state);
 
   return (
     <>

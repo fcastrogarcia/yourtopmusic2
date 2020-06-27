@@ -4,28 +4,35 @@ import styles from "./styles";
 import Zoom from "material/Zoom";
 
 const Views = ({ success, playlist }) => {
-  const [successView, setSuccessView] = useState(true);
+  const [successView, setSuccessView] = useState(false);
+  const [playlistView, setPlaylistView] = useState(false);
 
-  //   useEffect(() => {
-  //     if (success) {
-  //       setSuccessView(true);
-  //       setTimeout(() => {
-  //         setSuccessView(false);
-  //       }, 1500);
-  //     }
-  //   }, [success]);
+  useEffect(() => {
+    if (success) {
+      setSuccessView(true);
+      setTimeout(() => {
+        setSuccessView(false);
+        setPlaylistView(true);
+      }, 1200);
+    }
+  }, [success]);
 
   return (
     success && (
       <styles.ViewWrapper successView={successView}>
         {successView ? (
           <Zoom in={successView}>
-            <styles.Check />
+            <styles.Wrapper>
+              <styles.Check />
+              <styles.Message>Playlist is ready!</styles.Message>
+            </styles.Wrapper>
           </Zoom>
         ) : (
-          <a href={playlist.src} target="_blank" rel="noopener noreferrer">
-            <styles.Cover src={playlist.cover} />
-          </a>
+          <Zoom in={playlistView}>
+            <a href={playlist.src} target="_blank" rel="noopener noreferrer">
+              <styles.Cover src={playlist.cover} />
+            </a>
+          </Zoom>
         )}
       </styles.ViewWrapper>
     )

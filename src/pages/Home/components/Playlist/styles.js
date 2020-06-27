@@ -61,7 +61,7 @@ const CreateButton = styled(BaseButton)`
 const BaseWrapper = styled.div`
   background: var(--white);
   width: 350px;
-  height: 376px;
+  height: 384px;
   position: relative;
   transition: all 0.15s ease-in-out;
 `;
@@ -72,15 +72,7 @@ const Wrapper = styled(BaseWrapper)`
 `;
 
 const Top = styled.div`
-  padding: 16px;
-  display: grid;
-  grid-template-columns: 8fr 1fr;
-  grid-auto-rows: min-content;
-  grid-gap: 16px;
-  grid-template-areas:
-    "title close"
-    "range range";
-  align-items: center;
+  width: 100%;
 `;
 
 const Bottom = styled.div`
@@ -110,8 +102,8 @@ const IconButton = styled(Button).attrs({ disableRipple: true })`
     justify-self: flex-end;
     padding: 0;
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 18px;
+    right: 13px;
     z-index: 3;
 
     ${mixins.hoverButton`
@@ -123,9 +115,10 @@ const IconButton = styled(Button).attrs({ disableRipple: true })`
 const Title = styled(Typography).attrs({ variant: "h3" })`
   && {
     font-size: 18px;
-    grid-area: title;
     color: var(--gray-800);
     line-height: 32px;
+    border-bottom: 1px solid var(--gray-300);
+    padding: 16px;
   }
 `;
 
@@ -133,7 +126,6 @@ const FormLabel = styled(Typography).attrs({ variant: "" })`
   && {
     font-size: 15px;
     color: var(--gray-500);
-    border-bottom: 1px solid var(--gray-300);
     width: 100%;
     padding-bottom: 8px;
   }
@@ -141,13 +133,15 @@ const FormLabel = styled(Typography).attrs({ variant: "" })`
 
 const FormControl = styled(BaseFormControl).attrs({ component: "fieldset" })`
   && {
-    grid-area: range;
+    width: 100%;
+    padding: 16px 16px 0;
+    box-sizing: border-box;
   }
 `;
 
 const RadioGroup = styled(BaseRadioGroup)`
   && {
-    padding-top: 16px;
+    padding-top: 4px;
     display: grid;
     grid-gap: 6px;
   }
