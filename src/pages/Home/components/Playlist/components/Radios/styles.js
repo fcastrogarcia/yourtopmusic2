@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import BaseRadio from "material/Radio";
 import BaseFormControlLabel from "material/FormControlLabel";
 import mixins from "theme/mixins";
-import { mediaBreaks } from "theme/devices";
 import teal from "material/colors/teal";
 
 const FormControlLabel = styled(BaseFormControlLabel).attrs({
