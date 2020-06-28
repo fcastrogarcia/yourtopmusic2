@@ -73,7 +73,7 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
 
 const Controls = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr 162px 162px;
   grid-gap: 12px;
   align-items: center;
   background: #fff;

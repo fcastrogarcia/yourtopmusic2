@@ -16,7 +16,7 @@ const Select = withTheme(styled(BaseSelect).attrs({
   className: "react-select-container",
   classNamePrefix: "react-select",
 })`
-  width: 160px;
+  width: 100%;
   ${mediaBreaks.tablet`
     width: 100%;
   `}
@@ -24,7 +24,7 @@ const Select = withTheme(styled(BaseSelect).attrs({
   .react-select {
     font-family: "Rubik", sans-serif;
     &__control {
-      padding: 7px 5px 7px 10px;
+      padding: 8px 5px 8px 10px;
       transition: all 0.15s;
       border-color: var(--gray-300);
       cursor: pointer;  

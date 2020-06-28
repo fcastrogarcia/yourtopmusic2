@@ -1,4 +1,3 @@
-import palette from "./palette";
 import shadows from "./shadows";
 
 export default {
@@ -54,20 +53,6 @@ export default {
   //     background: palette.secondary.main,
   //   },
   // },
-  // MuiButton: {
-  //   root: {
-  //     boxShadow: "none",
-  //     borderRadius: "0px",
-  //   },
-  //   contained: {
-  //     boxShadow: "none",
-  //     borderRadius: "0px",
-  //   },
-  //   sizeLarge: {
-  //     minWidth: "160px",
-  //     fontSize: "15px",
-  //     height: "50px",
-  //   },
   // },
   // MuiCard: {
   //   root: {
@@ -85,6 +70,19 @@ export default {
   //     padding: "13px",
   //   },
   // },
+  MuiButton: {
+    root: {
+      boxShadow: "none",
+      borderRadius: "4px",
+      lineHeight: "initial",
+      minWidth: "initial",
+      padding: 0,
+      textTransform: "initial",
+    },
+    text: {
+      padding: 0,
+    },
+  },
   MuiPaper: {
     elevation8: {
       boxShadow: shadows.lg,

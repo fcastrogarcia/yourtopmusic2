@@ -1,7 +1,4 @@
-import styled, { css } from "styled-components";
-import Button from "material/Button";
-import mixins from "theme/mixins";
-import { mediaBreaks } from "theme/devices";
+import styled from "styled-components";
 import { withTheme } from "material";
 import { FaSpotify, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import shadows from "theme/shadows";
@@ -32,6 +29,7 @@ const Icon = (icon) => styled(icon).attrs({ size: 24 })`
   margin: 0 12px;
   color: var(--gray-900);
   cursor: pointer;
+  display: flex;
 `;
 
 const Spotify = Icon(FaSpotify);
@@ -52,7 +50,6 @@ const ShareButton = withTheme(styled.div`
   will-change: transform;
   position: relative;
   top: 22px;
-  box-shadow: ${shadows.default};
   &:hover {
     transform: scale(1.1);
     & ${Overlay} {

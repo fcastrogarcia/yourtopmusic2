@@ -28,7 +28,6 @@ const Card = styled.div`
     "rank image genres";
   grid-gap: 0 10px;
   box-shadow: ${shadows.fuzzy};
-  border: 1px solid var(--gray-100);
   align-items: center;
   justify-items: center;
   border-radius: 4px;
@@ -63,9 +62,6 @@ const Card = styled.div`
       }
       &:hover ${Album} {
         -webkit-line-clamp: 1;
-      }
-      &:hover {
-        box-shadow: ${shadows.xl};
       }
     `}
 
@@ -203,7 +199,6 @@ const Player = styled.div`
   grid-area: player;
   width: 100%;
   height: 100%;
-  background: var(--gray-100);
   display: flex;
   align-items: center;
   overflow: hidden;
