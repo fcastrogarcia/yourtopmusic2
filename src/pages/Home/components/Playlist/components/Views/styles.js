@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import teal from "material/colors/teal";
 import { BsCheckCircle as BaseCheck } from "react-icons/bs";
 import Typography from "material/Typography";
-import { mediaBreaks } from "theme/devices";
+// import { mediaBreaks } from "theme/devices";
 
 const ViewWrapper = styled.div`
   width: 350px;
@@ -32,12 +32,19 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
+const ShareWrapper = styled(Wrapper)``;
+
 const Message = styled(Typography).attrs({ variant: "h3" })`
   color: var(--gray-800);
   && {
-    font-size: 17px;
-    margin-top: 12px;
+    font-size: 20px;
+    margin-top: 35px;
   }
+`;
+
+const PartyPopper = styled.img`
+  width: 120px;
+  height: 120px;
 `;
 
 export default {
@@ -46,4 +53,6 @@ export default {
   Check,
   Message,
   Wrapper,
+  PartyPopper,
+  ShareWrapper,
 };

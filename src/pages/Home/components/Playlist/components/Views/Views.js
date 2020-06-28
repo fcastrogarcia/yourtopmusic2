@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { bool, objectOf, string } from "prop-types";
 import styles from "./styles";
 import Zoom from "material/Zoom";
+import Share from "components/Share";
+import partyPopper from "assets/images/party_popper.png";
 
 const Views = ({ success, playlist }) => {
   const [successView, setSuccessView] = useState(false);
@@ -23,15 +25,18 @@ const Views = ({ success, playlist }) => {
         {successView ? (
           <Zoom in={successView}>
             <styles.Wrapper>
-              <styles.Check />
-              <styles.Message>Playlist is ready!</styles.Message>
+              <styles.PartyPopper src={partyPopper} />
+              <styles.Message>Playlist created!</styles.Message>
             </styles.Wrapper>
           </Zoom>
         ) : (
           <Zoom in={playlistView}>
-            <a href={playlist.src} target="_blank" rel="noopener noreferrer">
-              <styles.Cover src={playlist.cover} />
-            </a>
+            <styles.ShareWrapper>
+              <a href={playlist.src} target="_blank" rel="noopener noreferrer">
+                <styles.Cover src={playlist.cover} />
+              </a>
+              <Share href={playlist.src} />
+            </styles.ShareWrapper>
           </Zoom>
         )}
       </styles.ViewWrapper>
