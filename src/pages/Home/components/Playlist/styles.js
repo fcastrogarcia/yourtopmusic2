@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import Button from "material/Button";
 import mixins from "theme/mixins";
 import { mediaBreaks } from "theme/devices";
-import teal from "material/colors/teal";
 import Typography from "material/Typography";
 import { MdClose } from "react-icons/md";
 import { ScaleLoader } from "react-spinners";
@@ -15,10 +14,11 @@ const BaseButton = styled(Button)`
     border-radius: 4px;
     box-sizing: content-box;
     height: 36px;
+    width: 100%;
     background: var(--white);
     transition: all 0.15s ease-in-out;
     min-width: initial;
-    padding: 0 12px;
+    padding: 0;
     text-transform: initial;
     letter-spacing: 0.3px;
     font-weight: 400;
@@ -62,6 +62,7 @@ const BaseWrapper = styled.div`
   background: var(--white);
   width: 350px;
   height: 384px;
+  max-width: 95vw;
   position: relative;
   transition: all 0.15s ease-in-out;
 `;

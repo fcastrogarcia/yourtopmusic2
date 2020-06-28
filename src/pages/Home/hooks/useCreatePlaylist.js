@@ -76,6 +76,7 @@ const useCreatePlaylist = () => {
           cover: cover[0].url,
         });
       } catch (error) {
+        console.error(error);
         handleError();
       }
     })();

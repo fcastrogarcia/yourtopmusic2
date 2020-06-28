@@ -1,8 +1,5 @@
-import styled, { css } from "styled-components";
-import teal from "material/colors/teal";
-import { BsCheckCircle as BaseCheck } from "react-icons/bs";
+import styled from "styled-components";
 import Typography from "material/Typography";
-// import { mediaBreaks } from "theme/devices";
 
 const ViewWrapper = styled.div`
   width: 350px;
@@ -13,11 +10,7 @@ const ViewWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ successView }) => successView && css``}
-`;
-
-const Check = styled(BaseCheck).attrs({ size: 72 })`
-  color: ${teal["A700"]};
+  max-width: 95vw;
 `;
 
 const Cover = styled.img`
@@ -37,20 +30,19 @@ const ShareWrapper = styled(Wrapper)``;
 const Message = styled(Typography).attrs({ variant: "h3" })`
   color: var(--gray-800);
   && {
-    font-size: 20px;
+    font-size: 21px;
     margin-top: 35px;
   }
 `;
 
 const PartyPopper = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
 `;
 
 export default {
   Cover,
   ViewWrapper,
-  Check,
   Message,
   Wrapper,
   PartyPopper,
