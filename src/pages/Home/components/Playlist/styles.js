@@ -11,16 +11,12 @@ import BaseFormControl from "material/FormControl";
 const BaseButton = styled(Button)`
   && {
     border: 1px solid var(--gray-300);
-    border-radius: 4px;
     box-sizing: content-box;
     height: 36px;
     width: 100%;
     background: var(--white);
     transition: all 0.15s ease-in-out;
-    min-width: initial;
-    padding: 0;
-    text-transform: initial;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
     font-weight: 400;
     ${mixins.hoverButton`
       background: var(--gray-800);
@@ -47,7 +43,6 @@ const CreateButton = styled(BaseButton)`
     font-weight: 500;
     height: 36px;
     border: 2px solid var(--gray-800);
-    padding: 0 24px;
     ${mixins.hoverButton`
       background: var(--gray-800);
       color: var(--white);

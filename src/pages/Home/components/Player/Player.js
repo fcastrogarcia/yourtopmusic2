@@ -3,7 +3,6 @@ import { string } from "prop-types";
 import styles from "./styles";
 
 import Tooltip from "material/Tooltip";
-import Equalizer from "../Equalizer";
 
 const Player = ({ src, play, pause, isPlaying }) => {
   const handlePlay = src && play;
@@ -23,7 +22,6 @@ const Player = ({ src, play, pause, isPlaying }) => {
   return (
     <Fragment>
       {src ? player() : <Tooltip title={tip}>{player()}</Tooltip>}
-      {isPlaying && <Equalizer />}
     </Fragment>
   );
 };
