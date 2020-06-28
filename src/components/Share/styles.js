@@ -1,7 +1,4 @@
-import styled, { css } from "styled-components";
-import Button from "material/Button";
-import mixins from "theme/mixins";
-import { mediaBreaks } from "theme/devices";
+import styled from "styled-components";
 import { withTheme } from "material";
 import { FaSpotify, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import shadows from "theme/shadows";

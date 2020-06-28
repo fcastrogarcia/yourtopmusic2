@@ -13,7 +13,7 @@ const useSticky = (stickyValue = 80) => {
       throttle(handleSticky, 200, { leading: true, trailing: true })
     );
     return () => window.removeEventListener("scroll", handleSticky);
-  }, []);
+  });
 
   return { sticky };
 };
