@@ -23,11 +23,12 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "craco start",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:client": "craco start",
+    "start:lambda": "netlify-lambda serve lambda-src",
+    "dev": "run-p start:**",
     "build": "run-p build:**",
-    "build:app": "craco build",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "build:client": "craco build",
+    "build:lambda": "netlify-lambda build lambda-src",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7",
+    "dotenv": "^8.2.0",
     "netlify-lambda": "^2.0.1",
     "npm-run-all": "^4.1.5"
   }
