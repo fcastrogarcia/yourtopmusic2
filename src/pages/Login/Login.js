@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./styles";
-import redirect from "utils/redirect";
+
+const TITLE = "Find out who your top artists and songs are.";
+const BUTTON_TEXT = "Continue with Spotify";
 
 const LoginButton = () => {
   const [loading, setLoading] = useState(false);
@@ -10,13 +12,12 @@ const LoginButton = () => {
   return (
     <styles.Layout>
       <styles.Wrapper>
-        <styles.Title>
-          Find out who your top artists and songs are.
-        </styles.Title>
-        <styles.Button onClick={handleClick} href={redirect}>
+        <styles.Title>{TITLE}</styles.Title>
+        <styles.Button onClick={handleClick} href="/.netlify/functions/login">
           {!loading ? (
             <>
-              <styles.Icon /> Continue with Spotify
+              <styles.Icon />
+              {BUTTON_TEXT}
             </>
           ) : (
             <styles.Loader />
