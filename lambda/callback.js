@@ -5,6 +5,7 @@ const {
   CLIENT_ID,
   CLIENT_SECRET,
   SPOTIFY_URL,
+  HOME_URL,
 } = require("./config");
 
 exports.handler = async (event, context, callback) => {
@@ -30,8 +31,11 @@ exports.handler = async (event, context, callback) => {
     if (!access_token) throw new Error("access token request failed");
 
     callback(null, {
-      statusCode: 200,
-      body: JSON.stringify({ access_token }),
+      statusCode: 302,
+      headers: {
+        Location: `${HOME_URL}?${querystring.stringify({ access_token })}`,
+        "Cache-Control": "no-cache",
+      },
     });
   } catch (error) {
     callback(error);
