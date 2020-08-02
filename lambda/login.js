@@ -10,7 +10,7 @@ exports.handler = (event, context, callback) => {
     "playlist-modify-public",
   ].join(" ");
 
-  const redirect = `${SPOTIFY_URL}/authorize?${querystring.stringify({
+  const authUrl = `${SPOTIFY_URL}/authorize?${querystring.stringify({
     response_type: "code",
     client_id: CLIENT_ID,
     scope: scope,
@@ -22,7 +22,7 @@ exports.handler = (event, context, callback) => {
   const response = {
     statusCode: 302,
     headers: {
-      Location: redirect,
+      Location: authUrl,
       "Cache-Control": "no-cache",
     },
   };
