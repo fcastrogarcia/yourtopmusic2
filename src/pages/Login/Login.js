@@ -12,17 +12,19 @@ const LoginButton = () => {
   return (
     <styles.Layout>
       <styles.Wrapper>
-        <styles.Title>{TITLE}</styles.Title>
-        <styles.Button onClick={handleClick} href="/.netlify/functions/login">
-          {!loading ? (
-            <>
-              <styles.Icon />
-              {BUTTON_TEXT}
-            </>
-          ) : (
-            <styles.Loader />
-          )}
-        </styles.Button>
+        <styles.Container>
+          <styles.Title>{TITLE}</styles.Title>
+          <styles.Button onClick={handleClick} href="/.netlify/functions/login">
+            {!loading ? (
+              <>
+                <styles.Icon />
+                {BUTTON_TEXT}
+              </>
+            ) : (
+              <styles.Loader />
+            )}
+          </styles.Button>
+        </styles.Container>
       </styles.Wrapper>
     </styles.Layout>
   );

@@ -16,11 +16,9 @@ const Layout = styled.div`
 `;
 
 const Wrapper = styled.div`
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  height: 60vh;
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
 `;
 
 const Title = styled.h1`
@@ -28,9 +26,10 @@ const Title = styled.h1`
   color: var(--gray-900);
   text-align: center;
   padding: 0 20px;
+  font-size: 26px;
   ${mediaBreaks.mobile`
-    font-size: 28px;
-  `}
+    font-size: 25px;
+    `}
 `;
 
 const override = css`
@@ -49,10 +48,11 @@ const Button = styled(BaseButton)`
     border: 2px solid var(--gray-900);
     text-transform: none;
     height: 60px;
-    font-size: 20px;
     font-weight: 500;
+    font-size: 20px;
     color: var(--gray-900);
     width: 310px;
+    max-width: 88%;
     ${mixins.hoverButton`
       background: var(--gray-900);
       color: ${beige};
@@ -73,6 +73,31 @@ const Icon = styled(RiSpotifyLine).attrs({ size: 27 })`
   margin-right: 12px;
 `;
 
+const Container = styled.div`
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 60vh;
+  border: 2px solid var(--gray-900);
+  background: ${beige};
+  padding: 15px 35px;
+  ${mediaBreaks.mobile`
+    padding: 0;
+  `}
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--gray-900);
+    top: 10px;
+    right: -10px;
+    height: 100%;
+    width: 100%;
+  }
+`;
+
 export default {
   Button,
   Layout,
@@ -80,4 +105,5 @@ export default {
   Loader,
   Title,
   Wrapper,
+  Container,
 };
