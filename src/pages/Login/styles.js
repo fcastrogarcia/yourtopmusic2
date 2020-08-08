@@ -29,7 +29,7 @@ const Title = styled.h1`
   font-size: 26px;
   ${mediaBreaks.mobile`
     font-size: 25px;
-    `}
+  `}
 `;
 
 const override = css`
@@ -83,6 +83,7 @@ const Container = styled.div`
   border: 2px solid var(--gray-900);
   background: ${beige};
   padding: 15px 35px;
+  border-radius: 4px;
   ${mediaBreaks.mobile`
     padding: 0;
   `}
@@ -91,6 +92,7 @@ const Container = styled.div`
     position: absolute;
     z-index: -1;
     background: var(--gray-900);
+    border-radius: 4px;
     top: 10px;
     right: -10px;
     height: 100%;
