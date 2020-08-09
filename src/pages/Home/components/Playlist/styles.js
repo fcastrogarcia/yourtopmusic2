@@ -41,7 +41,7 @@ const OpenButton = styled(BaseButton)`
 const CreateButton = styled(BaseButton)`
   && {
     font-weight: 500;
-    height: 36px;
+    height: 38px;
     border: 2px solid var(--gray-800);
     ${mixins.hoverButton`
       background: var(--gray-800);
@@ -55,8 +55,8 @@ const CreateButton = styled(BaseButton)`
 
 const BaseWrapper = styled.div`
   background: var(--white);
-  width: 350px;
-  height: 384px;
+  width: 380px;
+  height: 420px;
   max-width: 95vw;
   position: relative;
   transition: all 0.15s ease-in-out;
@@ -73,7 +73,7 @@ const Top = styled.div`
 
 const Bottom = styled.div`
   width: 100%;
-  padding: 16px;
+  padding: 20px;
   display: flex;
   box-sizing: border-box;
   justify-content: flex-end;
@@ -114,7 +114,7 @@ const Title = styled(Typography).attrs({ variant: "h3" })`
     color: var(--gray-800);
     line-height: 32px;
     border-bottom: 1px solid var(--gray-300);
-    padding: 16px;
+    padding: 20px;
   }
 `;
 
@@ -130,7 +130,7 @@ const FormLabel = styled(Typography).attrs({ variant: "" })`
 const FormControl = styled(BaseFormControl).attrs({ component: "fieldset" })`
   && {
     width: 100%;
-    padding: 16px 16px 0;
+    padding: 20px 20px 0;
     box-sizing: border-box;
   }
 `;
