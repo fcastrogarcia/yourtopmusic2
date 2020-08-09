@@ -2,8 +2,8 @@ import styled from "styled-components";
 import Typography from "material/Typography";
 
 const ViewWrapper = styled.div`
-  width: 350px;
-  height: 384px;
+  width: 380px;
+  height: 420px;
   background: var(--white);
   position: relative;
   transition: all 0.15s ease-in-out;
