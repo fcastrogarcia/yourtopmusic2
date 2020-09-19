@@ -1,16 +1,31 @@
 /* SF NS DISPLAY font*/
 @font-face {
   font-family: ".SF NS Display";
-  src: url("fonts/344d17417b87d35e88d9df15bea12e2e.eot"); /* IE9*/
-  src: url("fonts/344d17417b87d35e88d9df15bea12e2e.eot?#iefix")
+  src: url("fonts/SF-NS-Display/344d17417b87d35e88d9df15bea12e2e.eot"); /* IE9*/
+  src: url("fonts/SF-NS-Display/344d17417b87d35e88d9df15bea12e2e.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("fonts/344d17417b87d35e88d9df15bea12e2e.woff2")
+    /* IE6-IE8 */
+      url("fonts/SF-NS-Display/344d17417b87d35e88d9df15bea12e2e.woff2")
       format("woff2"),
-    /* chrome、firefox */ url("fonts/344d17417b87d35e88d9df15bea12e2e.woff")
+    /* chrome、firefox */
+      url("fonts/SF-NS-Display/344d17417b87d35e88d9df15bea12e2e.woff")
       format("woff"),
-    /* chrome、firefox */ url("fonts/344d17417b87d35e88d9df15bea12e2e.ttf")
+    /* chrome、firefox */
+      url("fonts/SF-NS-Display/344d17417b87d35e88d9df15bea12e2e.ttf")
       format("truetype"),
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-      url("fonts/344d17417b87d35e88d9df15bea12e2e.svg#SFNSDisplay")
+      url("fonts/SF-NS-Display/344d17417b87d35e88d9df15bea12e2e.svg#SFNSDisplay")
       format("svg"); /* iOS 4.1- */
+}
+
+/* JetBrainsMono */
+@font-face {
+  font-family: "JetBrains";
+  src: url("fonts/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff");
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains";
+  src: url("fonts/JetBrainsMono/web/woff/JetBrainsMono-Medium.woff");
+  font-style: medium;
 }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Typography from "material/Typography";
+import partyPopperImg from "assets/images/party_popper.png";
 
 const ViewWrapper = styled.div`
   width: 380px;
@@ -35,7 +36,7 @@ const Message = styled(Typography).attrs({ variant: "h3" })`
   }
 `;
 
-const PartyPopper = styled.img`
+const PartyPopper = styled.img.attrs({ src: partyPopperImg })`
   width: 130px;
   height: 130px;
 `;
