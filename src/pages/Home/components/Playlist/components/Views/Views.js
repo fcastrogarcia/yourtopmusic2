@@ -3,7 +3,6 @@ import { bool, objectOf, string } from "prop-types";
 import styles from "./styles";
 import Zoom from "material/Zoom";
 import Share from "components/Share";
-import partyPopper from "assets/images/party_popper.png";
 
 const Views = ({ success, playlist }) => {
   const [successView, setSuccessView] = useState(false);
@@ -25,7 +24,7 @@ const Views = ({ success, playlist }) => {
         {successView ? (
           <Zoom in={successView}>
             <styles.Wrapper>
-              <styles.PartyPopper src={partyPopper} />
+              <styles.PartyPopper />
               <styles.Message>Playlist created!</styles.Message>
             </styles.Wrapper>
           </Zoom>
