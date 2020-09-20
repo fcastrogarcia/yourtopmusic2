@@ -5,14 +5,13 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--gray-800);
 `;
 
 const Text = styled.p`
   font-family: "JetBrains";
-  /* color: #f4e9d3; */
-  color: #f5e9ca;
-  letter-spacing: 0.5px;
+  color: var(--gray-800);
+  letter-spacing: 0.6px;
+  font-size: 15px;
 `;
 
 const HotBevarage = styled.img.attrs({ src: HotBevarageImg })`

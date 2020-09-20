@@ -6,7 +6,7 @@ import { mediaBreaks } from "theme/devices";
 const Main = styled.main`
   display: grid;
   width: min(90vw, 1280px);
-  margin: 40px 0 150px;
+  margin: 40px 0 110px;
   grid-template-rows: auto auto;
   grid-gap: 30px;
 
