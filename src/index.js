@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import TagManager from "react-gtm-module";
 import App from "pages";
 import * as serviceWorker from "./serviceWorker";
+
+const tagManagerArgs = {
+  gtmId: process.env.REACT_APP_GTM_ID,
+};
+
+TagManager.initialize(tagManagerArgs);
 
 ReactDOM.render(
   <React.StrictMode>
