@@ -6,17 +6,31 @@ const {
   CLIENT_SECRET,
   SPOTIFY_URL,
   HOME_URL,
+  BASE_URL,
 } = require("./config");
+
+const getCallback = (cb) => (url) =>
+  cb(null, {
+    statusCode: 302,
+    headers: { Location: url, "Cache-Control": "no-cache" },
+  });
 
 exports.handler = async (event, context, callback) => {
   try {
-    const { code } = event.queryStringParameters;
+    const { code, error } = event.queryStringParameters;
+
+    const cb = getCallback(callback);
+
+    if (error === "access_denied") return cb(`${BASE_URL}/connect`);
+
     const endpoint = `${SPOTIFY_URL}/api/token`;
+
     const data = querystring.stringify({
       grant_type: "authorization_code",
       code: code,
       redirect_uri: CALLBACK_URL,
     });
+
     const headers = {
       Authorization:
         "Basic " +
@@ -30,13 +44,8 @@ exports.handler = async (event, context, callback) => {
 
     if (!access_token) throw new Error("access token request failed");
 
-    callback(null, {
-      statusCode: 302,
-      headers: {
-        Location: `${HOME_URL}?${querystring.stringify({ access_token })}`,
-        "Cache-Control": "no-cache",
-      },
-    });
+    const successURL = `${HOME_URL}?${querystring.stringify({ access_token })}`;
+    cb(successURL);
   } catch (error) {
     callback(error);
   }

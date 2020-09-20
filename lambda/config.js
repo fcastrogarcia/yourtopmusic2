@@ -9,4 +9,5 @@ module.exports = {
   CLIENT_SECRET,
   SPOTIFY_URL,
   HOME_URL,
+  BASE_URL,
 };
