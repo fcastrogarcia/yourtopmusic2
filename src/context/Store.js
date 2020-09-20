@@ -4,10 +4,12 @@ import useFetchData from "hooks/useFetchData";
 
 export const Store = createContext();
 
+const initialData = Array(3).fill(Array(50).fill({}));
+
 const initialState = {
   user: {},
-  artists: Array(3).fill(Array(50).fill({})),
-  tracks: Array(3).fill(Array(50).fill({})),
+  artists: [...initialData],
+  tracks: [...initialData],
   token_expired: false,
 };
 
