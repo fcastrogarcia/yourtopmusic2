@@ -10,8 +10,7 @@ const linkProps = {
 const Footer = () => (
   <styles.Container>
     <styles.Text>
-      Made with <styles.HotBevarage /> by{" "}
-      <styles.Link {...linkProps}>Fredo</styles.Link>
+      Made with <styles.HotBevarage /> by <styles.Link {...linkProps}>Fredo</styles.Link>
     </styles.Text>
   </styles.Container>
 );

@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
+import RangeSelector from "./components/RangeSelector";
 
 const Main = styled.main`
   display: grid;
@@ -84,4 +85,19 @@ const Controls = styled.div`
   `}
 `;
 
-export default { Main, Title, Controls, Header };
+const RangeSelectorMobile = styled(RangeSelector)``;
+
+const BottomWrapper = styled.div`
+  ${mediaBreaks.tablet`
+    position: fixed;
+    transition: all 0.2s ease-in-out;
+    bottom: ${({ isAtBottom }) => (isAtBottom ? 0 : -80)}px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: ${shadows.onlyTop};
+  `}
+  background: var(--white);
+`;
+
+export default { Main, Title, Controls, Header, RangeSelectorMobile, BottomWrapper };
