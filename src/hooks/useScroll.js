@@ -7,9 +7,8 @@ const useScroll = (stickyValue = 80) => {
     window.scrollY + window.innerHeight >= document.body.offsetHeight - 80;
 
   const isInitialSticky = isSticky();
-  const isInitialBottom = isScrollAtbottom();
 
-  const [isAtBottom, setIsAtBottom] = useState(isInitialBottom);
+  const [isAtBottom, setIsAtBottom] = useState(false);
   const [sticky, setSticky] = useState(isInitialSticky);
 
   const scrollCallback = () => {
