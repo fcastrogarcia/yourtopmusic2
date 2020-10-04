@@ -9,7 +9,7 @@ const Layout = styled.div`
   grid-template-rows: 4em auto 7em;
 
   ${mediaBreaks.mobile`
-    grid-template-rows: 3.5em auto 7em;
+    grid-template-rows: 3.5em auto 9em;
   `}
 `;
 

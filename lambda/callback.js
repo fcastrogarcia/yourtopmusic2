@@ -9,7 +9,7 @@ const {
   BASE_URL,
 } = require("./config");
 
-const getCallback = (cb) => (url) =>
+const getCallback = cb => url =>
   cb(null, {
     statusCode: 302,
     headers: { Location: url, "Cache-Control": "no-cache" },
@@ -32,15 +32,11 @@ exports.handler = async (event, context, callback) => {
     });
 
     const headers = {
-      Authorization:
-        "Basic " +
-        Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString("base64"),
+      Authorization: "Basic " + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString("base64"),
       "Content-Type": "application/x-www-form-urlencoded",
     };
 
-    const { access_token } = await axios
-      .post(endpoint, data, { headers })
-      .then((res) => res.data);
+    const { access_token } = await axios.post(endpoint, data, { headers }).then(res => res.data);
 
     if (!access_token) throw new Error("access token request failed");
 

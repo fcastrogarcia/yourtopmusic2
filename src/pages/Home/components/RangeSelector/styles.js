@@ -38,13 +38,6 @@ const Tabs = styled(BaseTabs)`
   && {
     background: var(--white);
     ${mediaBreaks.tablet`
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 15000;
-      box-shadow: ${shadows.onlyTop};
-
       && .MuiTabs-flexContainer {
         justify-content: space-evenly;
       }

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styles from "./styles";
 
 import Layout from "components/Layout";
+import Footer from "components/Footer";
 import Container from "components/Container";
 import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
@@ -9,13 +10,15 @@ import Chart from "./components/Chart";
 import Playlist from "./components/Playlist";
 
 import { Store } from "context/Store";
-import useSticky from "hooks/useSticky";
+import useScroll from "hooks/useScroll";
+import useDevices from "hooks/useDevices";
 import useQuery from "./hooks/useQuery";
 
 const Home = () => {
   const { store, isLoading } = useContext(Store);
-  const { sticky } = useSticky(84);
+  const { sticky, isAtBottom } = useScroll(84);
   const { handleType, handleTab, type, tab } = useQuery();
+  const { tablet } = useDevices();
 
   const { artists, tracks } = store;
   const isArtists = type === "artists";
@@ -29,7 +32,7 @@ const Home = () => {
           <styles.Header sticky={sticky}>
             <styles.Title sticky={sticky}>{title}</styles.Title>
             <styles.Controls>
-              <RangeSelector tab={tab} handleChange={handleTab} />
+              {!tablet && <RangeSelector tab={tab} handleChange={handleTab} />}
               <TypeSelector handleType={handleType} type={type} />
               <Playlist />
             </styles.Controls>
@@ -37,6 +40,13 @@ const Home = () => {
           <Chart {...{ isArtists, isLoading }} term={data[tab]} />
         </styles.Main>
       </Container>
+      {tablet && (
+        <styles.BottomWrapper isAtBottom={isAtBottom}>
+          <styles.RangeSelectorMobile tab={tab} handleChange={handleTab} />
+          <Footer />
+        </styles.BottomWrapper>
+      )}
+      {!tablet && <Footer />}
     </Layout>
   );
 };
