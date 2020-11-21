@@ -46,11 +46,7 @@ const CreateButton = styled(BaseButton)`
     border: 2px solid var(--gray-800);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 12px;
-
-    ${mediaBreaks.tablet`
-      font-size: 13px;
-    `}
+    font-size: 13px;
 
     ${mixins.hoverButton`
       background: var(--gray-800);

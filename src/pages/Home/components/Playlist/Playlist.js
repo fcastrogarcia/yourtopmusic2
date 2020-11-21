@@ -6,7 +6,7 @@ import Radios from "./components/Radios";
 import Views from "./components/Views";
 
 const Playlist = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const { range, setRange, handleInit, state, handleDefault } = useCreatePlaylist();
   const { loading, success } = state;
