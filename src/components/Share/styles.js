@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { withTheme } from "material";
 import { FaSpotify, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import shadows from "theme/shadows";
+import { mediaBreaks } from "theme/devices";
 
 const Overlay = styled.div`
   text-transform: uppercase;
@@ -23,7 +24,7 @@ const Overlay = styled.div`
   box-shadow: ${shadows.default};
 `;
 
-const Icon = (icon) => styled(icon).attrs({ size: 24 })`
+const Icon = icon => styled(icon).attrs({ size: 24 })`
   transform: scale(0.25);
   transition: all 0.5s ease;
   margin: 0 12px;
@@ -37,9 +38,9 @@ const Whatsapp = Icon(FaWhatsapp);
 const Twitter = Icon(FaTwitter);
 
 const ShareButton = withTheme(styled.div`
-  border-radius: 50px;
-  width: 200px;
-  height: 48px;
+  border-radius: 60px;
+  height: 52px;
+  width: 230px;
   position: relative;
   overflow: hidden;
   transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -49,11 +50,12 @@ const ShareButton = withTheme(styled.div`
   justify-content: center;
   will-change: transform;
   position: relative;
-  top: 22px;
+  top: 38px;
+
   &:hover {
     transform: scale(1.1);
     & ${Overlay} {
-      transform: translateX(-200px);
+      transform: translateX(-240px);
       transition-delay: 0.15s;
     }
     & ${Spotify} {
@@ -69,6 +71,10 @@ const ShareButton = withTheme(styled.div`
       transform: scale(1);
     }
   }
+
+  ${mediaBreaks.tablet`
+      top: 30px;
+  `}
 `);
 
 export default { ShareButton, Overlay, Spotify, Twitter, Whatsapp };

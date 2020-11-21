@@ -40,9 +40,18 @@ const OpenButton = styled(BaseButton)`
 
 const CreateButton = styled(BaseButton)`
   && {
+    width: 156px;
     font-weight: 500;
     height: 38px;
     border: 2px solid var(--gray-800);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+
+    ${mediaBreaks.tablet`
+      font-size: 13px;
+    `}
+
     ${mixins.hoverButton`
       background: var(--gray-800);
       color: var(--white);
@@ -55,11 +64,14 @@ const CreateButton = styled(BaseButton)`
 
 const BaseWrapper = styled.div`
   background: var(--white);
-  width: 380px;
-  height: 420px;
+  width: 550px;
+  height: 540px;
   max-width: 95vw;
   position: relative;
   transition: all 0.15s ease-in-out;
+  ${mediaBreaks.tablet`
+    height: 520px;
+  `}
 `;
 
 const Wrapper = styled(BaseWrapper)`
@@ -91,15 +103,15 @@ const Close = styled(MdClose)`
 
 const IconButton = styled(Button).attrs({ disableRipple: true })`
   && {
-    height: min-content;
+    height: 32px;
     width: min-content;
     min-width: initial;
     font-size: 22px;
     justify-self: flex-end;
     padding: 0;
     position: absolute;
-    top: 18px;
-    right: 13px;
+    top: 28px;
+    right: 20px;
     z-index: 3;
 
     ${mixins.hoverButton`
@@ -110,28 +122,39 @@ const IconButton = styled(Button).attrs({ disableRipple: true })`
 
 const Title = styled(Typography).attrs({ variant: "h3" })`
   && {
-    font-size: 18px;
+    font-size: 24px;
     color: var(--gray-800);
     line-height: 32px;
     border-bottom: 1px solid var(--gray-300);
-    padding: 20px;
+    padding: 28px 26px;
+
+    ${mediaBreaks.tablet`
+      font-size: 23px;
+      padding: 24px 20px;
+    `}
   }
 `;
 
 const FormLabel = styled(Typography).attrs({ variant: "" })`
   && {
-    font-size: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     color: var(--gray-500);
     width: 100%;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
+    font-weight: 500;
   }
 `;
 
 const FormControl = styled(BaseFormControl).attrs({ component: "fieldset" })`
   && {
     width: 100%;
-    padding: 20px 20px 0;
+    padding: 24px 28px 0;
     box-sizing: border-box;
+    ${mediaBreaks.tablet`
+      padding: 24px 20px 0;
+    `}
   }
 `;
 
@@ -139,7 +162,7 @@ const RadioGroup = styled(BaseRadioGroup)`
   && {
     padding-top: 4px;
     display: grid;
-    grid-gap: 6px;
+    grid-gap: 12px;
   }
 `;
 
