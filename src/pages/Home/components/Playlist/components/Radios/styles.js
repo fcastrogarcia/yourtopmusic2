@@ -12,27 +12,26 @@ const FormControlLabel = styled(BaseFormControlLabel).attrs({
   && {
     margin-left: initial;
     margin-right: initial;
-    height: 52px;
-    border-radius: 32px;
+    height: 72px;
     transition: all 0.1s ease-in-out;
-    border: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
     padding: 0 4px;
-    max-width: 245px;
+    /* max-width: 245px; */
     ${mixins.hoverButton`
         background: #F4FCFA;
     `}
     ${({ selected }) =>
       selected &&
       css`
-        border: 2px solid ${teal["A400"]};
+        border-bottom: 2px solid ${teal["A400"]};
         background: #f4fcfa;
       `}
       .control-label {
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 400;
       letter-spacing: 0.5px;
       color: var(--gray-800);
-      padding-left: 8px;
+      padding-left: 14px;
     }
   }
 `;

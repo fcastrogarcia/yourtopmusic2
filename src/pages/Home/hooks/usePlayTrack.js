@@ -2,7 +2,7 @@ import { useEffect, useRef, useContext, useState } from "react";
 
 import { PlayerContext } from "context/PlayerContext";
 
-const usePlayTrack = (id) => {
+const usePlayTrack = id => {
   const [isPlaying, setPlaying] = useState(false);
 
   const { id: globalId, setId } = useContext(PlayerContext);

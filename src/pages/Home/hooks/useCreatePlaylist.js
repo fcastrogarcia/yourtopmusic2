@@ -49,10 +49,12 @@ const useCreatePlaylist = () => {
 
   const { loading } = state;
 
-  const handleSuccess = (payload) => dispatch({ type: "SUCCESS", payload });
-  const handleError = () => dispatch({ type: "ERROR" });
-  const handleInit = () => dispatch({ type: "INIT" });
-  const handleDefault = () => dispatch({ type: "RESET" });
+  const getDispatcher = type => payload => dispatch({ type, payload });
+
+  const handleSuccess = payload => getDispatcher("SUCCESS")(payload);
+  const handleError = getDispatcher("ERROR");
+  const handleInit = getDispatcher("INIT");
+  const handleDefault = getDispatcher("RESET");
 
   useEffect(() => {
     (async function () {
@@ -65,7 +67,7 @@ const useCreatePlaylist = () => {
         const { data } = await axios.post(userEndpoint, body);
 
         const uris = Playlist.getUris(store.tracks[range]);
-        const getEndpoint = (slug) => Playlist.playlistEndpoint(data.id, slug);
+        const getEndpoint = slug => Playlist.playlistEndpoint(data.id, slug);
 
         await axios.post(getEndpoint("tracks"), uris);
 

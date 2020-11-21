@@ -6,15 +6,9 @@ import Radios from "./components/Radios";
 import Views from "./components/Views";
 
 const Playlist = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
-  const {
-    range,
-    setRange,
-    handleInit,
-    state,
-    handleDefault,
-  } = useCreatePlaylist();
+  const { range, setRange, handleInit, state, handleDefault } = useCreatePlaylist();
   const { loading, success } = state;
 
   const handleOpen = () => setOpen(true);
@@ -25,13 +19,11 @@ const Playlist = () => {
     setOpen(false);
   };
 
-  const handleChange = (e) => setRange(parseInt(e.target.value));
+  const handleChange = e => setRange(parseInt(e.target.value));
 
   return (
     <>
-      <styles.OpenButton onClick={handleOpen}>
-        Create a playlist
-      </styles.OpenButton>
+      <styles.OpenButton onClick={handleOpen}>Create a playlist</styles.OpenButton>
       <Modal open={open} handleClose={handleClose}>
         <div style={{ position: "relative" }}>
           <styles.IconButton onClick={handleClose}>
