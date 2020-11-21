@@ -12,7 +12,7 @@ const useQuery = () => {
   const queryType = params.get("type");
   const queryRange = params.get("range");
 
-  const setQueryParams = (search) => {
+  const setQueryParams = search => {
     return history.push({
       pathname: "/home",
       search,
@@ -26,7 +26,7 @@ const useQuery = () => {
     setQueryParams(params.toString());
   };
 
-  const handleType = (value) => {
+  const handleType = value => {
     params.set("type", value);
     setQueryParams(params.toString());
   };
@@ -36,7 +36,7 @@ const useQuery = () => {
     setQueryParams(params.toString());
   };
 
-  const doValidateRange = (range) => {
+  const doValidateRange = range => {
     if (range >= 0 && range < 3) return parseInt(range);
     params.set("range", 0);
     setQueryParams(params.toString());
