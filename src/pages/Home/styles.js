@@ -2,11 +2,28 @@ import styled, { css } from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
-import RangeSelector from "./components/RangeSelector";
 
-const Main = styled.main`
+const Sidebar1 = styled.div`
+  grid-area: sidebar-1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  padding: 68px 54px;
+  box-sizing: border-box;
+`;
+
+const Wrapper = styled.div`
   display: grid;
-  width: min(90vw, 1280px);
+  grid-gap: 0 54px;
+  height: 100%;
+  align-items: flex-start;
+`;
+
+const MainThread = styled.main`
+  grid-area: main-thread;
+  display: grid;
   margin: 40px 0 110px;
   grid-template-rows: auto auto;
   grid-gap: 30px;
@@ -27,7 +44,7 @@ const Header = styled.div`
   grid-gap: 30px;
   background: #fff;
   transition: all 0.15s;
-  box-shadow: ${shadows.onlyBottom};
+  /* box-shadow: ${shadows.onlyBottom}; */
 
   ${mediaBreaks.tablet`
     grid-gap: 18px;
@@ -85,8 +102,6 @@ const Controls = styled.div`
   `}
 `;
 
-const RangeSelectorMobile = styled(RangeSelector)``;
-
 const BottomWrapper = styled.div`
   ${mediaBreaks.tablet`
     position: fixed;
@@ -100,4 +115,12 @@ const BottomWrapper = styled.div`
   background: var(--white);
 `;
 
-export default { Main, Title, Controls, Header, RangeSelectorMobile, BottomWrapper };
+export default {
+  MainThread,
+  Title,
+  Controls,
+  Header,
+  BottomWrapper,
+  Sidebar1,
+  Wrapper,
+};

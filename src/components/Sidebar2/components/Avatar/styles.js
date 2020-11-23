@@ -15,7 +15,11 @@ const Avatar = styled(BaseAvatar)`
   }
 `;
 
-const IconButton = styled(Button)`
+const IconButton = styled(Button).attrs({
+  classes: {
+    root: "avatar-button",
+  },
+})`
   && {
     padding: 8px;
   }

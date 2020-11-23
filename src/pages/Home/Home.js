@@ -3,8 +3,7 @@ import styles from "./styles";
 
 import Layout from "components/Layout";
 import Footer from "components/Footer";
-import Container from "components/Container";
-import RangeSelector from "./components/RangeSelector";
+import { RangeSelectorMobile, RangeSelectorDesktop } from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 import Playlist from "./components/Playlist";
@@ -22,31 +21,33 @@ const Home = () => {
 
   const { artists, tracks } = store;
   const isArtists = type === "artists";
-  const title = `Top ${isArtists ? "Artists" : "Tracks"}`;
+  // const title = `Top ${isArtists ? "Artists" : "Tracks"}`;
   const data = isArtists ? artists : tracks;
 
   return (
     <Layout>
-      <Container>
-        <styles.Main>
-          <styles.Header sticky={sticky}>
-            <styles.Title sticky={sticky}>{title}</styles.Title>
-            <styles.Controls>
-              {!tablet && <RangeSelector tab={tab} handleChange={handleTab} />}
-              <TypeSelector handleType={handleType} type={type} />
-              <Playlist />
-            </styles.Controls>
-          </styles.Header>
-          <Chart {...{ isArtists, isLoading }} term={data[tab]} />
-        </styles.Main>
-      </Container>
+      <styles.Sidebar1>
+        <styles.Wrapper>
+          <TypeSelector handleType={handleType} type={type} />
+          <RangeSelectorDesktop tab={tab} handleChange={handleTab} />
+        </styles.Wrapper>
+      </styles.Sidebar1>
+      <styles.MainThread>
+        {/* <styles.Header sticky={sticky}>
+          <styles.Title sticky={sticky}>{title}</styles.Title>
+          <styles.Controls>
+            <Playlist />
+          </styles.Controls>
+        </styles.Header> */}
+        <Chart {...{ isArtists, isLoading }} term={data[tab]} />
+      </styles.MainThread>
       {tablet && (
         <styles.BottomWrapper isAtBottom={isAtBottom}>
-          <styles.RangeSelectorMobile tab={tab} handleChange={handleTab} />
+          <RangeSelectorMobile tab={tab} handleChange={handleTab} />
           <Footer />
         </styles.BottomWrapper>
       )}
-      {!tablet && <Footer />}
+      {/* {!tablet && <Footer />} */}
     </Layout>
   );
 };

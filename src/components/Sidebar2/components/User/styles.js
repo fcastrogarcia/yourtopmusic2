@@ -11,6 +11,18 @@ const User = styled.div`
   display: flex;
   justify-items: center;
   align-items: center;
+  border-radius: 30px;
+  width: min-content;
+  padding-left: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: var(--gray-200);
+    .avatar-button {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
 `;
 
 const Skeleton = styled(BaseSkeleton).attrs({

@@ -45,6 +45,4 @@ const Tabs = styled(BaseTabs)`
   }
 `;
 
-const LeftContainer = styled(Grid)``;
-
-export default { Tab, Tabs, LeftContainer };
+export default { Tab, Tabs };

@@ -1,16 +1,16 @@
 import React from "react";
-import { bool, string, func, shape } from "prop-types";
+import { bool, string, shape } from "prop-types";
 import styles from "./styles";
 
-const Avatar = ({ image, isLoading, firstLetter, handleMenu }) => {
+const Avatar = ({ image, isLoading, firstChar }) => {
   const src = image.url;
 
   return (
-    <styles.IconButton size="medium" onClick={handleMenu}>
+    <styles.IconButton size="medium">
       {isLoading ? (
         <styles.Skeleton />
       ) : (
-        <styles.Avatar src={src}>{firstLetter}</styles.Avatar>
+        <styles.Avatar src={src}>{firstChar}</styles.Avatar>
       )}
     </styles.IconButton>
   );
@@ -19,13 +19,11 @@ const Avatar = ({ image, isLoading, firstLetter, handleMenu }) => {
 Avatar.propTypes = {
   isLoading: bool.isRequired,
   image: shape({ url: string }),
-  firstLetter: string,
-  handleMenu: func,
+  firstChar: string,
 };
 Avatar.defaultProps = {
-  firstLetter: "",
+  firstChar: "",
   image: { url: "" },
-  handleMenu: () => {},
 };
 
 export default Avatar;
