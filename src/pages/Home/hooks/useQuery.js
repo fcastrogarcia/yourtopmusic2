@@ -31,7 +31,7 @@ const useQuery = () => {
     setQueryParams(params.toString());
   };
 
-  const handleTab = (_, value) => {
+  const handleTab = value => () => {
     params.set("range", value);
     setQueryParams(params.toString());
   };

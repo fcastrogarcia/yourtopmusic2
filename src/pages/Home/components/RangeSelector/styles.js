@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Grid from "material/Grid";
 import BaseTabs from "material/Tabs";
 import BaseTab from "material/Tab";
 import teal from "material/colors/teal";
 import { mediaBreaks } from "theme/devices";
-import shadows from "theme/shadows";
+// import shadows from "theme/shadows";
 
 const Tab = styled(BaseTab).attrs({
   disableRipple: false,
@@ -45,4 +44,32 @@ const Tabs = styled(BaseTabs)`
   }
 `;
 
-export default { Tab, Tabs };
+const Wrapper = styled.ul`
+  width: 200px;
+  border-radius: 22px;
+  background: var(--gray-100);
+  overflow: hidden;
+`;
+
+const RangeOption = styled.li`
+  cursor: pointer;
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  padding-left: 25px;
+  font-size: 15px;
+  color: var(--gray-700);
+  font-weight: ${({ selected }) => selected && 500};
+  background: ${({ selected }) => selected && `var(--gray-300)`};
+  transition: 0.2s background ease-in-out;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--gray-200);
+  }
+  &:hover {
+    background: var(--gray-200);
+  }
+`;
+
+export default { Tab, Tabs, Wrapper, RangeOption };

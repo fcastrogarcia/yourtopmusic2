@@ -16,9 +16,11 @@ const Sidebar1 = styled.div`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-gap: 0 54px;
+  grid-auto-rows: min-content;
+  grid-gap: 54px 0;
   height: 100%;
   align-items: flex-start;
+  justify-content: flex-end;
 `;
 
 const MainThread = styled.main`
