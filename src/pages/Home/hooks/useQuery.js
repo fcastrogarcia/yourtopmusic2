@@ -14,7 +14,7 @@ const useQuery = () => {
 
   const setQueryParams = search => {
     return history.push({
-      pathname: "/home",
+      pathname: "/chart",
       search,
     });
   };
