@@ -5,17 +5,17 @@ import { Store } from "context/Store";
 
 import User from "./components/User";
 
-const Sidebar2 = () => {
+const RightSidebar = () => {
   const { store } = useContext(Store);
   const {
     user: { external_urls, display_name, images },
   } = store;
 
   return (
-    <styles.Sidebar2>
+    <styles.RightSidebar>
       <User externalUrl={external_urls} displayName={display_name} images={images} />
-    </styles.Sidebar2>
+    </styles.RightSidebar>
   );
 };
 
-export default Sidebar2;
+export default RightSidebar;
