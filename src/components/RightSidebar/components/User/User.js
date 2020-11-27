@@ -30,7 +30,7 @@ const User = ({ externalUrl, displayName, images }) => {
 
   return (
     <ClickAwayListener onClickAway={handleClose}>
-      <div>
+      <styles.Wrapper>
         <styles.User onClick={handleMenu} open={open}>
           {isLoading || !displayName ? (
             <styles.Skeleton width={120} height={15} variant="text" />
@@ -49,7 +49,7 @@ const User = ({ externalUrl, displayName, images }) => {
             <styles.MenuItem onClick={handleSignOut}>Sign out</styles.MenuItem>
           </styles.Menu>
         )}
-      </div>
+      </styles.Wrapper>
     </ClickAwayListener>
   );
 };

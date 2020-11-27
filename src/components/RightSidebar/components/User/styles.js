@@ -11,6 +11,10 @@ const openStyles = css`
   }
 `;
 
+const Wrapper = styled.div`
+  position: relative;
+`;
+
 const User = styled.div`
   grid-area: user;
   display: flex;
@@ -59,8 +63,8 @@ const Menu = styled.ul`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: ${shadows.lg};
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: -133px;
 `;
 
 const MenuItem = styled.li`
@@ -89,4 +93,5 @@ export default {
   Skeleton,
   Menu,
   MenuItem,
+  Wrapper,
 };

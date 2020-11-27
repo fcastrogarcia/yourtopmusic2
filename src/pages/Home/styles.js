@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
+import { Link } from "react-router-dom";
 
-const Sidebar1 = styled.div`
-  grid-area: sidebar-1;
+const LeftSidebar = styled.div`
+  grid-area: sidebar-2;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 30%;
   padding: 68px 54px;
   box-sizing: border-box;
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
   grid-gap: 54px 0;
   height: 100%;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
 `;
 
 const MainThread = styled.main`
@@ -123,6 +124,6 @@ export default {
   Controls,
   Header,
   BottomWrapper,
-  Sidebar1,
+  LeftSidebar,
   Wrapper,
 };

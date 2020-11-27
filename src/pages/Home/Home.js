@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import styles from "./styles";
-
 import Layout from "components/Layout";
 import Footer from "components/Footer";
 import { RangeSelectorMobile, RangeSelectorDesktop } from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
-import Playlist from "./components/Playlist";
-
+// import Playlist from "./components/Playlist";
 import { Store } from "context/Store";
 import useScroll from "hooks/useScroll";
 import useDevices from "hooks/useDevices";
@@ -26,12 +24,12 @@ const Home = () => {
 
   return (
     <Layout>
-      <styles.Sidebar1>
+      <styles.LeftSidebar>
         <styles.Wrapper>
           <TypeSelector handleType={handleType} type={type} />
           <RangeSelectorDesktop tab={tab} handleChange={handleTab} />
         </styles.Wrapper>
-      </styles.Sidebar1>
+      </styles.LeftSidebar>
       <styles.MainThread>
         {/* <styles.Header sticky={sticky}>
           <styles.Title sticky={sticky}>{title}</styles.Title>
@@ -40,6 +38,7 @@ const Home = () => {
           </styles.Controls>
         </styles.Header> */}
         <Chart {...{ isArtists, isLoading }} term={data[tab]} />
+        {/* {!tablet && <Footer />} */}
       </styles.MainThread>
       {tablet && (
         <styles.BottomWrapper isAtBottom={isAtBottom}>
@@ -47,7 +46,6 @@ const Home = () => {
           <Footer />
         </styles.BottomWrapper>
       )}
-      {/* {!tablet && <Footer />} */}
     </Layout>
   );
 };

@@ -7,8 +7,8 @@ import styles from "./styles";
 const Layout = ({ children }) => (
   <MuiThemeProvider theme={theme}>
     <styles.Layout>
-      {children}
       <RightSidebar />
+      {children}
     </styles.Layout>
   </MuiThemeProvider>
 );
