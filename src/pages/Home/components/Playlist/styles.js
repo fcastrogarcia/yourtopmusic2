@@ -7,6 +7,7 @@ import { MdClose } from "react-icons/md";
 import { ScaleLoader } from "react-spinners";
 import BaseRadioGroup from "material/RadioGroup";
 import BaseFormControl from "material/FormControl";
+import shadows from "theme/shadows";
 
 const BaseButton = styled(Button)`
   && {
@@ -32,30 +33,18 @@ const CreateAPlaylist = styled.button`
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  color: var(--gray-800);
+  color: var(--gray-100);
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  background: var(--gray-200);
-  transition: background 0.2s ease-in-out;
+  background: var(--gray-800);
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: var(--gray-300);
+    background: var(--gray-900);
+    box-shadow: ${shadows.lg};
   }
 `;
-
-// const OpenButton = styled(BaseButton)`
-//   && {
-//     ${mixins.hoverButton`
-//       border: 1px solid var(--gray-800);
-//       `}
-//     ${mediaBreaks.tablet`
-//       height: 40px;
-//       font-size: 15px;
-//       padding: 0;
-//       `}
-//   }
-// `;
 
 const CreateButton = styled(BaseButton)`
   && {
