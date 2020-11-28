@@ -7,10 +7,14 @@ const Layout = styled.div`
   max-width: 100%;
   display: grid;
   grid-template-columns: 30% 1fr 30%;
-  grid-template-areas: "sidebar-1 main-thread sidebar-2";
-  /* ${mediaBreaks.mobile`
-    grid-template-rows: 3.5em auto 9em;
-  `} */
+  grid-template-areas: "header main sidebar";
+  ${mediaBreaks.mobile`
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main";
+    justify-items: center;
+  `}
 `;
 
 export default { Layout };

@@ -16,7 +16,6 @@ const Wrapper = styled.div`
 `;
 
 const User = styled.div`
-  grid-area: user;
   display: flex;
   justify-items: center;
   align-items: center;
@@ -29,6 +28,10 @@ const User = styled.div`
   &:hover {
     ${openStyles}
   }
+
+  ${mediaBreaks.tablet`
+    padding-left: 0;
+  `}
 `;
 
 const Skeleton = styled(BaseSkeleton).attrs({
@@ -53,9 +56,6 @@ const DisplayName = styled(Typography).attrs({
     padding-right: 10px;
     color: var(--gray-800);
   }
-  ${mediaBreaks.mobile`
-    display: none;
-  `}
 `;
 
 const Menu = styled.ul`
@@ -65,6 +65,13 @@ const Menu = styled.ul`
   box-shadow: ${shadows.lg};
   position: absolute;
   top: -133px;
+  z-index: 1000;
+  background: white;
+
+  ${mediaBreaks.tablet`
+    top: 58px;
+    right: 0;
+  `}
 `;
 
 const MenuItem = styled.li`

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 // import { mediaBreaks } from "theme/devices";
-import { FiHeadphones } from "react-icons/fi";
 
-const LeftSidebar = styled.div`
-  grid-area: sidebar-1;
+const Header = styled.header`
+  grid-area: header;
   z-index: 598;
   position: fixed;
   top: 0;
@@ -19,10 +18,13 @@ const LeftSidebar = styled.div`
   grid-gap: 54px 0;
 `;
 
-const Logo = styled(FiHeadphones).attrs({
-  size: 28,
-})`
-  color: var(--gray-800);
+const HeaderMobile = styled.header`
+  height: 5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  box-sizing: border-box;
 `;
 
-export default { LeftSidebar, Logo };
+export default { Header, HeaderMobile };

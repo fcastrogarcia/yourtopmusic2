@@ -3,8 +3,8 @@ import Typography from "@material-ui/core/Typography";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
 
-const LeftSidebar = styled.div`
-  grid-area: sidebar-2;
+const Sidebar = styled.aside`
+  grid-area: sidebar;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 `;
 
 const MainThread = styled.main`
-  grid-area: main-thread;
+  grid-area: main;
   display: grid;
   margin: 40px 0 110px;
   grid-template-rows: auto auto;
@@ -123,6 +123,6 @@ export default {
   Controls,
   Header,
   BottomWrapper,
-  LeftSidebar,
+  Sidebar,
   Wrapper,
 };
