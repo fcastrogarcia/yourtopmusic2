@@ -7,19 +7,19 @@ import Logo from "./components/Logo";
 import Navbar from "./components/NavBar";
 import User from "./components/User";
 
-const RightSidebar = () => {
+const LeftSidebar = () => {
   const { store } = useContext(Store);
   const {
     user: { external_urls, display_name, images },
   } = store;
 
   return (
-    <styles.RightSidebar>
+    <styles.LeftSidebar>
       <Logo />
       <Navbar />
       <User externalUrl={external_urls} displayName={display_name} images={images} />
-    </styles.RightSidebar>
+    </styles.LeftSidebar>
   );
 };
 
-export default RightSidebar;
+export default LeftSidebar;

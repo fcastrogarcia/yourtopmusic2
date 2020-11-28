@@ -2,7 +2,7 @@ import styled from "styled-components";
 // import { mediaBreaks } from "theme/devices";
 import { FiHeadphones } from "react-icons/fi";
 
-const RightSidebar = styled.div`
+const LeftSidebar = styled.div`
   grid-area: sidebar-1;
   z-index: 598;
   position: fixed;
@@ -25,4 +25,4 @@ const Logo = styled(FiHeadphones).attrs({
   color: var(--gray-800);
 `;
 
-export default { RightSidebar, Logo };
+export default { LeftSidebar, Logo };
