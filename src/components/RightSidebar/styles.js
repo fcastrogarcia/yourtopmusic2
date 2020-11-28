@@ -10,11 +10,13 @@ const RightSidebar = styled.div`
   bottom: 0;
   left: 0;
   width: 30%;
-  padding: 20px 54px;
+  padding: 40px 64px 20px;
   box-sizing: border-box;
   justify-content: flex-end;
-  display: flex;
+  display: grid;
   align-items: flex-end;
+  grid-template-rows: 50px 1fr 60px;
+  grid-gap: 54px 0;
 `;
 
 const Logo = styled(FiHeadphones).attrs({

@@ -25,18 +25,37 @@ const BaseButton = styled(Button)`
   }
 `;
 
-const OpenButton = styled(BaseButton)`
-  && {
-    ${mixins.hoverButton`
-      border: 1px solid var(--gray-800);
-      `}
-    ${mediaBreaks.tablet`
-      height: 40px;
-      font-size: 15px;
-      padding: 0;
-      `}
+const CreateAPlaylist = styled.button`
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: var(--gray-800);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--gray-200);
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: var(--gray-300);
   }
 `;
+
+// const OpenButton = styled(BaseButton)`
+//   && {
+//     ${mixins.hoverButton`
+//       border: 1px solid var(--gray-800);
+//       `}
+//     ${mediaBreaks.tablet`
+//       height: 40px;
+//       font-size: 15px;
+//       padding: 0;
+//       `}
+//   }
+// `;
 
 const CreateButton = styled(BaseButton)`
   && {
@@ -173,7 +192,7 @@ const Loader = styled(ScaleLoader).attrs({
 })``;
 
 export default {
-  OpenButton,
+  CreateAPlaylist,
   Wrapper,
   CreateButton,
   Bottom,

@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import Typography from "@material-ui/core/Typography";
 import shadows from "theme/shadows";
 import { mediaBreaks } from "theme/devices";
-import { Link } from "react-router-dom";
 
 const LeftSidebar = styled.div`
   grid-area: sidebar-2;
@@ -11,7 +10,7 @@ const LeftSidebar = styled.div`
   bottom: 0;
   right: 0;
   width: 30%;
-  padding: 68px 54px;
+  padding: 40px 64px;
   box-sizing: border-box;
 `;
 

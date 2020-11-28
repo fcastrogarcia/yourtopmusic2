@@ -5,7 +5,7 @@ import Footer from "components/Footer";
 import { RangeSelectorMobile, RangeSelectorDesktop } from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
-// import Playlist from "./components/Playlist";
+import Playlist from "./components/Playlist";
 import { Store } from "context/Store";
 import useScroll from "hooks/useScroll";
 import useDevices from "hooks/useDevices";
@@ -28,13 +28,13 @@ const Home = () => {
         <styles.Wrapper>
           <TypeSelector handleType={handleType} type={type} />
           <RangeSelectorDesktop tab={tab} handleChange={handleTab} />
+          <Playlist />
         </styles.Wrapper>
       </styles.LeftSidebar>
       <styles.MainThread>
         {/* <styles.Header sticky={sticky}>
           <styles.Title sticky={sticky}>{title}</styles.Title>
           <styles.Controls>
-            <Playlist />
           </styles.Controls>
         </styles.Header> */}
         <Chart {...{ isArtists, isLoading }} term={data[tab]} />

@@ -23,8 +23,10 @@ const Playlist = () => {
 
   return (
     <>
-      <styles.OpenButton onClick={handleOpen}>Create a playlist</styles.OpenButton>
-      {/* <Modal open={open} handleClose={handleClose}>
+      <styles.CreateAPlaylist onClick={handleOpen}>
+        Create a playlist
+      </styles.CreateAPlaylist>
+      <Modal open={open} handleClose={handleClose}>
         <div style={{ position: "relative" }}>
           <styles.IconButton onClick={handleClose}>
             <styles.Close />
@@ -54,7 +56,7 @@ const Playlist = () => {
           )}
           <Views {...state} />
         </div>
-      </Modal> */}
+      </Modal>
     </>
   );
 };

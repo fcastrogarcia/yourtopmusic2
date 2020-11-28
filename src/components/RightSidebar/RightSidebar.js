@@ -3,6 +3,8 @@ import styles from "./styles";
 
 import { Store } from "context/Store";
 
+import Logo from "./components/Logo";
+import Navbar from "./components/NavBar";
 import User from "./components/User";
 
 const RightSidebar = () => {
@@ -13,6 +15,8 @@ const RightSidebar = () => {
 
   return (
     <styles.RightSidebar>
+      <Logo />
+      <Navbar />
       <User externalUrl={external_urls} displayName={display_name} images={images} />
     </styles.RightSidebar>
   );
