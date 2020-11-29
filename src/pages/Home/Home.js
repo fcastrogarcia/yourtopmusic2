@@ -3,7 +3,7 @@ import styles from "./styles";
 
 import Layout from "components/Layout";
 import Footer from "components/Footer";
-import { RangeSelectorMobile, RangeSelectorDesktop } from "./components/RangeSelector";
+import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 import Playlist from "./components/Playlist";
@@ -25,6 +25,12 @@ const Home = () => {
 
   return (
     <Layout>
+      {tablet && (
+        <styles.Controls>
+          <TypeSelector handleType={handleType} type={type} />
+          <Playlist />
+        </styles.Controls>
+      )}
       <styles.MainThread>
         <Chart {...{ isArtists, isLoading }} term={data[tab]} />
         {/* {!tablet && <Footer />} */}
@@ -33,14 +39,14 @@ const Home = () => {
         <styles.Sidebar>
           <styles.Wrapper>
             <TypeSelector handleType={handleType} type={type} />
-            <RangeSelectorDesktop tab={tab} handleChange={handleTab} />
+            <RangeSelector tab={tab} handleChange={handleTab} isTablet={tablet} />
             <Playlist />
           </styles.Wrapper>
         </styles.Sidebar>
       )}
       {tablet && (
         <styles.BottomWrapper isAtBottom={isAtBottom}>
-          <RangeSelectorMobile tab={tab} handleChange={handleTab} />
+          <RangeSelector tab={tab} handleChange={handleTab} isTablet={tablet} />
           <Footer />
         </styles.BottomWrapper>
       )}

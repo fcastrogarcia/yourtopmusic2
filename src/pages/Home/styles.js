@@ -46,7 +46,6 @@ const Header = styled.div`
   grid-gap: 30px;
   background: #fff;
   transition: all 0.15s;
-  /* box-shadow: ${shadows.onlyBottom}; */
 
   ${mediaBreaks.tablet`
     grid-gap: 18px;
@@ -93,15 +92,19 @@ const Title = styled(Typography).attrs({ variant: "h1" })`
 
 const Controls = styled.div`
   display: grid;
-  grid-template-columns: 1fr 162px 162px;
-  grid-gap: 12px;
-  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-gap: 0 15px;
   background: #fff;
-  border-top: 1px solid var(--gray-200);
-  ${mediaBreaks.tablet`
-    grid-template-columns: 1fr 1fr;
-    padding: 8px 0;
-  `}
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 15px;
+  box-shadow: ${shadows.fuzzy};
+  border-radius: 0 0 40px 40px;
+  box-sizing: border-box;
+  clip-path: inset(0px -1px -25px -1px);
 `;
 
 const BottomWrapper = styled.div`
@@ -112,9 +115,8 @@ const BottomWrapper = styled.div`
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: ${shadows.onlyTop};
+    box-shadow: ${shadows.onlyBottom};
   `}
-  background: var(--white);
 `;
 
 export default {

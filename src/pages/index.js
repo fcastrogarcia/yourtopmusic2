@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
-import CreateAPlaylist from "./CreateAPlaylist";
 import { StoreProvider } from "context/Store";
 import GlobalStyles from "theme/globals";
 
@@ -14,7 +13,6 @@ function App() {
         <Route exact path="/connect" component={Login} />
         <StoreProvider>
           <Route exact path="/chart" component={Home} />
-          <Route exact path="/create-a-playlist" component={CreateAPlaylist} />
         </StoreProvider>
       </Switch>
       <GlobalStyles />

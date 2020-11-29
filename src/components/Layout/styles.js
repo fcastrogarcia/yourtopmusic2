@@ -12,6 +12,7 @@ const Layout = styled.div`
     grid-template-columns: 1fr;
     grid-template-areas:
         "header"
+        "controls"
         "main";
     justify-items: center;
   `}

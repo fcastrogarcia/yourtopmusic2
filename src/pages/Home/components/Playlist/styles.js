@@ -62,8 +62,11 @@ const CreateButton = styled(BaseButton)`
       & div div {
         background: var(--white);
       }
-    `}
+      `}
   }
+  ${mediaBreaks.tablet`
+    width: auto;
+  `}
 `;
 
 const BaseWrapper = styled.div`

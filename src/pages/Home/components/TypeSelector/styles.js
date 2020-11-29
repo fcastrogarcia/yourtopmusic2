@@ -10,9 +10,6 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   justify-content: flex-end;
-
-  ${mediaBreaks.tablet`
-  `}
 `;
 
 const Select = withTheme(styled(BaseSelect).attrs({
@@ -43,14 +40,18 @@ const Select = withTheme(styled(BaseSelect).attrs({
         background: var(--gray-200);
         border: none;
       }
-      &--is-focused {
-      }
-      ${mediaBreaks.tablet`
-        padding: 9px 5px 9px 10px;
-        `}
       &--menu-is-open {
         background: var(--gray-200);
       }
+      ${mediaBreaks.tablet`
+        background: var(--gray-200);
+        &:hover {
+          background: var(--gray-300);
+        }
+        &--menu-is-open {
+          background: var(--gray-300);
+        }
+      `}
     }
     &__menu {
       top: 64px;
