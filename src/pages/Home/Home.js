@@ -27,18 +27,18 @@ const Home = () => {
     <Layout>
       {tablet && (
         <styles.Controls>
-          <TypeSelector handleType={handleType} type={type} />
+          <TypeSelector handleChange={handleType} value={type} />
           <Playlist />
         </styles.Controls>
       )}
       <styles.MainThread>
-        <Chart {...{ isArtists, isLoading }} term={data[tab]} />
+        <Chart {...{ isArtists, isLoading, term: data[tab] }} />
         {/* {!tablet && <Footer />} */}
       </styles.MainThread>
       {!tablet && (
         <styles.Sidebar>
           <styles.Wrapper>
-            <TypeSelector handleType={handleType} type={type} />
+            <TypeSelector handleChange={handleType} value={type} />
             <RangeSelector tab={tab} handleChange={handleTab} isTablet={tablet} />
             <Playlist />
           </styles.Wrapper>
