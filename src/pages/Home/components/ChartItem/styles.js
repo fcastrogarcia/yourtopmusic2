@@ -31,7 +31,7 @@ const Card = styled.div`
   align-items: center;
   justify-items: center;
   border-radius: 4px;
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   ${mediaBreaks.mobile`
     padding-right: 12px;
     grid-gap: 0 6px;
@@ -66,19 +66,19 @@ const Card = styled.div`
     `}
 
     ${({ isPlaying }) =>
-      isPlaying &&
-      css`
-        position: sticky;
-        z-index: 30;
-        background: var(--white);
-        box-shadow: ${shadows.xl};
-        top: 150px;
-        bottom: 10px;
-        ${mediaBreaks.tablet`
+    isPlaying &&
+    css`
+      position: sticky;
+      z-index: 30;
+      background: var(--white);
+      box-shadow: ${shadows.xl};
+      top: 20px;
+      bottom: 20px;
+      ${mediaBreaks.tablet`
           top: 68px;
           bottom: 60px;
         `}
-      `}
+    `}
 `;
 
 const Rank = styled(Typography).attrs({ variant: "h2" })`

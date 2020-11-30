@@ -1,34 +1,28 @@
 import React from "react";
-import { func, string } from "prop-types";
-import styles from "./styles";
+import { bool, shape, func, string } from "prop-types";
+import Select from "components/Select";
+import SelectMobile from "components/SelectMobile";
 
-const TypeSelector = ({ handleType, type }) => {
-  const options = [
-    { value: "artists", label: "Artists" },
-    { value: "tracks", label: "Tracks" },
-  ];
-
-  const value = options.find(({ value }) => value === type);
-
-  return (
-    <styles.Wrapper>
-      <styles.Select
-        options={options}
-        onChange={({ value }) => handleType(value)}
-        value={value}
-        isSearchable={false}
-      />
-    </styles.Wrapper>
-  );
+const TypeSelector = ({ isTablet, ...rest }) => {
+  const Selector = isTablet ? SelectMobile : Select;
+  return <Selector {...rest} />;
 };
 
 TypeSelector.propTypes = {
-  handleType: func.isRequired,
-  type: string,
+  isTablet: bool,
+  value: string,
+  handleChange: func,
+  options: shape([]),
 };
 
 TypeSelector.defaultProps = {
-  type: "artists",
+  isTablet: false,
+  value: "artists",
+  handleChange: () => {},
+  options: [
+    { value: "artists", label: "Artists" },
+    { value: "tracks", label: "Tracks" },
+  ],
 };
 
 export default TypeSelector;

@@ -23,7 +23,9 @@ const Playlist = () => {
 
   return (
     <>
-      <styles.OpenButton onClick={handleOpen}>Create a playlist</styles.OpenButton>
+      <styles.CreateAPlaylist onClick={handleOpen}>
+        Create a playlist
+      </styles.CreateAPlaylist>
       <Modal open={open} handleClose={handleClose}>
         <div style={{ position: "relative" }}>
           <styles.IconButton onClick={handleClose}>

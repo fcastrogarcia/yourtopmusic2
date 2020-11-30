@@ -3,13 +3,18 @@ import { mediaBreaks } from "theme/devices";
 
 const Layout = styled.div`
   width: 100vw;
-  max-width: 100%;
   min-height: 100vh;
+  max-width: 100%;
   display: grid;
-  grid-template-rows: 4em auto 7em;
-
-  ${mediaBreaks.mobile`
-    grid-template-rows: 3.5em auto 9em;
+  grid-template-columns: 30% 1fr 30%;
+  grid-template-areas: "header main sidebar";
+  ${mediaBreaks.tablet`
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "controls"
+        "main";
+    justify-items: center;
   `}
 `;
 

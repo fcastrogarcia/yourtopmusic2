@@ -4,15 +4,13 @@ import theme from "theme";
 import Header from "components/Header";
 import styles from "./styles";
 
-const Layout = ({ children }) => {
-  return (
-    <MuiThemeProvider theme={theme}>
-      <styles.Layout>
-        <Header />
-        {children}
-      </styles.Layout>
-    </MuiThemeProvider>
-  );
-};
+const Layout = ({ children }) => (
+  <MuiThemeProvider theme={theme}>
+    <styles.Layout>
+      <Header />
+      {children}
+    </styles.Layout>
+  </MuiThemeProvider>
+);
 
 export default Layout;

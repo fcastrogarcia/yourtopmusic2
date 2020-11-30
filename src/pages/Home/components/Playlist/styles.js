@@ -7,6 +7,7 @@ import { MdClose } from "react-icons/md";
 import { ScaleLoader } from "react-spinners";
 import BaseRadioGroup from "material/RadioGroup";
 import BaseFormControl from "material/FormControl";
+import shadows from "theme/shadows";
 
 const BaseButton = styled(Button)`
   && {
@@ -25,16 +26,26 @@ const BaseButton = styled(Button)`
   }
 `;
 
-const OpenButton = styled(BaseButton)`
-  && {
-    ${mixins.hoverButton`
-      border: 1px solid var(--gray-800);
-      `}
-    ${mediaBreaks.tablet`
-      height: 40px;
-      font-size: 15px;
-      padding: 0;
-      `}
+const CreateAPlaylist = styled.button`
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: var(--gray-100);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--gray-800);
+  transition: all 0.2s ease-in-out;
+  max-width: 300px;
+  justify-self: end;
+  letter-spacing: 0.3px;
+
+  &:hover {
+    background: var(--gray-900);
+    box-shadow: ${shadows.lg};
   }
 `;
 
@@ -54,8 +65,11 @@ const CreateButton = styled(BaseButton)`
       & div div {
         background: var(--white);
       }
-    `}
+      `}
   }
+  ${mediaBreaks.tablet`
+    width: auto;
+  `}
 `;
 
 const BaseWrapper = styled.div`
@@ -173,7 +187,7 @@ const Loader = styled(ScaleLoader).attrs({
 })``;
 
 export default {
-  OpenButton,
+  CreateAPlaylist,
   Wrapper,
   CreateButton,
   Bottom,

@@ -2,51 +2,56 @@ import React, { useContext } from "react";
 import styles from "./styles";
 
 import Layout from "components/Layout";
-import Footer from "components/Footer";
-import Container from "components/Container";
+// import Footer from "components/Footer";
 import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 import Playlist from "./components/Playlist";
 
 import { Store } from "context/Store";
-import useScroll from "hooks/useScroll";
+// import useScroll from "hooks/useScroll";
 import useDevices from "hooks/useDevices";
 import useQuery from "./hooks/useQuery";
 
 const Home = () => {
   const { store, isLoading } = useContext(Store);
-  const { sticky, isAtBottom } = useScroll(84);
+  // const { isAtBottom } = useScroll(84);
   const { handleType, handleTab, type, tab } = useQuery();
   const { tablet } = useDevices();
 
   const { artists, tracks } = store;
   const isArtists = type === "artists";
-  const title = `Top ${isArtists ? "Artists" : "Tracks"}`;
   const data = isArtists ? artists : tracks;
+  const typeProps = { value: type, handleChange: handleType, isTablet: tablet };
+  const rangeProps = { tab, handleChange: handleTab, isTablet: tablet };
 
   return (
     <Layout>
-      <Container>
-        <styles.Main>
-          <styles.Header sticky={sticky}>
-            <styles.Title sticky={sticky}>{title}</styles.Title>
-            <styles.Controls>
-              {!tablet && <RangeSelector tab={tab} handleChange={handleTab} />}
-              <TypeSelector handleType={handleType} type={type} />
-              <Playlist />
-            </styles.Controls>
-          </styles.Header>
-          <Chart {...{ isArtists, isLoading }} term={data[tab]} />
-        </styles.Main>
-      </Container>
       {tablet && (
-        <styles.BottomWrapper isAtBottom={isAtBottom}>
-          <styles.RangeSelectorMobile tab={tab} handleChange={handleTab} />
-          <Footer />
+        <styles.Controls>
+          <TypeSelector {...typeProps} />
+          <Playlist />
+        </styles.Controls>
+      )}
+      <styles.MainThread>
+        <Chart {...{ isArtists, isLoading, term: data[tab] }} />
+        {/* {!tablet && <Footer />} */}
+      </styles.MainThread>
+      {!tablet && (
+        <styles.Sidebar>
+          <styles.Wrapper>
+            <TypeSelector {...typeProps} />
+            <RangeSelector {...rangeProps} />
+            <Playlist />
+          </styles.Wrapper>
+        </styles.Sidebar>
+      )}
+      {tablet && (
+        <styles.BottomWrapper>
+          <RangeSelector {...rangeProps} />
+          {/* <Footer /> */}
         </styles.BottomWrapper>
       )}
-      {!tablet && <Footer />}
     </Layout>
   );
 };

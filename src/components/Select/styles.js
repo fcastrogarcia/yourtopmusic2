@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BaseSelect from "react-select";
 import { withTheme } from "material";
 import { mediaBreaks } from "theme/devices";
-import teal from "material/colors/teal";
+// import teal from "material/colors/teal";
 import shadows from "theme/shadows";
 
 const Wrapper = styled.div`

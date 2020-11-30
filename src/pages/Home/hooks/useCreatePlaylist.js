@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Store } from "context/Store";
-import Playlist from "../utils/playlist";
+import Playlist from "utils/playlist";
 
 const initialState = {
   loading: false,

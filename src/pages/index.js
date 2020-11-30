@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
 import { StoreProvider } from "context/Store";
@@ -17,7 +12,7 @@ function App() {
         <Route exact path="/" render={() => <Redirect to="/connect" />} />
         <Route exact path="/connect" component={Login} />
         <StoreProvider>
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/chart" component={Home} />
         </StoreProvider>
       </Switch>
       <GlobalStyles />

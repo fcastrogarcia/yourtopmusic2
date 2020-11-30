@@ -1,28 +1,30 @@
 import styled from "styled-components";
-import { mediaBreaks } from "theme/devices";
-import { FiHeadphones } from "react-icons/fi";
+// import { mediaBreaks } from "theme/devices";
 
 const Header = styled.header`
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  grid-template-areas: "logo . user";
-  box-sizing: border-box;
-  border-bottom: 1px solid var(--gray-300);
-  font-weight: bold;
+  grid-area: header;
   z-index: 598;
-  padding: 0 24px;
-  background: #fff;
-  align-items: center;
-
-  ${mediaBreaks.mobile`
-    padding: 0 4.5%;
-  `}
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  padding: 40px 64px 20px;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  display: grid;
+  align-items: flex-end;
+  grid-template-rows: 50px 1fr 60px;
+  grid-gap: 54px 0;
 `;
 
-const Logo = styled(FiHeadphones).attrs({
-  size: 28,
-})`
-  color: var(--gray-800);
+const HeaderMobile = styled.header`
+  height: 5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  box-sizing: border-box;
 `;
 
-export default { Header, Logo };
+export default { Header, HeaderMobile };
