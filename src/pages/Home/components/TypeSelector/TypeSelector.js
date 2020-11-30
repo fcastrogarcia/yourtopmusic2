@@ -1,23 +1,23 @@
 import React from "react";
-import { func, string } from "prop-types";
+import { bool, shape } from "prop-types";
 import Select from "components/Select";
+import SelectMobile from "components/SelectMobile";
 
-const options = [
-  { value: "artists", label: "Artists" },
-  { value: "tracks", label: "Tracks" },
-];
-
-const TypeSelector = ({ handleChange, value }) => (
-  <Select handleChange={handleChange} currValue={value} options={options} />
-);
+const TypeSelector = ({ isTablet, ...rest }) => {
+  return isTablet ? <SelectMobile {...rest} /> : <Select {...rest} />;
+};
 
 TypeSelector.propTypes = {
-  handleType: func.isRequired,
-  type: string,
+  isTablet: bool,
+  options: shape([]),
 };
 
 TypeSelector.defaultProps = {
-  type: "artists",
+  isTablet: false,
+  options: [
+    { value: "artists", label: "Artists" },
+    { value: "tracks", label: "Tracks" },
+  ],
 };
 
 export default TypeSelector;

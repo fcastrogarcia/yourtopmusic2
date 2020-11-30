@@ -87,6 +87,10 @@ export default {
     elevation8: {
       boxShadow: shadows.lg,
     },
+    elevation16: {
+      borderRadius: "40px 40px 0 0",
+      boxShadow: shadows.lg,
+    },
   },
   // MuiInputBase: {
   //   root: {

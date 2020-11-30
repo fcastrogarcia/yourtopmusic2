@@ -15,19 +15,21 @@ import useQuery from "./hooks/useQuery";
 
 const Home = () => {
   const { store, isLoading } = useContext(Store);
-  const { sticky, isAtBottom } = useScroll(84);
+  const { isAtBottom } = useScroll(84);
   const { handleType, handleTab, type, tab } = useQuery();
   const { tablet } = useDevices();
 
   const { artists, tracks } = store;
   const isArtists = type === "artists";
   const data = isArtists ? artists : tracks;
+  const typeProps = { value: type, handleChange: handleType, isTablet: tablet };
+  const rangeProps = { tab, handleChange: handleTab, isTablet: tablet };
 
   return (
     <Layout>
       {tablet && (
         <styles.Controls>
-          <TypeSelector handleChange={handleType} value={type} />
+          <TypeSelector {...typeProps} />
           <Playlist />
         </styles.Controls>
       )}
@@ -38,15 +40,15 @@ const Home = () => {
       {!tablet && (
         <styles.Sidebar>
           <styles.Wrapper>
-            <TypeSelector handleChange={handleType} value={type} />
-            <RangeSelector tab={tab} handleChange={handleTab} isTablet={tablet} />
+            <TypeSelector {...typeProps} />
+            <RangeSelector {...rangeProps} />
             <Playlist />
           </styles.Wrapper>
         </styles.Sidebar>
       )}
       {tablet && (
         <styles.BottomWrapper isAtBottom={isAtBottom}>
-          <RangeSelector tab={tab} handleChange={handleTab} isTablet={tablet} />
+          <RangeSelector {...rangeProps} />
           <Footer />
         </styles.BottomWrapper>
       )}
