@@ -18,8 +18,7 @@ const SelectButton = styled.button`
   background: var(--gray-200);
   color: var(--gray-700);
   font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  font-weight: 500;
   max-width: 300px;
 
   &:hover {
@@ -52,7 +51,7 @@ const Selector = styled.div`
   grid-auto-columns: 1fr;
   border-radius: 50px;
   background: var(--gray-200);
-  height: 45px;
+  height: 50px;
   margin-bottom: 1vh;
 
   &::after {
@@ -60,22 +59,21 @@ const Selector = styled.div`
     position: absolute;
     background: var(--gray-300);
     border-radius: 50px;
-    height: 53px;
+    height: 56px;
     width: 50%;
     transition: all 0.15s ease-in-out;
-    top: -4px;
+    top: -3px;
     box-shadow: ${shadows.lg};
     left: ${({ index }) => (!index ? 0 : 50)}%;
   }
 `;
 
 const Option = styled.button`
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
   color: ${({ selected }) => (selected ? "var(--gray-800)" : "var(--gray-600)")};
   position: relative;
   z-index: 100;
-  letter-spacing: 0.3px;
   transition: all 0.3s ease-in-out;
 `;
 

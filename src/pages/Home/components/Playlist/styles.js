@@ -34,7 +34,7 @@ const CreateAPlaylist = styled.button`
   align-items: center;
   border-radius: 30px;
   color: var(--gray-100);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 15px;
   cursor: pointer;
   background: var(--gray-800);

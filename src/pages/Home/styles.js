@@ -26,13 +26,13 @@ const Wrapper = styled.div`
 const MainThread = styled.main`
   grid-area: main;
   display: grid;
-  margin: 40px 0 110px;
+  margin: 40px 0 100px;
   grid-template-rows: auto auto;
   grid-gap: 30px;
 
   ${mediaBreaks.tablet`
     width: min(93vw, 1280px);
-    margin: 16px 0;
+    margin: 16px 0 100px;
     grid-gap: 12px;
   `}
 `;

@@ -65,7 +65,7 @@ const Menu = styled.ul`
   box-shadow: ${shadows.lg};
   position: absolute;
   top: -133px;
-  z-index: 1000;
+  z-index: 10000;
   background: white;
 
   ${mediaBreaks.tablet`

@@ -61,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     button {
+        font-family: "Rubik", sans-serif;
         background-color: transparent;
         border: none;
         font-size: inherit;
