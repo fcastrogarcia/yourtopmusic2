@@ -2,20 +2,20 @@ import React, { useContext } from "react";
 import styles from "./styles";
 
 import Layout from "components/Layout";
-import Footer from "components/Footer";
+// import Footer from "components/Footer";
 import RangeSelector from "./components/RangeSelector";
 import TypeSelector from "./components/TypeSelector";
 import Chart from "./components/Chart";
 import Playlist from "./components/Playlist";
 
 import { Store } from "context/Store";
-import useScroll from "hooks/useScroll";
+// import useScroll from "hooks/useScroll";
 import useDevices from "hooks/useDevices";
 import useQuery from "./hooks/useQuery";
 
 const Home = () => {
   const { store, isLoading } = useContext(Store);
-  const { isAtBottom } = useScroll(84);
+  // const { isAtBottom } = useScroll(84);
   const { handleType, handleTab, type, tab } = useQuery();
   const { tablet } = useDevices();
 
@@ -47,9 +47,9 @@ const Home = () => {
         </styles.Sidebar>
       )}
       {tablet && (
-        <styles.BottomWrapper isAtBottom={isAtBottom}>
+        <styles.BottomWrapper>
           <RangeSelector {...rangeProps} />
-          <Footer />
+          {/* <Footer /> */}
         </styles.BottomWrapper>
       )}
     </Layout>

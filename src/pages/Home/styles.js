@@ -111,7 +111,8 @@ const BottomWrapper = styled.div`
   ${mediaBreaks.tablet`
     position: fixed;
     transition: all 0.2s ease-in-out;
-    bottom: ${({ isAtBottom }) => (isAtBottom ? 0 : -80)}px;
+    // bottom: ${({ isAtBottom }) => (isAtBottom ? 0 : -80)}px;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 1000;
