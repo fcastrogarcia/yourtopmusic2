@@ -39,6 +39,9 @@ const CreateAPlaylist = styled.button`
   cursor: pointer;
   background: var(--gray-800);
   transition: all 0.2s ease-in-out;
+  max-width: 300px;
+  justify-self: end;
+  letter-spacing: 0.3px;
 
   &:hover {
     background: var(--gray-900);

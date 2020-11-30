@@ -110,6 +110,9 @@ const Controls = styled.div`
 const BottomWrapper = styled.div`
   ${mediaBreaks.tablet`
     position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     transition: all 0.2s ease-in-out;
     // bottom: ${({ isAtBottom }) => (isAtBottom ? 0 : -80)}px;
     bottom: 0;

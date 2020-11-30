@@ -42,7 +42,7 @@ const Skeleton = styled(BaseSkeleton).attrs({
   && {
     margin-right: 10px;
   }
-  ${mediaBreaks.mobile`
+  ${mediaBreaks.tablet`
     && {
       display: none;
     }

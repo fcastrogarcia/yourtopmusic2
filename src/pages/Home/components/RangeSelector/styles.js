@@ -53,8 +53,9 @@ const WrapperMobile = styled.ul`
   height: 50px;
   box-shadow: ${shadows.xl};
   border-radius: 50px;
-  margin: 0 2vw;
   background: var(--gray-900);
+  width: 92vw;
+  max-width: 600px;
 
   &::after {
     position: absolute;

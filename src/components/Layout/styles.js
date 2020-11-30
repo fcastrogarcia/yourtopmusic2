@@ -8,7 +8,7 @@ const Layout = styled.div`
   display: grid;
   grid-template-columns: 30% 1fr 30%;
   grid-template-areas: "header main sidebar";
-  ${mediaBreaks.mobile`
+  ${mediaBreaks.tablet`
     grid-template-columns: 1fr;
     grid-template-areas:
         "header"
