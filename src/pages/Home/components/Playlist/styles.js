@@ -16,13 +16,12 @@ const BaseButton = styled(Button)`
     height: 36px;
     width: 100%;
     background: var(--white);
-    transition: all 0.15s ease-in-out;
     letter-spacing: 0.5px;
     font-weight: 400;
     ${mixins.hoverButton`
       background: var(--gray-800);
       color: var(--white);
-    `}
+      `}
   }
 `;
 
@@ -49,27 +48,37 @@ const CreateAPlaylist = styled.button`
   }
 `;
 
-const CreateButton = styled(BaseButton)`
+const CreateButton = styled.button`
   && {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 156px;
     font-weight: 500;
-    height: 38px;
+    height: 50px;
     border: 2px solid var(--gray-800);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 13px;
+    font-size: 15px;
+    border-radius: 40px;
+    background: var(--gray-800);
+    color: var(--white);
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+
+    &:active {
+      background: var(--gray-900);
+    }
+
+    & div div {
+      background: var(--white);
+    }
 
     ${mixins.hoverButton`
-      background: var(--gray-800);
-      color: var(--white);
+      background: var(--gray-900);
       & div div {
         background: var(--white);
       }
-      `}
+    `}
   }
-  ${mediaBreaks.tablet`
-    width: auto;
-  `}
 `;
 
 const BaseWrapper = styled.div`
@@ -95,7 +104,7 @@ const Top = styled.div`
 
 const Bottom = styled.div`
   width: 100%;
-  padding: 20px;
+  padding: 16px;
   display: flex;
   box-sizing: border-box;
   justify-content: flex-end;
@@ -120,7 +129,7 @@ const IconButton = styled(Button).attrs({ disableRipple: true })`
     justify-self: flex-end;
     padding: 0;
     position: absolute;
-    top: 28px;
+    top: 22px;
     right: 20px;
     z-index: 3;
 
@@ -139,8 +148,8 @@ const Title = styled(Typography).attrs({ variant: "h3" })`
     padding: 28px 26px;
 
     ${mediaBreaks.tablet`
-      font-size: 23px;
-      padding: 24px 20px;
+      font-size: 21px;
+      padding: 24px 30px;
     `}
   }
 `;

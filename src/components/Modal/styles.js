@@ -10,7 +10,7 @@ const Modal = styled(BaseModal)`
 
 const Wrapper = styled.div.attrs({ className: "modal__inner-wrapper" })`
   background: var(--white);
-  border-radius: 4px;
+  border-radius: 20px;
   box-shadow: ${shadows.md};
   outline: none;
   width: min-content;
