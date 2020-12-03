@@ -1,5 +1,11 @@
 <h1>Your top music</h1>
 Web application that let users check on their most listened artists and tracks with different time ranges signing in with their Spotify account. 
+<br />
+
+![preview-1](src/assets/images/Your-Top-Music.gif)
+![preview-2](src/assets/images/Your-Top-Music-2.gif)
+
+<br />
 <h2>Features</h2>
 <ul>
   <li>Listen to a sample of every track hovering on each track card & open it on Spotify web player</li>
