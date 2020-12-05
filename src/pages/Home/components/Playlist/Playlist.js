@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "components/Modal";
 import styles from "./styles";
 import useCreatePlaylist from "../../hooks/useCreatePlaylist";
 import Radios from "./components/Radios";
 import Views from "./components/Views";
 
-const Playlist = () => {
+const Playlist = ({ initialRange }) => {
   const [open, setOpen] = useState(false);
 
-  const { range, setRange, handleInit, state, handleDefault } = useCreatePlaylist();
+  const { range, setRange, handleInit, state, handleDefault } = useCreatePlaylist(
+    initialRange
+  );
   const { loading, success } = state;
+
+  useEffect(() => {
+    if (initialRange) setRange(initialRange);
+  }, [initialRange]);
 
   const handleOpen = () => setOpen(true);
 

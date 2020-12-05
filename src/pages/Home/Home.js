@@ -34,7 +34,7 @@ const Home = () => {
       {tablet && (
         <styles.Controls isScrollUp={isScrollUp}>
           <TypeSelector {...typeProps} />
-          <Playlist />
+          <Playlist initialRange={tab} />
         </styles.Controls>
       )}
       <styles.MainThread>
@@ -46,7 +46,7 @@ const Home = () => {
           <styles.Wrapper>
             <TypeSelector {...typeProps} />
             <RangeSelector {...rangeProps} />
-            <Playlist />
+            <Playlist initialRange={tab} />
           </styles.Wrapper>
         </styles.Sidebar>
       )}
