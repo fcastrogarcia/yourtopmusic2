@@ -1,13 +1,5 @@
 import React, { Fragment } from "react";
-import {
-  any,
-  string,
-  number,
-  objectOf,
-  arrayOf,
-  shape,
-  bool,
-} from "prop-types";
+import { any, string, number, objectOf, arrayOf, shape, bool } from "prop-types";
 import styles from "./styles";
 
 import { isMobile } from "react-device-detect";
@@ -24,6 +16,7 @@ const Track = ({
   id,
   isLoading,
   mobile,
+  isScrollUp,
 }) => {
   const { ref, handlePlay, handlePause, isPlaying } = usePlayTrack(id);
 
@@ -38,6 +31,7 @@ const Track = ({
       isTrack
       isPlaying={isPlaying}
       onClick={preview_url && handleClick}
+      isScrollUp={isScrollUp}
     >
       {isLoading ? (
         <Fragment>

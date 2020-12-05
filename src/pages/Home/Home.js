@@ -9,32 +9,36 @@ import Chart from "./components/Chart";
 import Playlist from "./components/Playlist";
 
 import { Store } from "context/Store";
-// import useScroll from "hooks/useScroll";
+import useScroll from "hooks/useScroll";
 import useDevices from "hooks/useDevices";
 import useQuery from "./hooks/useQuery";
 
 const Home = () => {
   const { store, isLoading } = useContext(Store);
-  // const { isAtBottom } = useScroll(84);
+  const { isScrollUp } = useScroll(84);
   const { handleType, handleTab, type, tab } = useQuery();
   const { tablet } = useDevices();
 
   const { artists, tracks } = store;
   const isArtists = type === "artists";
   const data = isArtists ? artists : tracks;
-  const typeProps = { value: type, handleChange: handleType, isTablet: tablet };
+  const typeProps = {
+    value: type,
+    handleChange: handleType,
+    isTablet: tablet,
+  };
   const rangeProps = { tab, handleChange: handleTab, isTablet: tablet };
 
   return (
     <Layout>
       {tablet && (
-        <styles.Controls>
+        <styles.Controls isScrollUp={isScrollUp}>
           <TypeSelector {...typeProps} />
           <Playlist />
         </styles.Controls>
       )}
       <styles.MainThread>
-        <Chart {...{ isArtists, isLoading, term: data[tab] }} />
+        <Chart {...{ isArtists, isLoading, isScrollUp, term: data[tab] }} />
         {/* {!tablet && <Footer />} */}
       </styles.MainThread>
       {!tablet && (

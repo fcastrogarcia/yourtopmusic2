@@ -8,7 +8,7 @@ import useDevices from "hooks/useDevices";
 import Artist from "../ChartItem/Artist";
 import Track from "../ChartItem/Track";
 
-const Chart = ({ term, isArtists, isLoading }) => {
+const Chart = ({ term, isArtists, isLoading, isScrollUp }) => {
   const { mobile } = useDevices();
 
   return (
@@ -32,6 +32,7 @@ const Chart = ({ term, isArtists, isLoading }) => {
               rank={i + 1}
               isLoading={isLoading}
               mobile={mobile}
+              isScrollUp={isScrollUp}
             />
           ))}
         </PlayerProdiver>

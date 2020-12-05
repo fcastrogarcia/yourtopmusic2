@@ -98,7 +98,8 @@ const Controls = styled.div`
   background: #fff;
   width: 100%;
   position: sticky;
-  top: 0;
+  top: ${({ isScrollUp }) => (isScrollUp ? 0 : "-75px")};
+  transition: all 0.25s ease-in-out;
   z-index: 1000;
   padding: 10px 15px;
   box-shadow: ${shadows.fuzzy};

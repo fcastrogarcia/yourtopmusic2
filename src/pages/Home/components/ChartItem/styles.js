@@ -75,8 +75,8 @@ const Card = styled.div`
       top: 20px;
       bottom: 20px;
       ${mediaBreaks.tablet`
-          top: 68px;
-          bottom: 60px;
+          top: ${({ isScrollUp }) => (isScrollUp ? 84 : 10)}px;
+          bottom: 80px;
         `}
     `}
 `;
