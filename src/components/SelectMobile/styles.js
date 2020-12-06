@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import shadows from "theme/shadows";
 
 const SelectButton = styled.button`
   padding: 12px 20px 12px 25px;
@@ -50,24 +51,26 @@ const Selector = styled.div`
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   border-radius: 50px;
-  height: 50px;
+  height: 60px;
   margin-bottom: 1vh;
+  background: var(--gray-200);
 
   &::after {
     content: "";
     position: absolute;
-    background: var(--gray-300);
+    background: var(--white);
+    box-shadow: ${shadows.md};
     border-radius: 50px;
-    height: 56px;
-    width: 50%;
+    height: 50px;
+    width: calc(50% - 10px);
     transition: all 0.15s ease-in-out;
-    top: -3px;
-    left: ${({ index }) => (!index ? 0 : 50)}%;
+    top: 5px;
+    left: ${({ index }) => (!index ? "5px" : "calc(50% + 5px)")};
   }
 `;
 
 const Option = styled.button`
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   color: ${({ selected }) => (selected ? "var(--gray-800)" : "var(--gray-600)")};
   position: relative;

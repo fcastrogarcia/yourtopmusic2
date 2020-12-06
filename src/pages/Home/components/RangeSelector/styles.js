@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import teal from "material/colors/teal";
 import shadows from "theme/shadows";
 
 const getPseudoElPosition = ({ tab }) => {
@@ -16,29 +15,27 @@ const getPseudoElPosition = ({ tab }) => {
 
 const WrapperDesktop = styled.ul`
   width: 200px;
-  border-radius: 22px;
-  background: var(--gray-100);
+  border-radius: 0;
   overflow: hidden;
 `;
 
 const RangeOption = styled.li`
   cursor: pointer;
   position: relative;
-  height: 40px;
+  height: 28px;
   display: flex;
+  margin: 10px 0;
   align-items: center;
   padding: 10px 10px;
   padding-left: 25px;
+  border-radius: 50px;
   font-size: 15px;
   color: var(--gray-700);
   font-weight: ${({ selected }) => selected && 500};
-  background: ${({ selected }) => selected && `var(--gray-300)`};
-  transition: 0.2s background ease-in-out;
-  &:not(:last-child) {
-    border-bottom: 1px solid var(--gray-200);
-  }
+  background: ${({ selected }) => selected && `var(--gray-200)`};
+  transition: 0.15s background ease-in-out;
   &:hover {
-    background: var(--gray-200);
+    background: ${({ selected }) => (selected ? `var(--gray-300)` : "var(--gray-100)")};
   }
 `;
 
