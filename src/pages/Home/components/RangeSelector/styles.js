@@ -63,6 +63,7 @@ const WrapperMobile = styled.ul`
     transition: all 0.2s ease-in-out;
     height: 38px;
     left: ${getPseudoElPosition};
+    box-shadow: ${shadows.md};
   }
 `;
 
