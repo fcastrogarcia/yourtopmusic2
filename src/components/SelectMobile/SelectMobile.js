@@ -15,7 +15,7 @@ const SelectMobile = ({ value, handleChange, options }) => {
   const currIndex = options.findIndex(option => option.value === value);
 
   return (
-    <>
+    <React.Fragment>
       <styles.SelectButton onClick={handleClick}>
         {label}
         <styles.Dropwdown />
@@ -35,7 +35,7 @@ const SelectMobile = ({ value, handleChange, options }) => {
           </styles.Selector>
         </styles.Wrapper>
       </Drawer>
-    </>
+    </React.Fragment>
   );
 };
 

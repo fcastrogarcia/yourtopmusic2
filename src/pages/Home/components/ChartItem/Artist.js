@@ -8,7 +8,8 @@ import useDevices from "hooks/useDevices";
 const Artist = ({ name, genres, images, rank, isLoading }) => {
   const { mobile } = useDevices();
 
-  const src = images[1].url;
+  const [, firstImage = {}] = images;
+  const { url: src } = firstImage;
   const slicedGenres = (isMobile ? genres.slice(0, 3) : genres).join(", ");
 
   return (

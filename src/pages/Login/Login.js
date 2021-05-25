@@ -16,10 +16,10 @@ const LoginButton = () => {
           <styles.Title>{TITLE}</styles.Title>
           <styles.Button onClick={handleClick} href="/.netlify/functions/login">
             {!loading ? (
-              <>
+              <React.Fragment>
                 <styles.Icon />
                 {BUTTON_TEXT}
-              </>
+              </React.Fragment>
             ) : (
               <styles.Loader />
             )}

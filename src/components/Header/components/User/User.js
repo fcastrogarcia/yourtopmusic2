@@ -45,7 +45,9 @@ const User = ({ externalUrl, displayName, images, isTablet }) => {
           {isLoading || !displayName ? (
             <styles.Skeleton width={120} height={15} variant="text" />
           ) : (
-            <>{!isTablet && <styles.DisplayName>{displayName}</styles.DisplayName>}</>
+            <React.Fragment>
+              {!isTablet && <styles.DisplayName>{displayName}</styles.DisplayName>}
+            </React.Fragment>
           )}
           <Avatar image={image} fisrtChar={fisrtChar} isLoading={isLoading} />
         </styles.User>

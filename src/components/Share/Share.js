@@ -18,7 +18,7 @@ const Share = ({ href }) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <styles.ShareButton>
         <styles.Overlay>share</styles.Overlay>
         <a href={href} target="_blank" rel="noopener noreferrer">
@@ -31,7 +31,7 @@ const Share = ({ href }) => {
           <styles.Twitter />
         </div>
       </styles.ShareButton>
-    </>
+    </React.Fragment>
   );
 };
 

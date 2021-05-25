@@ -8,9 +8,8 @@ import Views from "./components/Views";
 const Playlist = ({ initialRange }) => {
   const [open, setOpen] = useState(false);
 
-  const { range, setRange, handleInit, state, handleDefault } = useCreatePlaylist(
-    initialRange
-  );
+  const { range, setRange, handleInit, state, handleDefault } =
+    useCreatePlaylist(initialRange);
   const { loading, success } = state;
 
   useEffect(() => {
@@ -28,7 +27,7 @@ const Playlist = ({ initialRange }) => {
   const handleChange = e => setRange(parseInt(e.target.value));
 
   return (
-    <>
+    <React.Fragment>
       <styles.CreateAPlaylist onClick={handleOpen}>
         Create a playlist
       </styles.CreateAPlaylist>
@@ -63,7 +62,7 @@ const Playlist = ({ initialRange }) => {
           <Views {...state} />
         </div>
       </Modal>
-    </>
+    </React.Fragment>
   );
 };
 
