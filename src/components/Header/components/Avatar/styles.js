@@ -2,6 +2,7 @@ import styled from "styled-components";
 import BaseAvatar from "@material-ui/core/Avatar";
 import Button from "material/IconButton";
 import BaseSkeleton from "@material-ui/lab/Skeleton";
+import { BiUserCircle } from "react-icons/bi";
 
 const Avatar = styled(BaseAvatar)`
   && {
@@ -31,4 +32,10 @@ const Skeleton = styled(BaseSkeleton).attrs({
   width: 36,
 })``;
 
-export default { Avatar, IconButton, Skeleton };
+const UserCircle = styled(BiUserCircle)`
+  && {
+    color: var(--gray-600);
+  }
+`;
+
+export default { Avatar, IconButton, Skeleton, UserCircle };
