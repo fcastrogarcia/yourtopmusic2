@@ -9,9 +9,8 @@ import LazyImage from "components/LazyImage";
 const Genres = styled.p`
   font-size: 12px;
   color: var(--gray-600);
-  ${mixins.textEllipsis(1)}
   justify-self: flex-start;
-  max-width: 300px;
+  width: 95%;
   padding-left: 20px;
   text-transform: capitalize;
   ${mediaBreaks.mobile`
@@ -54,7 +53,7 @@ const Card = styled.div`
       `}
     `}
 
-  ${({ isMobile }) =>
+  /* ${({ isMobile }) =>
     !isMobile &&
     css`
       &:hover ${Genres} {
@@ -63,7 +62,7 @@ const Card = styled.div`
       &:hover ${Album} {
         -webkit-line-clamp: 1;
       }
-    `}
+    `} */
 
     ${({ isPlaying }) =>
     isPlaying &&
@@ -165,6 +164,7 @@ const Name = styled(Typography).attrs({ variant: "h3" })`
   justify-self: flex-start;
   align-self: flex-end;
   padding-left: 20px;
+  width: 100%;
   ${mediaBreaks.mobile`
     padding-left: 14px;
   `}
@@ -193,6 +193,9 @@ const Artist = styled(Genres)`
 const Album = styled(Genres)`
   grid-area: album;
   margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 const Player = styled.div`
